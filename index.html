@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Quiz App</title>
+		<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><img src="images/logo.png" alt="Quiz App Logo"></a>
+	</header>
+	
+	<section id="landing">
+		<h1>Practice Interview Questions for HTML, CSS, JavaScript, and NodeJS</h1>
+		<button type="submit" class="btn-login">Login</button>
+	</section>
+	
+	
+	
+	
+	
+	
+	<section class="login hidden">
+	
+		<div id="tabs" class="container-login animate">
+			<ul>
+				<li><a href="#tabs-1">Log In</a></li>
+				<li><a href="#tabs-2">Sign Up</a></li>
+			</ul>
+			
+			<div id="tabs-1">
+				<form>
+					<div class="container-image">
+						<img src="images/avatar.png" alt="Avatar image">
+					</div>
+					<div class="container-input">
+						<label for="username">Email</label>
+						<input type="text" name="username" placeholder="JohnSmith@mail.com" required>
+
+						<label for="password">Password</label>
+						<input type="password" name="password" placeholder="password" required>
+
+						<button type="submit" class="btn-success">Login</button>
+
+						<br>
+
+						<input type="checkbox" name="checked" checked="checked">Remember me
+					</div>
+
+					<div class="container-options">
+						<button type="button" class="btn-cancel">Cancel</button>
+						<button type="reset" class="btn-update">Forgot Password</button>
+					</div>
+				</form>
+			</div>
+			
+			<div id="tabs-2">
+				<form>
+					<div class="container-image">
+						<img src="images/avatar.png" alt="Avatar image">
+					</div>
+					<div class="container-input">
+						<label for="firstname">First Name</label>
+						<input type="text" name="firstname" placeholder="John" required>
+						
+						<label for="lastname">Last Name</label>
+						<input type="text" name="lastname" placeholder="Smith" required>
+						
+						<label for="email">Email</label>
+						<input type="email" name="email" placeholder="JohnSmith@mail.com" required>
+
+						<label for="password">Password</label>
+						<input type="password" name="password" placeholder="password" required>
+
+						<button type="submit" class="btn-success">Sign up</button>
+
+						<br>
+
+						<input type="checkbox" name="checked" checked="checked">Remember me
+					</div>
+
+					<div class="container-options">
+						<button type="button" class="btn-cancel">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	
+		
+		
+		
+	</section>
+	<main>
+		
+	</main>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
