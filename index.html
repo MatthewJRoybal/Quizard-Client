@@ -11,18 +11,29 @@
 
 	<div class="video-fullscreen-container">
 		<video loop autoplay class="video-fullscreen">
+		<source src="videos/magicBook.mov" type="video/mov">
 			<source src="videos/magicBook.mp4" type="video/mp4">
 		</video>
 	</div>
 
 	<header>
-		<a href="index.html"><img src="images/logo.png" alt="Quiz App Logo"></a>
+		<div class="logo">
+			<a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
+		</div>
+		<div class="nav-main">
+			<ul>
+				<li>About</li>
+				<li>Contact</li>
+				<li>Sign Up</li>
+				<li>Sign In</li>
+			</ul>
+		</div>
 	</header>
 	
 	<section id="landing">
 		<h1>Welcome Wizards and Witches.</h1>
 		<h1>Are you prepared to take the ultimate full stack node js quiz?</h1>
-		<button type="submit" class="btn-login">You May Enter</button>
+		<button type="submit" class="btn btn-login">You May Enter</button>
 	</section>
 	
 	
@@ -39,16 +50,15 @@
 			</ul>
 			
 			<div id="tabs-1">
-				<form>
+<!--			// jquery onsubmit to make an api request-->
+				<form id="login-session">
 					<div class="container-image">
 						<img src="images/avatar.png" alt="Avatar image">
 					</div>
 					<div class="container-input">
-						<label for="username">Email</label>
-						<input type="text" name="username" placeholder="JohnSmith@mail.com" required>
+						<input type="text" name="username" placeholder="Username" required>
 
-						<label for="password">Password</label>
-						<input type="password" name="password" placeholder="password" required>
+						<input type="password" name="password" placeholder="Password" required>
 
 						<button type="submit" class="btn-success">Login</button>
 
@@ -65,22 +75,22 @@
 			</div>
 			
 			<div id="tabs-2">
-				<form>
+				<form id="signup">
 					<div class="container-image">
 						<img src="images/avatar.png" alt="Avatar image">
 					</div>
 					<div class="container-input">
-						<label for="firstname">First Name</label>
-						<input type="text" name="firstname" placeholder="John" required>
+						<input type="text" name="username" placeholder="Username" required>
 						
-						<label for="lastname">Last Name</label>
-						<input type="text" name="lastname" placeholder="Smith" required>
-						
-						<label for="email">Email</label>
-						<input type="email" name="email" placeholder="JohnSmith@mail.com" required>
+						<input type="email" name="email" placeholder="Email Address" required>
 
-						<label for="password">Password</label>
-						<input type="password" name="password" placeholder="password" required>
+						<input type="password" name="password" placeholder="Password" required>
+						
+						<input type="text" name="first_name" placeholder="First Name" required>
+						
+						<input type="text" name="last_name" placeholder="Last Name" required>
+						
+						<input type="text" name="gender" placeholder="Select A Gender" required>
 
 						<button type="submit" class="btn-success">Sign up</button>
 
@@ -102,6 +112,7 @@
 	</main>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<script src="js/config.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
