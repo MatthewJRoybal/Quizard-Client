@@ -1,15 +1,23 @@
+@font-face {
+    font-family: 'magic_school_tworegular';
+    src: url('fonts/magicschooltwo-webfont.woff2') format('woff2'),
+         url('fonts/magicschooltwo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html,
 body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	
+	background: none;
 }
 
 header,
 footer {
 	height: 65px;
-	background-color: gray;
 }
 
 .hidden {
@@ -20,14 +28,89 @@ footer {
  *************   LANDING   *************
  ***************************************/ 
 
+.video-fullscreen-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.video-fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Expand height & width to cover screen, then center */
+@media (min-aspect-ratio: 16/9) {
+  .video-fullscreen {
+		height: 300%;
+		top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-fullscreen {
+		width: 300%;
+		left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
 #landing {
 	height: 500px;
+	text-align: center;
 }
 
 #landing h1 {
 	text-align: center;
 }
 
+.btn-login {
+  background: #b64ce0;
+  background-image: -webkit-linear-gradient(top, #b64ce0, #630c85);
+  background-image: -moz-linear-gradient(top, #b64ce0, #630c85);
+  background-image: -ms-linear-gradient(top, #b64ce0, #630c85);
+  background-image: -o-linear-gradient(top, #b64ce0, #630c85);
+  background-image: linear-gradient(to bottom, #b64ce0, #630c85);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  -webkit-box-shadow: 3px 3px 3px #ab83ab;
+  -moz-box-shadow: 3px 3px 3px #ab83ab;
+  box-shadow: 3px 3px 3px #ab83ab;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #4b2657 1px;
+  text-decoration: none;
+}
+
+
+.btn-login:hover {
+  background: #ae27e8;
+  background-image: -webkit-linear-gradient(top, #ae27e8, #520073);
+  background-image: -moz-linear-gradient(top, #ae27e8, #520073);
+  background-image: -ms-linear-gradient(top, #ae27e8, #520073);
+  background-image: -o-linear-gradient(top, #ae27e8, #520073);
+  background-image: linear-gradient(to bottom, #ae27e8, #520073);
+  text-decoration: none;
+}
 /***************************************
  ***********   LOGIN FORM   ************
  ***************************************/ 
