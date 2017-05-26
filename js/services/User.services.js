@@ -34,7 +34,7 @@ function createUserObject(userArray) {
 function createUser(userObject) {
 	$.ajax({
 			type: "POST",
-			url: 'http://localhost:8080/users',
+			url: 'http://localhost:8080/user/create',
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				loginUser(userObject);
@@ -50,7 +50,7 @@ function createUser(userObject) {
 function loginUser(userObject) {
 	$.ajax({
 			type: "POST",
-			url: 'http://localhost:8080/sessions',
+			url: 'http://localhost:8080/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				window.location.href = "dashboard.html";
@@ -59,43 +59,18 @@ function loginUser(userObject) {
 		});	
 }
 
+/********************************************
+ *************   LOGIN LOGOUT   *************
+ ********************************************/
 
-
-
-
-
-
-
-
-
-
-
-//function createUser(userObject) {
-//	$.ajax({
-//			type: "POST",
-//			url: 'http://localhost:8080/users',
-//			data: JSON.stringify(userObject),
-//			success: function(user) {
-//				$.ajax({
-//						type: "POST",
-//						url: 'http://localhost:8080/sessions',
-//						data: JSON.stringify(userObject),
-//						success: function(user) {
-//							// Redirect to the dashboard page
-//							// Save token to local storage for every time we want to talk to the server
-//							alert('Your logged in');
-//						},
-//						contentType: "application/json"
-//				});
-//			},
-//			contentType: "application/json"
-//		});
-//}
-
-
-
-
-
-
-
-
+function logoutUser(userObject) {
+	$.ajax({
+			type: "POST",
+			url: 'http://localhost:8080/user/logout',
+			data: JSON.stringify(userObject),
+			success: function(user) {
+				window.location.href = "index.html";
+			},
+			contentType: "application/json"
+		});	
+}

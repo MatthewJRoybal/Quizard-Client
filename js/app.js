@@ -11,5 +11,9 @@ $(document).ready(function() {
 		var userArray = $(this).serializeArray();
 		var newUser = createUserObject(userArray);
 		createUser(newUser);
+	});
+	$('#logout').submit(function(event) {
+		event.preventDefault();
+		logoutUser();
 	})
 });
