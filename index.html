@@ -9,39 +9,37 @@
 
 <body>
 
-	<div class="video-fullscreen-container">
-		<video loop autoplay class="video-fullscreen">
-			<source src="videos/magicBook.mov" type="video/mov">
-			<source src="videos/magicBook.mp4" type="video/mp4">
-		</video>
-	</div>
-
 	<header>
+		<div class="header">
+			<div></div>
+		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
 		</div>
 		<div class="nav-main">
 			<ul>
-				<li>About</li>
-				<li>Contact</li>
-				<li>Sign Up</li>
-				<li>Sign In</li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="contribute.html">Contribute</a></li>
+				<li><a href="register.html">Sign Up</a></li>
+				<li><a href="login.html">Sign In</a></li>
 			</ul>
 		</div>
 	</header>
+	
+	<div class="video-fullscreen-container">
+		<video loop autoplay class="video-fullscreen">
+			<source src="videos/magicBook.mov" type="video/mov">
+		</video>
+	</div>
 	
 	<section id="landing">
 		<h1>Welcome Wizards and Witches.</h1>
 		<h1>Are you prepared to take the ultimate full stack node js quiz?</h1>
 		<button type="submit" class="btn btn-login">You May Enter</button>
 	</section>
-	
-	
-	
-	
-	
-	
-	<section class="login hidden">
+
+	<section id="showlogin" class="login hidden">
 	
 		<div id="tabs" class="container-login animate">
 			<ul>

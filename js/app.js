@@ -5,6 +5,11 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+	$('#showlogin').submit(function(event) {
+		event.preventDefault();
+			displayLogin();
+		$('#tabs').tabs();
+	});
 	displayLogin();
 	$('#signup').submit(function(event) {
 		event.preventDefault();

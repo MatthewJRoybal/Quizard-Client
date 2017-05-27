@@ -3,13 +3,13 @@
  ********************************************/
 
 function displayLogin() {
+	
 	$('.btn-login' || '.btn-cancel').click(function() {
 		$('.login').toggleClass('hidden');
 	});
 	$('.btn-cancel').click(function() {
 		$('.login').toggleClass('hidden');
 	});
-	$('#tabs').tabs();
 }
 
 /********************************************
@@ -44,7 +44,7 @@ function createUser(userObject) {
 }
 
 /********************************************
- **************   LOGIN USER   *************
+ **************   LOGIN USER   **************
  ********************************************/
 
 function loginUser(userObject) {
