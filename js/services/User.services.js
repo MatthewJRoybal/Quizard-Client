@@ -54,6 +54,7 @@ function loginUser(userObject) {
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				window.location.href = "dashboard.html";
+				window.localStorage.setItem('token', user.token);
 			},
 			contentType: "application/json"
 		});	
@@ -63,14 +64,7 @@ function loginUser(userObject) {
  *************   LOGIN LOGOUT   *************
  ********************************************/
 
-function logoutUser(userObject) {
-	$.ajax({
-			type: "POST",
-			url: 'http://localhost:8080/user/logout',
-			data: JSON.stringify(userObject),
-			success: function(user) {
-				window.location.href = "index.html";
-			},
-			contentType: "application/json"
-		});	
+function logoutUser() {
+	window.localStorage.setItem('token', null);
+	window.location.href = "index.html";
 }

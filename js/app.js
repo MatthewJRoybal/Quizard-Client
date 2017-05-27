@@ -5,20 +5,32 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$('#showlogin').submit(function(event) {
-		event.preventDefault();
-			displayLogin();
+	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
+	};
+	$('#showLogin').submit(function() {
+		displayLogin();
 	});
 	displayLogin();
-	$('#signup').submit(function(event) {
+	$('#signUp').submit(function(event) {
 		event.preventDefault();
 		var userArray = $(this).serializeArray();
 		var newUser = createUserObject(userArray);
 		createUser(newUser);
 	});
-	$('#logout').submit(function(event) {
+	$('#signIn').submit(function(event) {
+		event.preventDefault();
+		var userCredentials = $(this).serializeArray();
+		var returningUser = createUserObject(userCredentials);
+		loginUser(returningUser);
+	})
+	$('body').on('click', '#logout', function(event) {
 		event.preventDefault();
 		logoutUser();
 	})
 });
+
+// create quiz service
+// save quiz
+// attach token from local storage
+// make a request and see what happens

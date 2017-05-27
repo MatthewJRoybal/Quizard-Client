@@ -15,6 +15,10 @@ body {
 	background-color: black;
 }
 
+body > * {
+	color: darkviolet;
+}
+
 header {
 	height: 100px;
 }
@@ -248,22 +252,29 @@ header {
 	width: 100px;
 }
 
-.login label {
+label {
 	font-weight: 600;
 }
 
-.login label,
-.login input {
+label,
+input,
+select {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-.login input {
+input, 
+select {
     width: 100%;
     padding: 10px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+select,
+.login select#gender {
+	color: gray;
 }
 
 .login input[type=checkbox] {
@@ -291,14 +302,6 @@ header {
 /***************************************
  *************   DASHBOARD  ************
  ***************************************/
-
-#dashboard {
-	background-color: black;
-}
-
-#dashboard > * {
-	color: darkviolet;
-}
 
 .table {
 	width: 25%;
@@ -345,6 +348,16 @@ header {
 
 #start:hover {
 	background-color: violet;
+}
+
+/***************************************
+ ***********   CONTRIBUTE   ************
+ ***************************************/
+
+#contribute,
+#contact {
+	width: 800px;
+	margin: auto;
 }
 
 /***************************************

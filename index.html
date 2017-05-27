@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Quiz App</title>
-		<link rel="stylesheet" href="css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quizard</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 	<header>
-		<div class="header">
-			<div></div>
-		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
 		</div>
@@ -39,32 +36,23 @@
 		<button type="submit" class="btn btn-login">You May Enter</button>
 	</section>
 
-	<section id="showlogin" class="login hidden">
+	<section id="showLogin" class="login hidden">
 	
 		<div id="tabs" class="container-login animate">
 			<ul>
-				<li><a href="#tabs-1">Log In</a></li>
-				<li><a href="#tabs-2">Sign Up</a></li>
+				<li><a href="#tab1">Log In</a></li>
+				<li><a href="#tab2">Sign Up</a></li>
 			</ul>
 			
-			<div id="tabs-1">
-<!--			// jquery onsubmit to make an api request-->
-				<form id="login-session">
-					<div class="container-image">
-						<img src="images/avatar.png" alt="Avatar image">
-					</div>
+			<div id="tab1">
+				<form id="signIn">
 					<div class="container-input">
 						<input type="text" name="username" placeholder="Username" required>
-
 						<input type="password" name="password" placeholder="Password" required>
-
 						<button type="submit" class="btn-success">Login</button>
-
 						<br>
-
 						<input type="checkbox" name="checked" checked="checked">Remember me
 					</div>
-
 					<div class="container-options">
 						<button type="button" class="btn-cancel">Cancel</button>
 						<button type="reset" class="btn-update">Forgot Password</button>
@@ -72,31 +60,23 @@
 				</form>
 			</div>
 			
-			<div id="tabs-2">
-				<form id="signup">
-					<div class="container-image">
-						<img src="images/avatar.png" alt="Avatar image">
-					</div>
+			<div id="tab2">
+				<form id="signUp">
 					<div class="container-input">
 						<input type="text" name="username" placeholder="Username" required>
-						
 						<input type="email" name="email" placeholder="Email Address" required>
-
 						<input type="password" name="password" placeholder="Password" required>
-						
 						<input type="text" name="first_name" placeholder="First Name" required>
-						
 						<input type="text" name="last_name" placeholder="Last Name" required>
-						
-						<input type="text" name="gender" placeholder="Select A Gender" required>
-
+						<select name="gender" id="gender" placeholder="Select a Gender" required>
+							<option value="" disabled selected hidden>Wizard or Witch?</option>
+							<option value="Wizard">Wizard</option>
+							<option value="Witch">Witch</option>
+						</select>
 						<button type="submit" class="btn-success">Sign up</button>
-
 						<br>
-
 						<input type="checkbox" name="checked" checked="checked">Remember me
 					</div>
-
 					<div class="container-options">
 						<button type="button" class="btn-cancel">Cancel</button>
 					</div>
