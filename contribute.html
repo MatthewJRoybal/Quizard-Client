@@ -27,6 +27,7 @@
 		<h1>Have a question to contribute?</h1>
 		<form>
 			<select name="question-category" id="question-category" required>
+				<option value="" disabled selected>Choose a Category</option>
 				<option value="HTML">HTML</option>
 				<option value="CSS">CSS</option>
 				<option value="CSS">JavaScript</option>
@@ -34,20 +35,29 @@
 				<option value="CSS">Git</option>
 			</select>
 			<select name="question-type" id="question-type" required>
+				<option value="" disabled selected>Choose a Type</option>
 				<option value="Boolean">Boolean</option>
 				<option value="Multiple">Multiple Choice</option>
 			</select>
 			<input type="text" name="question-title" id="question-title" placeholder="Question Title" required>
 			<input type="text" name="question-ask" id="question-ask" placeholder="What's the question?" required>
+			<input type="text" name="question-answer" id="question-answer" placeholder="What's the correct answer?" required>
+			<input type="text" name="question-option-1" id="question-option-1" placeholder="What's a wrong answer #1?" required>
+			<input type="text" name="question-option-2" id="question-option-2" placeholder="What's a wrong answer #2?">
+			<input type="text" name="question-option-3" id="question-option-3" placeholder="What's a wrong answer #3?">
 			<button id="question-submit" class="btn" type="submit">Submit Question</button>
 		</form>
 	</main>
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   <script src="js/quiz.js"></script>
   <script src="js/questions.js"></script>
   <script src="js/quotes.js"></script>
+  <script src="js/services/Question.services.js"></script>
   <script src="js/services/User.services.js"></script>
   <script src="js/app.js"></script>
 </body>

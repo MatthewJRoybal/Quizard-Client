@@ -28,9 +28,19 @@ $(document).ready(function() {
 		event.preventDefault();
 		logoutUser();
 	})
+	if($('#contribute').length > 0) {
+		$('#contribute').submit(function() {
+			var questionArray = $(this).serializeArray();
+			createQuestionObject(questionArray);
+			console.log("Your question array has been created" + questionArray);
+		});
+	};
 });
 
-// create quiz service
+// create questions service
+
+
+
 // save quiz
 // attach token from local storage
 // make a request and see what happens
