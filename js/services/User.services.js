@@ -53,7 +53,7 @@ function loginUser(userObject) {
 			url: 'http://localhost:8080/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
-				window.location.href = "dashboard.html";
+				window.location.href = "html/dashboard.html";
 				window.localStorage.setItem('token', user.token);
 			},
 			contentType: "application/json"
@@ -66,5 +66,5 @@ function loginUser(userObject) {
 
 function logoutUser() {
 	window.localStorage.setItem('token', null);
-	window.location.href = "index.html";
+	window.location.href = "../index.html";
 }

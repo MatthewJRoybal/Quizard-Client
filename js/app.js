@@ -22,19 +22,28 @@ $(document).ready(function() {
 		event.preventDefault();
 		logoutUser();
 	});
-//	$('#dashboard').on('click', '#start-quiz', function() {
-//		getQuestions()//.then(function(questions) {
-			// Do Quizard code here 
-			// var Quizard = new Quiz($('#quiz'), questions, quotes);
-  		// Quizard.cycleQuiz();
-			
-			
-			
-			// Seed questions into database for testing GET here...write a script with faker or similar
-			
-			// Need to be able to save the results in association with user...how would that endpoint look? users.id.quiz
-		//});
-//	});
+	$('#dashboard').on('click', '#start-quiz', function(event) {
+		event.preventDefault();
+		var categories = $('#xyz').serializeArray();
+		var categoriesObj = createFormObject(categories);
+		var queryString = makeQueryString(categoriesObj);
+		getQuestions(queryString);
+	});
+});
+		
+		
+		
+//.then(function(questions) {
+//			 Do Quizard code here 
+//			 var Quizard = new Quiz($('#quiz'), questions, quotes);
+//  		 Quizard.cycleQuiz();
+//			
+//			
+//			
+//			 Seed questions into database for testing GET here...write a script with faker or similar
+//			
+//			 Need to be able to save the results in association with user...how would that endpoint look? users.id.quiz
+
 //	if($('#contribute').length > 0) {
 //		$('#contribute').submit(function(event) {
 //			event.preventDefault();
@@ -44,4 +53,3 @@ $(document).ready(function() {
 //			console.log("Your question array has been created" + contributeArray);
 //		});
 //	};
-});

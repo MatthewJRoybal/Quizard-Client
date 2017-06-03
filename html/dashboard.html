@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quizard - Dashboard</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
 	<header>
 		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
+			<a href="../index.html"><img src="../images/logo.png" alt="Quizard Logo"></a>
 		</div>
 		<div class="nav-main">
 			<ul>
@@ -47,20 +47,29 @@
 			</div>
 		</div>
 		
-		<div class="btn-container">
-			<button id="start-quiz" class="btn btn-start">Start Quiz</button>
+		<div class="start-quiz-form">
+			<form id="xyz">
+				<p>Select the types of quiz questions you'd like to practice:</p>
+				<label><input type="checkbox" name="html" value="true">HTML</label>
+				<label><input type="checkbox" name="css" value="true">CSS</label>
+				<label><input type="checkbox" name="javascript" value="true">JavaScript</label>
+				<label><input type="checkbox" name="nodejs" value="true">Node JS</label>
+				<label><input type="checkbox" name="git" value="true">Git</label>
+				<button id="start-quiz" class="btn btn-start">Submit</button>
+			</form>
+			
 		</div>	
 					
 	</main>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-  <script src="js/quiz.js"></script>
-  <script src="js/questions.js"></script>
-  <script src="js/quotes.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/services/Questions.services.js"></script>
-  <script src="js/services/User.services.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/quiz.js"></script>
+  <script src="../js/questions.js"></script>
+  <script src="../js/quotes.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/services/Questions.services.js"></script>
+  <script src="../js/services/User.services.js"></script>
+  <script src="../js/app.js"></script>
 </body>
 </html>
