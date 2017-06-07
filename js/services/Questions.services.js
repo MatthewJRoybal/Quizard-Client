@@ -40,5 +40,7 @@ function getQuestions(queryString) {
 			},
 			contentType: "application/json"
 		});	
+	}).catch(function(err) {
+		console.log(err);
 	})
 }

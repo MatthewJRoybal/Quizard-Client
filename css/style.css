@@ -1,193 +1,42 @@
 @font-face {
-    font-family: 'magic_school_tworegular';
-    src: url('fonts/magicschooltwo-webfont.woff2') format('woff2'),
-         url('fonts/magicschooltwo-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
+  font-family: 'magic_school_tworegular';
+  src: url("fonts/magicschooltwo-webfont.woff2") format("woff2"), url("fonts/magicschooltwo-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 html,
 body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: black;
-}
+  height: 100%;
+  margin: 0;
+  padding: 0; }
 
 body > * {
-	color: darkviolet;
-}
+  color: darkviolet; }
 
 header {
-	height: 100px;
-}
-
-/***************************************
- *************   NAV MAIN  *************
- ***************************************/ 
-
-.logo {
-	display: inline-block;
-	margin-left: 15px;
-}
-
-.nav-main {
-	float: right;
-}
-
-.nav-main ul {
-	margin-top: 25px;
-	padding: 10px 25px;
-}
-
-.nav-main ul li {
-	display: inline;
-	padding: 0 15px;
-}
-
-.nav-main ul li a {
-	color: darkviolet;
-	text-decoration: none;
-	font-size: 24px;
-	font-weight: bold;
-}
-
-
-
-.nav-main ul li:hover {
-	background: #ae27e8;
-  background-image: -webkit-linear-gradient(top, #ae27e8, #520073);
-  background-image: -moz-linear-gradient(top, #ae27e8, #520073);
-  background-image: -ms-linear-gradient(top, #ae27e8, #520073);
-  background-image: -o-linear-gradient(top, #ae27e8, #520073);
-  background-image: linear-gradient(to bottom, #ae27e8, #520073);
-  text-decoration: none;
-	
-	-webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-	
-  -webkit-box-shadow: 3px 3px 3px violet;
-  -moz-box-shadow: 3px 3px 3px #ab83ab;
-  box-shadow: 3px 3px 3px #ab83ab;
-  
-	font-family: Arial;
-  color: #FFF;
-  font-size: 20px;
-  padding: 5px;
-  border: solid #4b2657 1px;
-  text-decoration: none;	
-}
-
-.btn {
-  background: #b64ce0;
-  background: -webkit-linear-gradient(top, rgba(195, 52, 217, 0.5), rgba(143, 52, 217, 0.5));
-  background: -moz-linear-gradient(top, rgba(195, 52, 217, 0.75), rgba(143, 52, 217, 0.75));
-  background: -ms-linear-gradient(top, rgba(195, 52 217, 0.75) rgba(143, 52, 217, 0.75));
-  background: -o-linear-gradient(top, rgba(195, 52, 217, 0.75), rgba(143, 52, 217, 0.75));
-  background: linear-gradient(top, rgba(195, 52, 217, 0.0), rgba(143, 52, 217, 0.0));
-  
-	-webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-	
-  -webkit-box-shadow: 3px 3px 3px violet;
-  -moz-box-shadow: 3px 3px 3px #ab83ab;
-  box-shadow: 3px 3px 3px #ab83ab;
-  
-	font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  border: solid #4b2657 1px;
-  text-decoration: none;	
-}
+  height: 100px; }
 
 .hidden {
-	display: none;
-}
-
-/***************************************
- *************   LANDING   *************
- ***************************************/ 
-
-.video-fullscreen-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -100;
-}
-
-.video-fullscreen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Expand height & width to cover screen, then center */
-@media (min-aspect-ratio: 16/9) {
-  .video-fullscreen {
-		height: 300%;
-		top: -100%;
-  }
-}
-
-@media (max-aspect-ratio: 16/9) {
-  .video-fullscreen {
-		width: 300%;
-		left: -100%;
-  }
-}
-
-@media (max-width: 767px) {
-  .fullscreen-bg {
-    background: url('../img/videoframe.jpg') center center / cover no-repeat;
-  }
-
-  .fullscreen-bg__video {
-    display: none;
-  }
-}
-
-#landing {
-	height: 500px;
-	text-align: center;
-}
-
-#landing h1 {
-	text-align: center;
-}
+  display: none; }
 
 .btn {
   background: #b64ce0;
   background: -webkit-linear-gradient(top, rgba(195, 52, 217, 0.5), rgba(143, 52, 217, 0.5));
   background: -moz-linear-gradient(top, rgba(195, 52, 217, 0.75), rgba(143, 52, 217, 0.75));
-  background: -ms-linear-gradient(top, rgba(195, 52 217, 0.75) rgba(143, 52, 217, 0.75));
+  background: -ms-linear-gradient(top, rgba(195, 52, 217, 0.75) rgba(143, 52, 217, 0.75));
   background: -o-linear-gradient(top, rgba(195, 52, 217, 0.75), rgba(143, 52, 217, 0.75));
-  background: linear-gradient(top, rgba(195, 52, 217, 0.0), rgba(143, 52, 217, 0.0));
-  
-	-webkit-border-radius: 10;
+  background: linear-gradient(top, rgba(195, 52, 217, 0), rgba(143, 52, 217, 0));
+  -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
-	
   -webkit-box-shadow: 3px 3px 3px violet;
   -moz-box-shadow: 3px 3px 3px #ab83ab;
   box-shadow: 3px 3px 3px #ab83ab;
-  
-	font-family: Arial;
+  font-family: Arial;
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   border: solid #4b2657 1px;
-  text-decoration: none;	
-}
-
+  text-decoration: none; }
 
 .btn:hover {
   background: #ae27e8;
@@ -196,158 +45,102 @@ header {
   background-image: -ms-linear-gradient(top, #ae27e8, #520073);
   background-image: -o-linear-gradient(top, #ae27e8, #520073);
   background-image: linear-gradient(to bottom, #ae27e8, #520073);
-  text-decoration: none;
-}
-/***************************************
- ***********   LOGIN FORM   ************
- ***************************************/ 
-
-#tabs li {
-	list-style: none;
-	display: inline;
-	padding: 15px;
-	background-color: aqua;
-}
-
-.login {
-	z-index: 10;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-}
-
-.container-login {
-	margin: 15% auto;
-	max-width: 400px;
-	padding: 15px;
-	border: 1px solid gray;
-	background-color: #EEE;
-}
-
-.login .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-    
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-
-.login .container-image {
-	width: 100px;
-	margin: 0 auto;
-}
-
-.login img {
-	width: 100px;
-}
-
-label {
-	font-weight: 600;
-}
-
-label,
-input,
-select {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-input, 
-select {
-    width: 100%;
-    padding: 10px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-select,
-.login select#gender {
-	color: gray;
-}
-
-.login input[type=checkbox] {
-	width: auto;
-}
+  text-decoration: none; }
 
 /***************************************
- ************   SCOREBOARD  ************
+ *************   NAV MAIN  *************
  ***************************************/
+.logo {
+  display: inline-block;
+  margin-left: 15px; }
 
-.scoreboard {
-	display: table;
-	height: 60px;
-	width: 100%;
-}
+.nav-main {
+  float: right; }
 
-.scoreboard-left, 
-.scoreboard-right {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 2em;
-}
+.nav-main ul {
+  margin-top: 25px;
+  padding: 10px 25px; }
+
+.nav-main ul li {
+  display: inline;
+  padding: 0 15px; }
+
+.nav-main ul li a {
+  color: darkviolet;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold; }
+
+.nav-main ul li:hover {
+  background: #ae27e8;
+  background-image: -webkit-linear-gradient(top, #ae27e8, #520073);
+  background-image: -moz-linear-gradient(top, #ae27e8, #520073);
+  background-image: -ms-linear-gradient(top, #ae27e8, #520073);
+  background-image: -o-linear-gradient(top, #ae27e8, #520073);
+  background-image: linear-gradient(to bottom, #ae27e8, #520073);
+  text-decoration: none;
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 3px violet;
+  -moz-box-shadow: 3px 3px 3px #ab83ab;
+  box-shadow: 3px 3px 3px #ab83ab;
+  font-family: Arial;
+  color: #FFF;
+  font-size: 20px;
+  padding: 5px;
+  border: solid #4b2657 1px;
+  text-decoration: none; }
+
+/***************************************
+ ***********   CONTRIBUTE   ************
+ ***************************************/
+#contribute,
+#contact {
+  width: 800px;
+  margin: auto; }
 
 /***************************************
  *************   DASHBOARD  ************
  ***************************************/
-
 .table {
-	width: 25%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 200px;
-	border: 3px red solid;
-}
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  border: 3px red solid; }
 
 .table .thead {
-	display: table-header-group;
-	background-color: gray;
-}
+  display: table-header-group;
+  background-color: gray; }
 
 .table .th {
-	display: table-cell;
-	padding: 10px;
-	font-size: 18px;
-	font-weight: bold;
-	color: #fff;
-}
+  display: table-cell;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; }
 
 .table .tr {
-	display: table-row;
-}
+  display: table-row; }
 
 .table .td {
-	display: table-cell;
-	padding: 10px;
-	font-size: 18px;
-	font-weight: bold;
-}
+  display: table-cell;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold; }
 
 .start-quiz-form {
-	max-width: 450px;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 18px;
-}
+  max-width: 450px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px; }
 
 .start-quiz-form label {
   display: block;
   padding-left: 15px;
-  text-indent: -15px;
-}
+  text-indent: -15px; }
 
 .start-quiz-form input[type='checkbox'] {
   width: 13px;
@@ -357,36 +150,147 @@ select,
   vertical-align: bottom;
   position: relative;
   top: -1px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 #start {
-	font-size: 18px;
-	padding: 5px;
-	border-radius: 8px;
-}
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 8px; }
 
 #start:hover {
-	background-color: violet;
-}
+  background-color: violet; }
 
 /***************************************
- ***********   CONTRIBUTE   ************
+ ************   SCOREBOARD  ************
  ***************************************/
+.scoreboard {
+  display: table;
+  height: 60px;
+  width: 100%; }
 
-#contribute,
-#contact {
-	width: 800px;
-	margin: auto;
-}
+.scoreboard-left,
+.scoreboard-right {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2em; }
+
+/***************************************
+ *************   LANDING   *************
+ ***************************************/
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100; }
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url("http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg") center center/cover no-repeat; }
+
+  .fullscreen-bg__video {
+    display: none; } }
+#landing {
+  height: 500px;
+  text-align: center; }
+
+#landing h1 {
+  text-align: center; }
+
+/***************************************
+ ***********   LOGIN FORM   ************
+ ***************************************/
+#tabs li {
+  list-style: none;
+  display: inline;
+  padding: 15px;
+  background-color: aqua; }
+
+.login {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.container-login {
+  margin: 15% auto;
+  max-width: 400px;
+  padding: 15px;
+  border: 1px solid gray;
+  background-color: #EEE; }
+
+.login .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s; }
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0); }
+  to {
+    -webkit-transform: scale(1); } }
+@keyframes animatezoom {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1); } }
+.login .container-image {
+  width: 100px;
+  margin: 0 auto; }
+
+.login img {
+  width: 100px; }
+
+label {
+  font-weight: 600; }
+
+label,
+input,
+select {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box; }
+
+select,
+.login select#gender {
+  color: gray; }
+
+.login input[type=checkbox] {
+  width: auto; }
 
 /***************************************
  ***************   QUIZ  ***************
  ***************************************/
-
 .question {
-	width: 700px;
-	margin-top: 100px;
-	margin-left: auto;
-	margin-right: auto;
-}
+  width: 700px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*# sourceMappingURL=style.css.map */

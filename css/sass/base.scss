@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'magic_school_tworegular';
+    src: url('fonts/magicschooltwo-webfont.woff2') format('woff2'),
+         url('fonts/magicschooltwo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body > * {
+	color: darkviolet;
+}
+
+header {
+	height: 100px;
+}
+
+.hidden {
+	display: none;
+}
