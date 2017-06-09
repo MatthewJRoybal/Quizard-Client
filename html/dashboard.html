@@ -15,57 +15,60 @@
 		</div>
 		<div class="nav-main">
 			<ul>
-				<li><a href="html/about.html">About</a></li>
-				<li><a href="html/contact.html">Contact</a></li>
-				<li><a href="html/contribute.html">Contribute</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="contribute.html">Contribute</a></li>
 				<li id="logout"><a href="#">Sign Out/In</a></li>
 			</ul>
 		</div>
 	</header>
 
-	<main id="dashboard">
+	<main>
 	
-		<div class="scoreboard">
-			<div class="scoreboard-left">
-				<h2>Score Left</h2>
+		<div id="dashboard">
+			<div class="scoreboard">
+				<div class="scoreboard-left">
+					<h2>Score Left</h2>
+				</div>
+				<div class="scoreboard-right">
+					<h2>Score Right</h2>
+				</div>
 			</div>
-			<div class="scoreboard-right">
-				<h2>Score Right</h2>
+
+			<div class="table">
+				<div class="thead">
+					<div class="th">Date</div>
+					<div class="th">Score</div>
+					<div class="th">Action</div>
+				</div>
+				<div class="tr">
+					<div class="td">May 1st, 2017</div>
+					<div class="td">90%</div>
+					<div class="td">Delete</div>
+				</div>
 			</div>
-		</div>
-	
-		<div class="table">
-			<div class="thead">
-				<div class="th">Date</div>
-				<div class="th">Score</div>
-				<div class="th">Action</div>
+
+			<div class="start-quiz-form">
+				<form id="xyz">
+					<p>Select the types of quiz questions you'd like to practice:</p>
+					<label><input type="checkbox" name="html" value="true">HTML</label>
+					<label><input type="checkbox" name="css" value="true">CSS</label>
+					<label><input type="checkbox" name="javascript" value="true">JavaScript</label>
+					<label><input type="checkbox" name="nodejs" value="true">Node JS</label>
+					<label><input type="checkbox" name="git" value="true">Git</label>
+					<button id="start-quiz" class="btn btn-start">Submit</button>
+				</form>
 			</div>
-			<div class="tr">
-				<div class="td">May 1st, 2017</div>
-				<div class="td">90%</div>
-				<div class="td">Delete</div>
-			</div>
-		</div>
-		
-		<div class="start-quiz-form">
-			<form id="xyz">
-				<p>Select the types of quiz questions you'd like to practice:</p>
-				<label><input type="checkbox" name="html" value="true">HTML</label>
-				<label><input type="checkbox" name="css" value="true">CSS</label>
-				<label><input type="checkbox" name="javascript" value="true">JavaScript</label>
-				<label><input type="checkbox" name="nodejs" value="true">Node JS</label>
-				<label><input type="checkbox" name="git" value="true">Git</label>
-				<button id="start-quiz" class="btn btn-start">Submit</button>
-			</form>
 			
-		</div>	
+		</div>
+
+		<div id="quiz"></div>
 					
 	</main>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   <script src="../js/quiz.js"></script>
-  <script src="../js/questions.js"></script>
   <script src="../js/quotes.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/services/Questions.services.js"></script>

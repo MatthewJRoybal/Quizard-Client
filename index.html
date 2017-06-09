@@ -15,17 +15,16 @@
 		</div>
 		<div class="nav-main">
 			<ul>
-				<li><a href="html/about.html">About</a></li>
-				<li><a href="html/contact.html">Contact</a></li>
-				<li><a href="html/contribute.html">Contribute</a></li>
-				<li><a href="html/register.html">Sign Up</a></li>
-				<li><a href="html/login.html">Sign In</a></li>
+				<li><a class="btn btn-nav" href="html/about.html">About</a></li>
+				<li><a class="btn btn-nav" href="html/contact.html">Contact</a></li>
+				<li><a class="btn btn-nav" href="html/contribute.html">Contribute</a></li>
+				<li><button class="btn btn-nav js-toggle-hidden">Sign In/Up</button></li>
 			</ul>
 		</div>
 	</header>
 	
 	<div class="fullscreen-bg">
-		<video loop autoplay class="fullscreen-bg__video">
+		<video id="js-video-delay" loop autoplay class="fullscreen-bg__video">
 			<source src="videos/magicBook.mp4" type="video/mp4">
 			<source src="videos/magicBook.mov" type="video/mov">
 		</video>
@@ -34,10 +33,9 @@
 	<section id="landing">
 		<h1>Welcome Wizards and Witches.</h1>
 		<h1>Are you prepared to take the ultimate full stack node js quiz?</h1>
-		<button type="submit" class="btn btn-login">You May Enter</button>
 	</section>
 
-	<section id="showLogin" class="login hidden">
+	<section id="login" class="hidden">
 	
 		<div id="tabs" class="container-login animate">
 			<ul>
@@ -50,12 +48,9 @@
 					<div class="container-input">
 						<input type="text" name="username" placeholder="Username" required>
 						<input type="password" name="password" placeholder="Password" required>
-						<button type="submit" class="btn-success">Login</button>
+						<button type="submit" class="btn btn-success">Login</button>
+						<button type="button" class="btn btn-cancel js-toggle-hidden ">Cancel</button>
 						<br>
-					</div>
-					<div class="container-options">
-						<button type="button" class="btn-cancel">Cancel</button>
-						<button type="reset" class="btn-update">Forgot Password</button>
 					</div>
 				</form>
 			</div>
@@ -73,11 +68,9 @@
 							<option value="Wizard">Wizard</option>
 							<option value="Witch">Witch</option>
 						</select>
-						<button type="submit" class="btn-success">Sign up</button>
+						<button type="submit" class="btn btn-success js-toggle-hidden">Sign up</button>
+						<button type="button" class="btn btn-cancel js-toggle-hidden">Cancel</button>
 						<br>
-					</div>
-					<div class="container-options">
-						<button type="button" class="btn-cancel">Cancel</button>
 					</div>
 				</form>
 			</div>

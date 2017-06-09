@@ -1,11 +1,27 @@
 @font-face {
-    font-family: 'magic_school_tworegular';
-    src: url('fonts/magicschooltwo-webfont.woff2') format('woff2'),
-         url('fonts/magicschooltwo-webfont.woff') format('woff');
+    font-family: 'wizard-magic';
+    src: url('../../fonts/wizard-magic.ttf');
     font-weight: normal;
     font-style: normal;
-
 }
+
+@font-face {
+    font-family: 'witch-magic';
+    src: url('../../fonts/witch-magic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-wizard: 'wizard-magic';
+$font-witch: 'witch-magic';
+
+$color-light: #4B05B4;
+$color-dark: #B905D2;
+$color-spell: #FFF;
+$color-good: green;
+$color-evil: red;
+
+
 
 html,
 body {

@@ -2,7 +2,7 @@ var Quiz = function(container, questions, quotes) {
   //  Create properties for arguments
   this.container = container;
   this.questions = questions;
-  this.questionsCopy = questions.slice(0);
+  this.questionsCopy = questions.slice();
   this.quotes = quotes;
   
   //  Load quiz and cycle questions
@@ -89,19 +89,54 @@ function fetchQuestion() {
 function buildQuestion(question) {
   var HTML = '<div class="question">' +  
                '<h3 id="question">' + 
-                 question.ask + 
+                 question.name + 
                '<h3>';
+	
+<div class="container">
+	
+	<h2>Tomorrow I want some:</h2>
+	
+  <ul>
+  <li>
+    <input type="radio" id="f-option" name="selector">
+    <label for="f-option">Pizza</label>
+    
+    <div class="check"></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="s-option" name="selector">
+    <label for="s-option">Bacon</label>
+    
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="t-option" name="selector">
+    <label for="t-option">Cats</label>
+    
+    <div class="check"><div class="inside"></div></div>
+  </li>
+</ul>
+</div>
+	
+	
+	
+	
+	
+	
   
 	for(var i = 0; i < question.options.length; i++) {
-  	HTML += '<input type="radio" name="question_' + i + '" value="' + question.options[i] + '" required>' + question.options[i] + '<br>';
+  	HTML += '<input type="radio" name="question_' + i + '" value="' + question.options[i] + '" required>' + 
+						'<label for="question_' + i + '">' +	question.options[i] + '</label><br>';
   }
 	
-	HTML += '<div class="btn"><button class="grade-question-btn">Grade Question</button></div>';
+	HTML += '<div><button class="btn grade-question-btn">Grade Question</button></div>';
 	return $(HTML);
 };
 
 function nextQuestion() {
-  var nextButton = '<div class="btn"><button class="next-question-btn">Next Question</button></div>';
+  var nextButton = '<div><button class="btn next-question-btn">Next Question</button></div>';
   $('.grade-question-btn').replaceWith(nextButton);
 };
 

@@ -2,10 +2,9 @@ $(document).ready(function() {
 	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
 	};
-	$('#showLogin').submit(function() {
-		displayLogin();
-	});
-	displayLogin();
+	$('body').on('click', '.js-toggle-hidden', function() {
+		$('#login').toggleClass('hidden');
+	})
 	$('#signUp').submit(function(event) {
 		event.preventDefault();
 		var userArray = $(this).serializeArray();
@@ -22,27 +21,22 @@ $(document).ready(function() {
 		event.preventDefault();
 		logoutUser();
 	});
-	$('#dashboard').on('click', '#start-quiz', function(event) {
+	$('main').on('click', '#start-quiz', function(event) {
 		event.preventDefault();
 		var categories = $('#xyz').serializeArray();
 		var categoriesObj = createFormObject(categories);
 		var queryString = makeQueryString(categoriesObj);
-		getQuestions(queryString);
+		getQuestions(queryString).then(function(questions) {
+			$('#dashboard').toggleClass('hidden');
+			var Quizard = new Quiz($('#quiz'), questions, quotes);
+			var html = "<div id='start'><button class='btn'>Start</button></div>"
+			$('#quiz').html(html);
+  		Quizard.cycleQuiz();
+		});
 	});
 });
-		
-		
-		
-//.then(function(questions) {
-//			 Do Quizard code here 
-//			 var Quizard = new Quiz($('#quiz'), questions, quotes);
-//  		 Quizard.cycleQuiz();
-//			
-//			
-//			
-//			 Seed questions into database for testing GET here...write a script with faker or similar
-//			
-//			 Need to be able to save the results in association with user...how would that endpoint look? users.id.quiz
+
+			 
 
 //	if($('#contribute').length > 0) {
 //		$('#contribute').submit(function(event) {

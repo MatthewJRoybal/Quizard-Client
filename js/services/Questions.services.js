@@ -33,7 +33,6 @@ function getQuestions(queryString) {
 			url: queryString,
 			success: function(questions) {
 				resolve(questions);
-				console.log("You have successfully gotten the questions:" + questions);
 			},
 			error: function(err) {
 				reject(err);

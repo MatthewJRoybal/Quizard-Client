@@ -1,6 +1,11 @@
 @font-face {
-  font-family: 'magic_school_tworegular';
-  src: url("fonts/magicschooltwo-webfont.woff2") format("woff2"), url("fonts/magicschooltwo-webfont.woff") format("woff");
+  font-family: 'wizard-magic';
+  src: url("../../fonts/wizard-magic.ttf");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'witch-magic';
+  src: url("../../fonts/witch-magic.ttf");
   font-weight: normal;
   font-style: normal; }
 html,
@@ -20,32 +25,44 @@ header {
 
 .btn {
   background: #b64ce0;
-  background: -webkit-linear-gradient(top, rgba(195, 52, 217, 0.5), rgba(143, 52, 217, 0.5));
-  background: -moz-linear-gradient(top, rgba(195, 52, 217, 0.75), rgba(143, 52, 217, 0.75));
-  background: -ms-linear-gradient(top, rgba(195, 52, 217, 0.75) rgba(143, 52, 217, 0.75));
-  background: -o-linear-gradient(top, rgba(195, 52, 217, 0.75), rgba(143, 52, 217, 0.75));
-  background: linear-gradient(top, rgba(195, 52, 217, 0), rgba(143, 52, 217, 0));
+  background: -webkit-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: -moz-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: -ms-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: -o-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: linear-gradient(to bottom, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 3px violet;
-  -moz-box-shadow: 3px 3px 3px #ab83ab;
-  box-shadow: 3px 3px 3px #ab83ab;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
   border: solid #4b2657 1px;
+  -webkit-box-shadow: 0.5px 0.5px 3px #ab83ab;
+  -moz-box-shadow: 0.5px 0.5px 3px #ab83ab;
+  box-shadow: 0.5px 0.5px 3px #ab83ab;
+  padding: 5px 15px;
+  color: #FFF;
+  font-family: "wizard-magic";
+  font-size: 24px;
   text-decoration: none; }
 
 .btn:hover {
-  background: #ae27e8;
-  background-image: -webkit-linear-gradient(top, #ae27e8, #520073);
-  background-image: -moz-linear-gradient(top, #ae27e8, #520073);
-  background-image: -ms-linear-gradient(top, #ae27e8, #520073);
-  background-image: -o-linear-gradient(top, #ae27e8, #520073);
-  background-image: linear-gradient(to bottom, #ae27e8, #520073);
+  background: #d645d6;
+  background: -webkit-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: -moz-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: -ms-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: -o-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: linear-gradient(to bottom, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
   text-decoration: none; }
+
+.btn-success {
+  background: #b64ce0; }
+
+.btn-success:hover {
+  background: darkgreen; }
+
+.btn-cancel {
+  background: #d645d6; }
+
+.btn-cancel:hover {
+  background: darkred; }
 
 /***************************************
  *************   NAV MAIN  *************
@@ -58,39 +75,15 @@ header {
   float: right; }
 
 .nav-main ul {
-  margin-top: 25px;
-  padding: 10px 25px; }
+  margin-top: 15px;
+  padding: 10px 20px; }
 
 .nav-main ul li {
   display: inline;
-  padding: 0 15px; }
+  padding: 0 5px; }
 
 .nav-main ul li a {
-  color: darkviolet;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold; }
-
-.nav-main ul li:hover {
-  background: #ae27e8;
-  background-image: -webkit-linear-gradient(top, #ae27e8, #520073);
-  background-image: -moz-linear-gradient(top, #ae27e8, #520073);
-  background-image: -ms-linear-gradient(top, #ae27e8, #520073);
-  background-image: -o-linear-gradient(top, #ae27e8, #520073);
-  background-image: linear-gradient(to bottom, #ae27e8, #520073);
-  text-decoration: none;
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 3px violet;
-  -moz-box-shadow: 3px 3px 3px #ab83ab;
-  box-shadow: 3px 3px 3px #ab83ab;
-  font-family: Arial;
-  color: #FFF;
-  font-size: 20px;
-  padding: 5px;
-  border: solid #4b2657 1px;
-  text-decoration: none; }
+  padding: 5px 15px; }
 
 /***************************************
  ***********   CONTRIBUTE   ************
@@ -211,18 +204,13 @@ header {
   text-align: center; }
 
 #landing h1 {
-  text-align: center; }
+  font-size: 48px;
+  font-family: "witch-magic"; }
 
 /***************************************
  ***********   LOGIN FORM   ************
  ***************************************/
-#tabs li {
-  list-style: none;
-  display: inline;
-  padding: 15px;
-  background-color: aqua; }
-
-.login {
+#login {
   z-index: 10;
   position: fixed;
   top: 0;
@@ -230,10 +218,13 @@ header {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.75); }
 
 .container-login {
-  margin: 15% auto;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
   max-width: 400px;
   padding: 15px;
   border: 1px solid gray;
@@ -253,6 +244,12 @@ header {
     transform: scale(0); }
   to {
     transform: scale(1); } }
+#tabs li {
+  list-style: none;
+  display: inline;
+  padding: 15px;
+  background-color: aqua; }
+
 .login .container-image {
   width: 100px;
   margin: 0 auto; }
@@ -287,6 +284,9 @@ select,
 /***************************************
  ***************   QUIZ  ***************
  ***************************************/
+#start {
+  text-align: center; }
+
 .question {
   width: 700px;
   margin-top: 100px;

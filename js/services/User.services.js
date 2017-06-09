@@ -2,15 +2,9 @@
  *************   DISPLAY LOGIN   ************
  ********************************************/
 
-function displayLogin() {
-	
-	$('.btn-login' || '.btn-cancel').click(function() {
-		$('.login').toggleClass('hidden');
-	});
-	$('.btn-cancel').click(function() {
-		$('.login').toggleClass('hidden');
-	});
-}
+function displayLogin() {	
+	$(this).toggleClass('hidden');
+	};
 
 /********************************************
  ************   GET USER OBJECT   ***********
