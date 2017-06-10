@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	setTimeout(function() {
+		$('#js-video-delay')[0].play()
+	}, 5000);
 	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
 	};
@@ -34,16 +37,24 @@ $(document).ready(function() {
   		Quizard.cycleQuiz();
 		});
 	});
+	if($('#contribute').length > 0) {
+		$('#contribute').on('click', '#contribute-submit', function(event) {
+			event.preventDefault();
+			var contributeArray = $('#container-contribute').serializeArray();
+			var contributeObject = createFormObject(contributeArray);
+			console.log(contributeObject);
+			contributeConnect(contributeObject)
+			.then(function() {
+				// If question exists, say so
+				// If success, what do I want to show?
+			}).catch(function() {
+				// If there's an error, how am I going to show the error
+				// Call a function that redirects so its reusable
+			})
+		});
+	};
 });
 
 			 
 
-//	if($('#contribute').length > 0) {
-//		$('#contribute').submit(function(event) {
-//			event.preventDefault();
-//			var contributeArray = $(this).serializeArray();
-//			var contributeObject = createFormObject(contributeArray);
-//			contributeConnect(contributeObject);
-//			console.log("Your question array has been created" + contributeArray);
-//		});
-//	};
+	

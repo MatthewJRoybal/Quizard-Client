@@ -3,45 +3,66 @@
  ***************************************/ 
 
 .fullscreen-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-		z-index: -100;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: -100;
 }
 
 .fullscreen-bg__video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-	    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	-webkit-transform: translate(-50%, -50%);
+		 -moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 @media (max-width: 767px) {
-    .fullscreen-bg {
-        background: url('http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg') center center / cover no-repeat;
-    }
+	.fullscreen-bg {
+		background: url('../images/magicbook.png') center center / cover no-repeat;
+	}
 
-    .fullscreen-bg__video {
-        display: none;
-    }
-}
-
-#landing {
-	height: 500px;
-	text-align: center;
+	.fullscreen-bg__video {
+		display: none;
+	}
 }
 
 #landing h1 {
-	font-size: 48px;
-	font-family: $font-witch;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	font-family: $font-wizard, Verdana, sans-serif;
+  font-size: 125px;
+	text-align: center;
+  }
+
+
+#landing h1 div {
+    background-image: -webkit-gradient(linear, top, bottom, from(#B905D2), to(#4B05B4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute; 
+    width: 100%;
+}
+
+#landing h1:after {
+    text-shadow: 2px 2px 2px #000000;
+    color: transparent;
+}
+
+#landing .gradient-shadow:after {
+    content: attr(title); /* Pulls the text from the 'title' attribute to make the shadow */
+}
+
+#landing .landingTwo {
+	font-family: $font-witch, Verdana, sans-serif;
 }

@@ -2,7 +2,6 @@
  *************   GET QUESTIONS   ************
  ********************************************/
 
-
 function makeQueryString(categoriesObj) {
 	// Count how many name/value pairs
 	var count = 0;
@@ -39,6 +38,29 @@ function getQuestions(queryString) {
 			},
 			contentType: "application/json"
 		});	
+	}).catch(function(err) {
+		console.log(err);
+	})
+}
+
+/********************************************
+ *************   POST QUESTIONS   ************
+ ********************************************/
+
+function contributeConnect(questionObj) {
+	return new Promise(function(resolve, reject) {
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:8080/contribute",
+			data: JSON.stringify(questionObj),
+			contentType: "application/json",
+			success: function(question) {
+				resolve(question);
+			},
+			error: function(err) {
+				reject(err);
+			}
+		});
 	}).catch(function(err) {
 		console.log(err);
 	})

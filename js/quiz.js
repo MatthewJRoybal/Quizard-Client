@@ -1,3 +1,11 @@
+// templates.restartButton
+var templates = {
+	restartButton: '<div class="btn"><button class="center restart-quiz-btn">Restart Quiz</button></div>',
+	finalScore: function(score) {
+		return 'string here' + score;
+	}
+};
+
 var Quiz = function(container, questions, quotes) {
   //  Create properties for arguments
   this.container = container;
@@ -87,51 +95,24 @@ function fetchQuestion() {
 };
 
 function buildQuestion(question) {
-  var HTML = '<div class="question">' +  
-               '<h3 id="question">' + 
-                 question.name + 
-               '<h3>';
-	
-<div class="container">
-	
-	<h2>Tomorrow I want some:</h2>
-	
-  <ul>
-  <li>
-    <input type="radio" id="f-option" name="selector">
-    <label for="f-option">Pizza</label>
-    
-    <div class="check"></div>
-  </li>
-  
-  <li>
-    <input type="radio" id="s-option" name="selector">
-    <label for="s-option">Bacon</label>
-    
-    <div class="check"><div class="inside"></div></div>
-  </li>
-  
-  <li>
-    <input type="radio" id="t-option" name="selector">
-    <label for="t-option">Cats</label>
-    
-    <div class="check"><div class="inside"></div></div>
-  </li>
-</ul>
-</div>
-	
-	
-	
-	
-	
-	
-  
+	var HTML = '<form class="quiz-container">' +
+							 '<h2 class="quiz-question">' + question.question + '</h2>' +
+							 '<ul class="quiz-choices">';
+
 	for(var i = 0; i < question.options.length; i++) {
-  	HTML += '<input type="radio" name="question_' + i + '" value="' + question.options[i] + '" required>' + 
-						'<label for="question_' + i + '">' +	question.options[i] + '</label><br>';
-  }
-	
-	HTML += '<div><button class="btn grade-question-btn">Grade Question</button></div>';
+		HTML += '<li class="quiz-option">' +
+							'<input type="radio" name="question_' + question.id + '" id="question_' + question.id + '_' + i + '" value="' + question.options[i] + '" required>' +
+							'<label for="question_' + question.id + '_' + i + '">' + question.options[i] + '</label>' +
+							'<div class="check"><div class="inside"></div></div>' +
+						'</li>';
+	}
+
+	HTML += '</ul>' +
+						'<div>' +
+							'<button class="btn grade-question-btn">Submit Choice</button>' +
+						'</div>' +
+					'</form>';
+
 	return $(HTML);
 };
 
@@ -182,5 +163,6 @@ function restartQuiz() {
   finalHTML = ('<h2 class="center">Congratulations, youve completed the quiz.</h2>' +
                '<h3 class="center">Your score was ' + score + ' points out of ' + total + '</h3>' + '<br>' +
                 quote + '<br>' + restartBtn + returnHomeBtn);
+	// consider submitting questions asked to be saved to the database so that they can possibily be displayed later for recall by the user
   this.container.html(finalHTML);
 };
