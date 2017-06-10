@@ -47,7 +47,8 @@
 
 
 #landing h1 div {
-    background-image: -webkit-gradient(linear, top, bottom, from(#B905D2), to(#4B05B4));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#B905D2), to(#4B05B4));
+//	background-image: -webkit-gradient(linear, top, bottom, from(#B905D2), to(#4B05B4)); --> can make this black and then change the color to purple after the letters highlight the text........ohhhh cool!
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: absolute; 

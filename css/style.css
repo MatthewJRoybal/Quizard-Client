@@ -208,7 +208,7 @@ header {
   text-align: center; }
 
 #landing h1 div {
-  background-image: -webkit-gradient(linear, top, bottom, from(#B905D2), to(#4B05B4));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#B905D2), to(#4B05B4));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: absolute;
