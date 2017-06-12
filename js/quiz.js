@@ -44,7 +44,8 @@ var score = 0;
  *************************************************************/
 
 function cycleQuiz() {
-  this.container.on('click', '#start', this.pullQuestion);
+	this.pullQuestion();
+//  this.container.on('click', '#start', this.pullQuestion);
 	this.container.on('click', '.grade-question-btn', this.gradeQuestion);
   this.container.on('click', '.grade-question-btn', this.nextQuestion);
   this.container.on('click', '.next-question-btn', this.pullQuestion);
@@ -60,13 +61,13 @@ function cycleQuiz() {
 function trackProgress() {
   var total = this.questions.length;
   var progress = this.questions.length - this.questionsCopy.length;
-  var HTML = ('<h3 class="center">Progress: ' + progress + ' of ' + total + '</h3>');
+  var HTML = ('<h2 class="center">Progress: ' + progress + ' of ' + total + '</h2>');
   return $('#progress').html(HTML);
 };
 
 function trackScore() {
   var total = this.questions.length;
-  var HTML = ('<h3 class="center">Score: ' + score + ' of ' + total + '</h3>');
+  var HTML = ('<h2 class="center">Score: ' + score + ' of ' + total + '</h2>');
   return $('#score').html(HTML);
 };
 
@@ -150,7 +151,23 @@ function gradeQuestion(quotes) {
  *************************************************************/
 
 function restartQuiz() {
-  var restartBtn = ('<div class="btn"><button class="center restart-quiz-btn">Restart Quiz</button></div>');
+//  var restartBtn = ('<div class="btn"><button class="center restart-quiz-btn">Restart Quiz</button></div>');
+	
+	var restartBtn = (
+			'<div class="start-quiz-form">' +
+				'<form id="xyz">' +
+					'<p>Select the types of quiz questions you\'d like to practice:</p>' +
+					'<label><input type="checkbox" name="html" value="true">HTML</label>' +
+					'<label><input type="checkbox" name="css" value="true">CSS</label>' +
+					'<label><input type="checkbox" name="javascript" value="true">JavaScript</label>' +
+					'<label><input type="checkbox" name="nodejs" value="true">Node JS</label>' +
+					'<label><input type="checkbox" name="git" value="true">Git</label>' +
+					'<button id="start-quiz" class="btn btn-start">Submit</button>' +
+				'</form>' +
+			'</div>');
+	
+	
+	
 	var returnHomeBtn = ('<div class="btn"><button class="center return-home-btn"><a href="dashboard.html">Return Home</a></button></div>');
   var finalHTML;
   var quote;

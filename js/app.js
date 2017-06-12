@@ -1,7 +1,7 @@
 $(document).ready(function() {
-	setTimeout(function() {
-		$('#js-video-delay')[0].play()
-	}, 5000);
+//	setTimeout(function() {
+//		$('#js-video-delay')[0].play()
+//	}, 5000);
 	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
 	};
@@ -30,10 +30,8 @@ $(document).ready(function() {
 		var categoriesObj = createFormObject(categories);
 		var queryString = makeQueryString(categoriesObj);
 		getQuestions(queryString).then(function(questions) {
-			$('#dashboard').toggleClass('hidden');
+			$('#dashboard').addClass('hidden');
 			var Quizard = new Quiz($('#quiz'), questions, quotes);
-			var html = "<div id='start'><button class='btn'>Start</button></div>"
-			$('#quiz').html(html);
   		Quizard.cycleQuiz();
 		});
 	});
