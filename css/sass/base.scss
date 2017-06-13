@@ -27,7 +27,11 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: #bbb;
+}
+
+body {
+	background-color: #000;
+	z-index: -50;
 }
 
 body > * {
@@ -36,6 +40,8 @@ body > * {
 
 header {
 	height: 100px;
+	background-color: #000;
+	z-index: -50;
 }
 
 .hidden {

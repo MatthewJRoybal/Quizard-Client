@@ -14,11 +14,17 @@
   -webkit-box-shadow: 0.5px 0.5px 3px #ab83ab;
   -moz-box-shadow: 0.5px 0.5px 3px #ab83ab;
   box-shadow: 0.5px 0.5px 3px #ab83ab;
-  
-	padding: 5px 15px;
-	color: #FFF;
+  color: #FFF;
 	font-family: $font-wizard;
 	font-size: 24px;
+	text-decoration: none;
+	padding: 5px 15px;
+
+}
+
+.btn a {
+	color: #FFF;
+	font-family: $font-wizard;
 	text-decoration: none;
 }
 
