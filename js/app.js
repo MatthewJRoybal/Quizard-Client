@@ -26,22 +26,25 @@ $(document).ready(function() {
 	});
 	$('main').on('click', '#start-quiz', function(event) {
 		event.preventDefault();
-		var categories = $('#xyz').serializeArray();
-		var categoriesObj = createFormObject(categories);
-		var queryString = makeQueryString(categoriesObj);
-		getQuestions(queryString).then(function(questions) {
-			$('#dashboard').addClass('hidden');
-			var Quizard = new Quiz($('#quiz'), questions, quotes);
-  		Quizard.cycleQuiz();
+		getQuestions().then(function(questions) {
+			getQuotes(questions.length).then(function(quotes) {
+				$('#quiz-results, #quiz-start').addClass('hidden');
+				var Quizard = new Quiz($('#quiz'), questions, quotes);
+  			Quizard.cycleQuiz();
+				Quizard.done(function() {
+					// done via quiz.js, it would have to call this callback when it cycles the last question...
+					// returns the results of the quiz, how many questions, how many right, wrong, etc --> puts the control back into app.js hands
+					// Save the quiz to the user history
+				})
+			});
 		});
 	});
 	if($('#contribute').length > 0) {
-		$('#contribute').on('click', '#contribute-submit', function(event) {
+		$('#contribute').on('click', '#contribute-question-submit', function(event) {
 			event.preventDefault();
-			var contributeArray = $('#container-contribute').serializeArray();
-			var contributeObject = createFormObject(contributeArray);
-			console.log(contributeObject);
-			contributeConnect(contributeObject)
+			var questionArray = $('#contribute-question').serializeArray();
+			var questionObject = createFormObject(questionArray);
+			contributeQuestion(questionObject)
 			.then(function() {
 				// If question exists, say so
 				// If success, what do I want to show?
@@ -50,6 +53,21 @@ $(document).ready(function() {
 				// Call a function that redirects so its reusable
 			})
 		});
+		$('#contribute').on('click', '#contribute-quote-submit', function(event) {
+			event.preventDefault();
+			var quoteArray = $('#contribute-quotes').serializeArray();
+			console.log(quoteArray);
+			var quoteObject = createFormObject(quoteArray);
+			console.log(quoteObject);
+			contributeQuote(quoteObject)
+			.then(function() {
+				// If question exists, say so
+				// If success, what do I want to show?
+			}).catch(function() {
+				// If there's an error, how am I going to show the error
+				// Call a function that redirects so its reusable
+			})
+		})
 	};
 });
 

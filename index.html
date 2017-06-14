@@ -30,13 +30,16 @@
 		</video>
 	</div>
 	
-	<section id="landing">
-		<h1 class="landingOne gradient-shadow" title="Come One, Come all"><div>Come One, Come all</div></h1>
-		<h1 class="landingTwo gradient-shadow" title="Test Your Knowledge"><div>Test Your Knowledge</div></h1>
-		<h1 class="landingThree gradient-shadow" title="And Make Your Mark!"><div>And Make Your Mark!</div></h1>
+	<main id="landing">
 		
-	</section>
-
+		<section id="splash">
+			<h1 class="landingOne gradient-shadow" title="Come One, Come all"><div>Come One, Come all</div></h1>
+			<h1 class="landingTwo gradient-shadow" title="Test Your Knowledge"><div>Test Your Knowledge</div></h1>
+			<h1 class="landingThree gradient-shadow" title="And Make Your Mark!"><div>And Make Your Mark!</div></h1>
+		</section>
+		
+	</main>
+	
 	<section id="login" class="hidden">
 	
 		<div id="tabs" class="container-login animate">
@@ -76,20 +79,17 @@
 					</div>
 				</form>
 			</div>
+			
 		</div>
 		
 	</section>
-	<main>
-		
-	</main>
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-  <script src="js/quiz.js"></script>
-  <script src="js/questions.js"></script>
-  <script src="js/quotes.js"></script>
+  <script src="js/quiz/quiz.js"></script>
+  <script src="js/quiz/quotes.js"></script>
+  <script src="js/services/Utils.services.js"></script>
+  <script src="js/services/Questions.services.js"></script>
   <script src="js/services/User.services.js"></script>
   <script src="js/app.js"></script>
 </body>

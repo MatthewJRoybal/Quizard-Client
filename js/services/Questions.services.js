@@ -1,31 +1,44 @@
 /********************************************
- *************   GET QUESTIONS   ************
+ ************   CONVERT TO URL   ************
  ********************************************/
 
 function makeQueryString(categoriesObj) {
-	// Count how many name/value pairs
 	var count = 0;
 	var queryString = "";
-	for(var prop in categoriesObj) {
+	for(var prop in categoriesObj) { // Count # name/value pairs
 		if (categoriesObj.hasOwnProperty(prop)) {
 			++count;
 		}
 	}
-	// Determine number of questions per category
-	var questionsCount = (12 / count);
-	// Change values from true to questionsCount
+	if(count === 1) { // Determine # questions/category
+		var questionsCount = 12;
+	} else if(count === 2) {
+		var questionsCount = 8;
+	} else if(count === 3) {
+		var questionsCount = 7;
+	} else if(count === 4) {
+		var questionsCount = 6;
+	} else if(count === 5) {
+		var questionsCount = 5;
+	}
 	for(var prop in categoriesObj) {
 		categoriesObj[prop] = questionsCount;
 	}
-	// Now make a query string
-	for(var prop in categoriesObj) {
+	for(var prop in categoriesObj) { // Create query string
 		queryString += (prop + "=" + categoriesObj[prop] + "&");
 	}
 	queryString = queryString.substring(0, queryString.length - 1);
 	return ('http://localhost:8080/questions?' + queryString);	
 }
 
-function getQuestions(queryString) {
+/********************************************
+ *************   GET QUESTIONS   ************
+ ********************************************/
+
+function getQuestions() {
+	var categories = $('#quiz-start-form').serializeArray();
+	var categoriesObj = createFormObject(categories);
+	var queryString = makeQueryString(categoriesObj);
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
@@ -44,18 +57,63 @@ function getQuestions(queryString) {
 }
 
 /********************************************
- *************   POST QUESTIONS   ************
+ **************   GET QUOTES  ***************
  ********************************************/
 
-function contributeConnect(questionObj) {
+function getQuotes(count) {
+	return new Promise(function(resolve, reject) {
+		$.ajax({
+			type: "GET",
+			url: 'http://localhost:8080/quotes?count=' + count,
+			success: function(quotes) {
+				resolve(quotes);
+			},
+			error: function(err) {
+				reject(err);
+			},
+			contentType: "application/json"
+		});	
+	}).catch(function(err) {
+		console.log(err);
+	})
+}
+
+/********************************************
+ *************   POST QUESTIONS   ***********
+ ********************************************/
+
+function contributeQuestion(questionObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8080/contribute",
+			url: "http://localhost:8080/questions",
 			data: JSON.stringify(questionObj),
 			contentType: "application/json",
 			success: function(question) {
 				resolve(question);
+			},
+			error: function(err) {
+				reject(err);
+			}
+		});
+	}).catch(function(err) {
+		console.log(err);
+	})
+}
+
+/********************************************
+ **************   POST QUOTES   *************
+ ********************************************/
+
+function contributeQuote(quoteObj) {
+	return new Promise(function(resolve, reject) {
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:8080/quotes",
+			data: JSON.stringify(quoteObj),
+			contentType: "application/json",
+			success: function(quote) {
+				resolve(quote);
 			},
 			error: function(err) {
 				reject(err);

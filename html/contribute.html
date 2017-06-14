@@ -15,18 +15,19 @@
 		</div>
 		<div class="nav-main">
 			<ul>
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="contribute.html">Contribute</a></li>
-				<li id="logout"><a href="#">Sign Out/In</a></li>
+				<li><a class="btn btn-nav" href="about.html">About</a></li>
+				<li><a class="btn btn-nav" href="contact.html">Contact</a></li>
+				<li><a class="btn btn-nav" href="contribute.html">Contribute</a></li>
+				<li id="logout"><a class="btn btn-nav" href="#">Sign Out/In</a></li>
 			</ul>
 		</div>
 	</header>
 	
 	<main id="contribute">
-		<h1>Quizzeresting!</h1>
-		<form id="container-contribute">
-			<select name="category" id="question-category" required>
+	
+		<h1>Contribute a question</h1>
+		<form id="contribute-questions">
+			<select name="question-category" id="question-category" required>
 				<option value="" disabled selected>Choose a Category</option>
 				<option value="HTML">HTML</option>
 				<option value="CSS">CSS</option>
@@ -45,19 +46,32 @@
 			<input type="text" name="options" id="question-option-1" placeholder="What's a wrong answer #1?" required>
 			<input type="text" name="options" id="question-option-2" placeholder="What's a wrong answer #2?">
 			<input type="text" name="options" id="question-option-3" placeholder="What's a wrong answer #3?">
-			<button id="contribute-submit" class="btn" type="submit">Submit Question</button>
+			<button id="contribute-question-submit" class="btn" type="submit">Submit Question</button>
 		</form>
+		
+		<h1>Contribute a quote</h1>
+		<form id="contribute-quotes">
+			<select name="type" id="type" required>
+				<option value="" disabled selected>Choose a Type</option>
+				<option value="book">Book</option>
+				<option value="comic">Comic</option>
+				<option value="tvshow">TV Show</option>
+				<option value="movie">Movie</option>
+				<option value="other">Other</option>
+			</select>
+			<input type="text" name="story" placeholder="What story are you quoting from?" required>
+			<input type="text" name="character" placeholder="What character in that story are you quoting?" required>
+			<textarea name="quote" rows="5" cols="111" placeholder="What's the actual quote?" required></textarea>
+			<button id="contribute-quote-submit" class="btn" type="submit">Submit Quote</button>
+		</form>
+		
 	</main>
 	
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-	<script src="../js/utils.js"></script>
-  <script src="../js/quiz.js"></script>
-  <script src="../js/questions.js"></script>
-  <script src="../js/quotes.js"></script>
+  <script src="../js/quiz/quiz.js"></script>
+  <script src="../js/quiz/quotes.js"></script>
+  <script src="../js/services/Utils.services.js"></script>
   <script src="../js/services/Questions.services.js"></script>
   <script src="../js/services/User.services.js"></script>
   <script src="../js/app.js"></script>

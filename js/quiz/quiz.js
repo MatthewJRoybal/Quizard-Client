@@ -11,7 +11,7 @@ var Quiz = function(container, questions, quotes) {
   this.container = container;
   this.questions = questions;
   this.questionsCopy = questions.slice();
-  this.quotes = quotes;
+	this.quotes = quotes;
   
   //  Load quiz and cycle questions
   this.cycleQuiz = cycleQuiz.bind(this);
@@ -27,7 +27,6 @@ var Quiz = function(container, questions, quotes) {
   this.yourDestiny = yourDestiny.bind(this);
   
   //  Next question
-  
   this.nextQuestion = nextQuestion.bind(this);
   
   //  Track progress & score
@@ -45,7 +44,6 @@ var score = 0;
 
 function cycleQuiz() {
 	this.pullQuestion();
-//  this.container.on('click', '#start', this.pullQuestion);
 	this.container.on('click', '.grade-question-btn', this.gradeQuestion);
   this.container.on('click', '.grade-question-btn', this.nextQuestion);
   this.container.on('click', '.next-question-btn', this.pullQuestion);
@@ -84,7 +82,7 @@ function pullQuestion() {
     this.trackProgress();
     this.trackScore();
   } else {
-    this.restartQuiz();
+    this.restartQuiz(); // call done in restart quiz, maybe return home button that calls done? It takes a callback and call it at that moment
   }
 };
 
@@ -102,15 +100,15 @@ function buildQuestion(question) {
 
 	for(var i = 0; i < question.options.length; i++) {
 		HTML += '<li class="quiz-option">' +
-							'<input type="radio" name="question_' + question.id + '" id="question_' + question.id + '_' + i + '" value="' + question.options[i] + '" required>' +
-							'<label for="question_' + question.id + '_' + i + '">' + question.options[i] + '</label>' +
+							'<input type="radio" name="question_' + question._id + '" id="question_' + question._id + '_' + i + '" value="' + question.options[i] + '" required>' +
+							'<label for="question_' + question._id + '_' + i + '">' + question.options[i] + '</label>' +
 							'<div class="check"><div class="inside"></div></div>' +
 						'</li>';
 	}
 
 	HTML += '</ul>' +
 						'<div>' +
-							'<button class="btn grade-question-btn">Submit Choice</button>' +
+							'<button class="btn btn-quiz grade-question-btn">Submit Choice</button>' +
 						'</div>' +
 					'</form>';
 
@@ -118,7 +116,7 @@ function buildQuestion(question) {
 };
 
 function nextQuestion() {
-  var nextButton = '<div><button class="btn next-question-btn">Next Question</button></div>';
+  var nextButton = '<div><button class="btn btn-quiz next-question-btn">Next Question</button></div>';
   $('.grade-question-btn').replaceWith(nextButton);
 };
 
@@ -132,16 +130,14 @@ function yourDestiny(array, whichSide) {
   return HTML;
 };
 
-function gradeQuestion(quotes) {
+function gradeQuestion() {
   var choice = this.container.find("input:checked").val();
-  var jedi = this.quotes.jedi;
-  var sith = this.quotes.sith;
   
   if (choice === this.answer) {
-    this.container.append(yourDestiny(jedi, "jedi"));
+    this.container.append(this.quotes);
     score += 1;
   } else {
-    this.container.append(yourDestiny(sith, "sith"));
+    this.container.append(this.quotes);
   }
   this.answer = "";
 };
@@ -151,35 +147,22 @@ function gradeQuestion(quotes) {
  *************************************************************/
 
 function restartQuiz() {
-//  var restartBtn = ('<div class="btn"><button class="center restart-quiz-btn">Restart Quiz</button></div>');
-	
-	var restartBtn = (
-			'<div class="start-quiz-form">' +
-				'<form id="xyz">' +
-					'<p>Select the types of quiz questions you\'d like to practice:</p>' +
-					'<label><input type="checkbox" name="html" value="true">HTML</label>' +
-					'<label><input type="checkbox" name="css" value="true">CSS</label>' +
-					'<label><input type="checkbox" name="javascript" value="true">JavaScript</label>' +
-					'<label><input type="checkbox" name="nodejs" value="true">Node JS</label>' +
-					'<label><input type="checkbox" name="git" value="true">Git</label>' +
-					'<button id="start-quiz" class="btn btn-start">Submit</button>' +
-				'</form>' +
-			'</div>');
-	
-	
-	
-	var returnHomeBtn = ('<div class="btn"><button class="center return-home-btn"><a href="dashboard.html">Return Home</a></button></div>');
+	var returnHomeBtn = (
+		'<div><button class="btn btn-quiz"><a href="dashboard.html">Return Home</a></button></div>');
   var finalHTML;
   var quote;
+	$('#quiz-start').removeClass('hidden').append(returnHomeBtn);
+	
+	
   var total = this.questions.length;
     if ( score >= 1 ) {
-      quote = ('<h2 class="center jedi">The Force will be with you, always.</h2><audio src="audio/theForceWillBeWithYouAlways.mp3" autoplay="autoplay"></audio>');
+      quote = ('<h2 class="center jedi">The Force will be with you, always.</h2>');
     } else {
-      quote = ('<h2 class="center sith">Learn to know the dark side of the force and you will achieve a power greater than any Jedi.</h2><audio src="audio/learnToKnowTheDarkSide.mp3" autoplay="autoplay"></audio>');
+      quote = ('<h2 class="center sith">Learn to know the dark side of the force and you will achieve a power greater than any Jedi.</h2>');
     }
-  finalHTML = ('<h2 class="center">Congratulations, youve completed the quiz.</h2>' +
+  finalHTML = ('<h2 class="center">Congratulations, you\'ve completed the quiz.</h2>' +
                '<h3 class="center">Your score was ' + score + ' points out of ' + total + '</h3>' + '<br>' +
-                quote + '<br>' + restartBtn + returnHomeBtn);
+                quote + '<br>' + returnHomeBtn);
 	// consider submitting questions asked to be saved to the database so that they can possibily be displayed later for recall by the user
   this.container.html(finalHTML);
 };
