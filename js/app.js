@@ -31,11 +31,11 @@ $(document).ready(function() {
 				$('#quiz-results, #quiz-start').addClass('hidden');
 				var Quizard = new Quiz($('#quiz'), questions, quotes);
   			Quizard.cycleQuiz();
-				Quizard.done(function() {
-					// done via quiz.js, it would have to call this callback when it cycles the last question...
-					// returns the results of the quiz, how many questions, how many right, wrong, etc --> puts the control back into app.js hands
-					// Save the quiz to the user history
-				})
+//				Quizard.done(function() {
+//					// done via quiz.js, it would have to call this callback when it cycles the last question...
+//					// returns the results of the quiz, how many questions, how many right, wrong, etc --> puts the control back into app.js hands
+//					// Save the quiz to the user history
+//				})
 			});
 		});
 	});
