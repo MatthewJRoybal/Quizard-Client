@@ -480,4 +480,10 @@ select,
 #quiz input[type=radio]:checked ~ label {
   color: #B905D2; }
 
+/***************************************
+ ************   QUIZ END   *************
+ ***************************************/
+#quiz-end {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

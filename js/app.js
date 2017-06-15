@@ -27,7 +27,7 @@ $(document).ready(function() {
 	$('main').on('click', '#start-quiz', function(event) {
 		event.preventDefault();
 		getQuestions().then(function(questions) {
-			getQuotes(questions.length).then(function(quotes) {
+			getQuotes(questions.length + 1).then(function(quotes) {
 				$('#quiz-results, #quiz-start').addClass('hidden');
 				var Quizard = new Quiz($('#quiz'), questions, quotes);
   			Quizard.cycleQuiz();
