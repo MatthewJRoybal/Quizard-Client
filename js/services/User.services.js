@@ -42,7 +42,6 @@ function createUser(userObject) {
  ********************************************/
 
 function loginUser(userObject) {
-	console.log(userObject);
 	$.ajax({
 			type: "POST",
 			url: 'http://localhost:8080/user/login',

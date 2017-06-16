@@ -140,9 +140,7 @@ function buildQuestion(question) {
 
 function gradeAnswer() {
   var choice = this.container.find("input:checked").val();
-	// Push the choice into the original questions array with a new key/value pair
-	
-  if (choice === this.correct) {
+	if (choice === this.correct) {
     score += 1;
   }
   this.answer = "";
@@ -152,7 +150,6 @@ function nextQuestion() {
   var nextButton = '<div><button class="btn btn-quiz next-question-btn">Next Question</button></div>';
   $('.grade-question-btn').replaceWith(nextButton);
 };
-
 
 /********************************************
  ****************    QUOTES    **************
