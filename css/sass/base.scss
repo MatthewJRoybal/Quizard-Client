@@ -21,6 +21,9 @@ $color-spell: #FFF;
 $color-good: green;
 $color-evil: red;
 
+$bp-small: "only screen and (max-width: 767px)";
+$bp-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
+$bp-large: "only screen and (min-width: 1024px)";
 
 html,
 body {
@@ -34,13 +37,15 @@ body {
 	z-index: -50;
 }
 
-body > * {
+#contribute,
+#about,
+#dashboard,
+#contact {
 	color: darkviolet;
 }
 
 header {
 	height: 100px;
-	background-color: #000;
 	z-index: -50;
 }
 

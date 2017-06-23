@@ -18,12 +18,14 @@ body {
   background-color: #000;
   z-index: -50; }
 
-body > * {
+#contribute,
+#about,
+#dashboard,
+#contact {
   color: darkviolet; }
 
 header {
   height: 100px;
-  background-color: #000;
   z-index: -50; }
 
 .hidden {
@@ -78,23 +80,224 @@ header {
 /***************************************
  *************   NAV MAIN  *************
  ***************************************/
-.logo {
+/* CSS Document */
+header {
+  z-index: 50; }
+
+.toggle,
+[id^=drop] {
+  display: none; }
+
+/* Giving a background-color to the nav container. */
+nav {
+  margin: 0;
+  padding: 0;
+  background-color: #254441; }
+
+#logo {
+  display: block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px; }
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+nav:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative; }
+
+/* Positioning the navigation items inline */
+nav ul li {
+  margin: 0px;
   display: inline-block;
-  margin-left: 15px; }
+  float: left;
+  background-color: #254441; }
 
-.nav-main {
-  float: right; }
+/* Styling the links */
+nav a {
+  display: block;
+  padding: 14px 20px;
+  color: #FFF;
+  font-size: 17px;
+  text-decoration: none; }
 
-.nav-main ul {
-  margin-top: 15px;
-  padding: 10px 20px; }
+nav ul li ul li:hover {
+  background: #000000; }
 
-.nav-main ul li {
-  display: inline;
-  padding: 0 5px; }
+/* Background color change on Hover */
+nav a:hover {
+  background-color: #000000; }
 
-.nav-main ul li a {
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of "nav a" */
+  top: 60px; }
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display: inherit; }
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative; }
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  /* has to be the same number as the "width" of "nav ul ul li" */
+  left: 170px; }
+
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after {
+  content: ' +'; }
+
+li > a:only-child:after {
+  content: ''; }
+
+/* Media Queries
+--------------------------------------------- */
+@media all and (max-width: 768px) {
+  #logo {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    float: left; }
+
+  #logo img {
+    width: 70%; }
+
+  nav {
+    margin: 0; }
+
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a,
+  .nav-menu {
+    display: none; }
+
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: inline-block;
+    background-color: #254441;
+    padding: 14px 20px;
+    color: #FFF;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+    float: right; }
+
+  .toggle:hover {
+    background-color: #000000; }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul {
+    display: block; }
+
+  /* Change menu item's width to 100% */
+  nav ul li {
+    display: block;
+    width: 100%; }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px; }
+
+  nav ul ul ul a {
+    padding: 0 80px; }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: #000000; }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    color: #FFF;
+    font-size: 17px; }
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121; }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of "nav a" */ }
+
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none; }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%; }
+
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */ } }
+@media all and (max-width: 330px) {
+  nav ul li {
+    display: block;
+    width: 94%; } }
+.nav-link {
+  background: #b64ce0;
+  background: -webkit-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: -moz-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: -ms-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: -o-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  background: linear-gradient(to bottom, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  border: solid #4b2657 1px;
+  -webkit-box-shadow: 0.5px 0.5px 3px #ab83ab;
+  -moz-box-shadow: 0.5px 0.5px 3px #ab83ab;
+  box-shadow: 0.5px 0.5px 3px #ab83ab;
+  color: #FFF;
+  font-family: "wizard-magic";
+  font-size: 24px;
+  text-decoration: none;
   padding: 5px 15px; }
+
+.nav-link a {
+  color: #FFF;
+  font-family: "wizard-magic";
+  text-decoration: none; }
+
+.nav-link:hover {
+  background: #d645d6;
+  background: -webkit-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: -moz-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: -ms-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: -o-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  background: linear-gradient(to bottom, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
+  text-decoration: none; }
 
 /***************************************
  ***********   CONTRIBUTE   ************
@@ -149,7 +352,7 @@ header {
   line-height: 2em; }
 
 /***************************************
- *************   LANDING   *************
+ **************   VIDEO   **************
  ***************************************/
 .fullscreen-bg {
   position: fixed;
@@ -173,38 +376,65 @@ header {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .fullscreen-bg {
     background: url("../images/magicbook.png") center center/cover no-repeat; }
 
   .fullscreen-bg__video {
     display: none; } }
-#landing h1 {
-  position: relative;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-family: "wizard-magic", Verdana, sans-serif;
-  font-size: 125px;
-  text-align: center; }
+/***************************************
+ *************   SPLASH   **************
+ ***************************************/
+@media only screen and (min-width: 768px) {
+  #splash h1 {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: "wizard-magic", Verdana, sans-serif;
+    font-size: 100px;
+    text-align: center; }
 
-#landing h1 div {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#B905D2), to(#4B05B4));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  width: 100%; }
+  @keyframes splash-1 {
+    from {
+      color: #000; }
+    to {
+      color: #B905D2; } }
+  @keyframes splash-2 {
+    from {
+      color: #000; }
+    to {
+      color: #B905D2; } }
+  @keyframes splash-3 {
+    from {
+      color: #000; }
+    to {
+      color: #B905D2; } }
+  #splash h1 {
+    text-shadow: 2px 2px 4px #000; }
 
-#landing h1:after {
-  text-shadow: 2px 2px 2px #000000;
-  color: transparent; }
+  #splash .landingOne {
+    animation-name: splash-1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 6s;
+    animation-fill-mode: forwards; }
 
-#landing .gradient-shadow:after {
-  content: attr(title);
-  /* Pulls the text from the 'title' attribute to make the shadow */ }
+  #splash .landingTwo {
+    animation-name: splash-2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 4s;
+    animation-fill-mode: forwards; }
 
-#landing .landingTwo {
-  font-family: "witch-magic", Verdana, sans-serif; }
+  #splash .landingThree {
+    animation-name: splash-3;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-fill-mode: forwards; }
 
+  #splash .landingTwo {
+    font-family: "witch-magic", Verdana, sans-serif; } }
 /***************************************
  ***********   LOGIN FORM   ************
  ***************************************/

@@ -1,7 +1,7 @@
 $(document).ready(function() {
-//	setTimeout(function() {
-//		$('#js-video-delay')[0].play()
-//	}, 5000);
+	setTimeout(function() {
+		$('#js-video-delay')[0].play()
+	}, 1000);	
 	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
 	};

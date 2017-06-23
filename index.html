@@ -9,6 +9,23 @@
 
 <body>
 
+  <header>
+    <nav>
+      <div id="logo">
+			  <a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
+		  </div>
+      <label for="drop" class="toggle">Menu</label>
+      <input type="checkbox" id="drop" />
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="html/about.html">About</a></li>
+          <li><a class="nav-link" href="html/contact.html">Contact</a></li>
+          <li><a class="nav-link" href="html/contribute.html">Contribute</a></li>
+          <li><button class="nav-link js-toggle-hidden">Sign In/Up</button></li>
+        </ul>
+    </nav>
+  </header>
+
+<!--
 	<header>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
@@ -22,6 +39,7 @@
 			</ul>
 		</div>
 	</header>
+-->
 	
 	<div class="fullscreen-bg">
 		<video id="js-video-delay" loop class="fullscreen-bg__video">
@@ -30,15 +48,17 @@
 		</video>
 	</div>
 	
+<!--
 	<main id="landing">
 		
 		<section id="splash">
-			<h1 class="landingOne gradient-shadow" title="Come One, Come all"><div>Come One, Come all</div></h1>
-			<h1 class="landingTwo gradient-shadow" title="Test Your Knowledge"><div>Test Your Knowledge</div></h1>
-			<h1 class="landingThree gradient-shadow" title="And Make Your Mark!"><div>And Make Your Mark!</div></h1>
+			<h1 class="landingOne">Make Your Mark!</h1>
+			<h1 class="landingTwo">Test Your Knowledge</h1>
+			<h1 class="landingThree">Come One, Come All</h1>
 		</section>
 		
 	</main>
+-->
 	
 	<section id="login" class="hidden">
 	
@@ -87,8 +107,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   <script src="js/quiz/quiz.js"></script>
-  <script src="js/quiz/quotes.js"></script>
   <script src="js/services/Utils.services.js"></script>
+  <script src="js/services/Quotes.services.js"></script>
   <script src="js/services/Questions.services.js"></script>
   <script src="js/services/User.services.js"></script>
   <script src="js/app.js"></script>

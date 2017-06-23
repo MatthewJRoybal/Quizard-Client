@@ -1,5 +1,5 @@
 /***************************************
- *************   LANDING   *************
+ **************   VIDEO   **************
  ***************************************/ 
 
 .fullscreen-bg {
@@ -26,7 +26,7 @@
 	transform: translate(-50%, -50%);
 }
 
-@media (max-width: 767px) {
+@media #{$bp-small} {
 	.fullscreen-bg {
 		background: url('../images/magicbook.png') center center / cover no-repeat;
 	}
@@ -36,34 +36,64 @@
 	}
 }
 
-#landing h1 {
+/***************************************
+ *************   SPLASH   **************
+ ***************************************/ 
+
+@media only screen and (min-width: 768px) {
+	#splash h1 {
 	position: relative;
 	margin-top: 10px;
 	margin-bottom: 15px;
 	font-family: $font-wizard, Verdana, sans-serif;
-  font-size: 125px;
+  font-size: 100px;
 	text-align: center;
   }
 
+	@keyframes splash-1 {
+		from {color: #000}
+		to {color: $color-light}
+	}
 
-#landing h1 div {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#B905D2), to(#4B05B4));
-//	background-image: -webkit-gradient(linear, top, bottom, from(#B905D2), to(#4B05B4)); --> can make this black and then change the color to purple after the letters highlight the text........ohhhh cool!
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: absolute; 
-    width: 100%;
-}
+	@keyframes splash-2 {
+		from {color: #000}
+		to {color: $color-light}
+	}
 
-#landing h1:after {
-    text-shadow: 2px 2px 2px #000000;
-    color: transparent;
-}
+	@keyframes splash-3 {
+		from {color: #000}
+		to {color: $color-light}
+	}
 
-#landing .gradient-shadow:after {
-    content: attr(title); /* Pulls the text from the 'title' attribute to make the shadow */
-}
+	#splash h1 {
+		text-shadow: 2px 2px 4px #000;
+	}
 
-#landing .landingTwo {
-	font-family: $font-witch, Verdana, sans-serif;
+	#splash .landingOne {
+		animation-name: splash-1;
+		animation-duration: 5s;
+		animation-timing-function: linear;
+		animation-delay: 6s;
+		animation-fill-mode:forwards;
+	}
+
+	#splash .landingTwo {
+		animation-name: splash-2;
+		animation-duration: 5s;
+		animation-timing-function: linear;
+		animation-delay: 4s;
+		animation-fill-mode:forwards;
+	}
+
+	#splash .landingThree {
+		animation-name: splash-3;
+		animation-duration: 5s;
+		animation-timing-function: linear;
+		animation-delay: 2s;
+		animation-fill-mode:forwards;
+	}
+
+	#splash .landingTwo {
+		font-family: $font-witch, Verdana, sans-serif;
+	}
 }
