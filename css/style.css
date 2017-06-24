@@ -16,7 +16,9 @@ body {
 
 body {
   background-color: #000;
-  z-index: -50; }
+  z-index: -50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 #contribute,
 #about,
@@ -80,225 +82,99 @@ header {
 /***************************************
  *************   NAV MAIN  *************
  ***************************************/
-/* CSS Document */
-header {
-  z-index: 50; }
+.open {
+  margin-bottom: 220px; }
 
-.toggle,
-[id^=drop] {
-  display: none; }
+#nav-logo img {
+  width: 185.5px;
+  padding: 7.5px 20px; }
 
-/* Giving a background-color to the nav container. */
-nav {
-  margin: 0;
-  padding: 0;
-  background-color: #254441; }
-
-#logo {
-  display: block;
-  padding: 0 30px;
-  float: left;
-  font-size: 20px;
-  line-height: 60px; }
-
-/* Since we'll have the "ul li" "float:left"
- * we need to add a clear after the container. */
-nav:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-/* Removing padding, margin and "list-style" from the "ul",
- * and adding "position:reltive" */
-nav ul {
-  float: right;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: relative; }
-
-/* Positioning the navigation items inline */
-nav ul li {
-  margin: 0px;
-  display: inline-block;
-  float: left;
-  background-color: #254441; }
-
-/* Styling the links */
-nav a {
-  display: block;
-  padding: 14px 20px;
-  color: #FFF;
-  font-size: 17px;
-  text-decoration: none; }
-
-nav ul li ul li:hover {
-  background: #000000; }
-
-/* Background color change on Hover */
-nav a:hover {
-  background-color: #000000; }
-
-/* Hide Dropdowns by Default
- * and giving it a position of absolute */
-nav ul ul {
-  display: none;
+.hamburger,
+.cross {
+  background: none;
   position: absolute;
-  /* has to be the same number as the "line-height" of "nav a" */
-  top: 60px; }
+  top: 0;
+  right: 0;
+  padding: 25px 30px;
+  border: 0;
+  color: #B905D2;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000; }
 
-/* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-  display: inherit; }
+.hamburger {
+  font-size: 2.25em; }
 
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-  width: 170px;
-  float: none;
-  display: list-item;
-  position: relative; }
+.cross {
+  font-size: 5em; }
 
-/* Second, Third and more Tiers	
- * We move the 2nd and 3rd etc tier dropdowns to the left
- * by the amount of the width of the first tier.
-*/
-nav ul ul ul li {
-  position: relative;
-  top: -60px;
-  /* has to be the same number as the "width" of "nav ul ul li" */
-  left: 170px; }
+#nav-menu {
+  z-index: 100;
+  font-weight: bold;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center; }
 
-/* Change ' +' in order to change the Dropdown symbol */
-li > a:after {
-  content: ' +'; }
-
-li > a:only-child:after {
-  content: ''; }
-
-/* Media Queries
---------------------------------------------- */
-@media all and (max-width: 768px) {
-  #logo {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-    float: left; }
-
-  #logo img {
-    width: 70%; }
-
-  nav {
-    margin: 0; }
-
-  /* Hide the navigation menu by default */
-  /* Also hide the  */
-  .toggle + a,
-  .nav-menu {
-    display: none; }
-
-  /* Stylinf the toggle lable */
-  .toggle {
-    display: inline-block;
-    background-color: #254441;
-    padding: 14px 20px;
-    color: #FFF;
-    font-size: 17px;
-    text-decoration: none;
-    border: none;
-    float: right; }
-
-  .toggle:hover {
-    background-color: #000000; }
-
-  /* Display Dropdown when clicked on Parent Lable */
-  [id^=drop]:checked + ul {
-    display: block; }
-
-  /* Change menu item's width to 100% */
-  nav ul li {
-    display: block;
-    width: 100%; }
-
-  nav ul ul .toggle,
-  nav ul ul a {
-    padding: 0 40px; }
-
-  nav ul ul ul a {
-    padding: 0 80px; }
-
-  nav a:hover,
-  nav ul ul ul a {
-    background-color: #000000; }
-
-  nav ul li ul li .toggle,
-  nav ul ul a,
-  nav ul ul ul a {
-    padding: 14px 20px;
-    color: #FFF;
-    font-size: 17px; }
-
-  nav ul li ul li .toggle,
-  nav ul ul a {
-    background-color: #212121; }
-
-  /* Hide Dropdowns by Default */
-  nav ul ul {
-    float: none;
-    position: static;
-    color: #ffffff;
-    /* has to be the same number as the "line-height" of "nav a" */ }
-
-  /* Hide menus on hover */
-  nav ul ul li:hover > ul,
-  nav ul li:hover > ul {
-    display: none; }
-
-  /* Fisrt Tier Dropdown */
-  nav ul ul li {
-    display: block;
-    width: 100%; }
-
-  nav ul ul ul li {
-    position: static;
-    /* has to be the same number as the "width" of "nav ul ul li" */ } }
-@media all and (max-width: 330px) {
-  nav ul li {
-    display: block;
-    width: 94%; } }
-.nav-link {
+#nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
   background: #b64ce0;
   background: -webkit-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
   background: -moz-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
   background: -ms-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
   background: -o-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  background: linear-gradient(to bottom, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-  border: solid #4b2657 1px;
-  -webkit-box-shadow: 0.5px 0.5px 3px #ab83ab;
-  -moz-box-shadow: 0.5px 0.5px 3px #ab83ab;
-  box-shadow: 0.5px 0.5px 3px #ab83ab;
-  color: #FFF;
-  font-family: "wizard-magic";
-  font-size: 24px;
+  background: linear-gradient(to bottom, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3)); }
+
+#nav-menu li {
+  display: block;
+  font-size: 30px;
+  letter-spacing: 3px; }
+
+#nav-menu ul li a {
+  display: block;
   text-decoration: none;
-  padding: 5px 15px; }
+  padding: 10px 0;
+  color: #FFF; }
 
-.nav-link a {
-  color: #FFF;
-  font-family: "wizard-magic";
+#nav-menu ul li a:hover {
+  color: #B905D2;
   text-decoration: none; }
 
-.nav-link:hover {
-  background: #d645d6;
-  background: -webkit-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: -moz-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: -ms-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: -o-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: linear-gradient(to bottom, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  text-decoration: none; }
+@media all and (min-width: 900px) {
+  .hamburger,
+  .cross {
+    display: none; }
 
+  #nav-logo img {
+    width: 200px;
+    padding: 7.5px 20px; }
+
+  #nav-logo,
+  #nav-menu {
+    display: inline-block; }
+
+  #nav-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    height: 106px; }
+
+  #nav-menu ul {
+    margin: 0;
+    padding: 36px 20px 36px 0px;
+    background: none; }
+
+  #nav-menu li {
+    display: inline-block;
+    font-size: 24px; }
+
+  #nav-menu ul li a {
+    display: inline-block;
+    padding: 0 20px; } }
 /***************************************
  ***********   CONTRIBUTE   ************
  ***************************************/

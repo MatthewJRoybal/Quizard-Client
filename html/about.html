@@ -9,19 +9,21 @@
 
 <body>
 
-	<header>
-		<div class="logo">
-			<a href="../index.html"><img src="../images/logo.png" alt="Quizard Logo"></a>
-		</div>
-		<div class="nav-main">
-			<ul>
-				<li><a class="btn btn-nav" href="about.html">About</a></li>
-				<li><a class="btn btn-nav" href="contact.html">Contact</a></li>
-				<li><a class="btn btn-nav" href="contribute.html">Contribute</a></li>
-				<li id="logout"><a class="btn btn-nav" href="#">Sign Out/In</a></li>
-			</ul>
-		</div>
-	</header>
+  <header>
+    <div id="nav-logo">
+          <a href="../index.html"><img src="../images/logo.png" alt="Quizard Logo"></a>
+    </div>
+    <div id="nav-menu">
+    <ul>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link" href="contribute.html">Contribute</a></li>
+        <li><a class="nav-link js-toggle-hidden">Sign In/Up</a></li>
+      </ul>
+  </div> 
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
+  </header>
 	
 	<main id="about">
 		<h1><center>About Me</center></h1>
@@ -34,6 +36,7 @@
   <script src="../js/services/Utils.services.js"></script>
   <script src="../js/services/Questions.services.js"></script>
   <script src="../js/services/User.services.js"></script>
+  <script src="../js/services/menu.services.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>

@@ -1,15 +1,21 @@
 // templates.restartButton
 var templates = {
+  trackProgressHTML: function (){
+    return '<h2 class="center">Progress: ' + (this.questions.length - this.questionsCopy.length) + ' of ' + this.questions.length + '</h2>';
+  },
+	trackScoreHTML: function() {
+    return '<h2 class="center">Score: ' + this.score + ' of ' + this.questions.length + '</h2>';
+  },
 	restartButton: '<div class="btn"><button class="center restart-quiz-btn">Restart Quiz</button></div>',
 	returnHomeBtn: '<div><button class="btn btn-quiz"><a href="dashboard.html">Return Home</a></button></div>',
-	nextButton: '<div><button class="btn btn-quiz next-question-btn">Next Question</button></div>',
-//	trackProgressHTML: ('<h2 class="center">Progress: ' + (this.questions.length - this.questionsCopy.length) + ' of ' + this.questions.length + '</h2>'),
-//	trackScoreHTML: '<h2 class="center">Score: ' + score + ' of ' + this.questions.length + '</h2>',
-	
+	nextButton: '<div><button class="btn btn-quiz next-question-btn">Next Question</button></div>',	
 	finalScore: function(score) {
-		return 'string here' + score;
+		return 'string here' + this.score;
 	}
 };
+
+// Problem 1: Moving trackProgressHTML and trackScoreHTML serves errors saying length, play undefined.
+// Problem 2: 
 
 
 // Create a new array for answered questions 
@@ -23,7 +29,7 @@ var templates = {
  ************    GLOBAL VARIABLES    *************
  *************************************************/
 
-var score = 0;
+
 
 /*************************************************
  **************    QUIZ FUNCTION    **************
@@ -43,14 +49,14 @@ var Quiz = function(container, questions, quotes) {
 	this.cycleAnswers = cycleAnswers.bind(this);
 	
 	//  Scoreboard
-//  this.trackProgress = trackProgress.bind(this);
-//  this.trackScore = trackScore.bind(this);
   
   //  Questions
   this.fetchQuestion = fetchQuestion.bind(this);
   this.buildQuestion = buildQuestion.bind(this);
 	
 	//  Grading
+  this.score = 0;
+  this.results = {};
   this.gradeAnswer = gradeAnswer.bind(this);
 	this.correct;
 	
@@ -59,7 +65,9 @@ var Quiz = function(container, questions, quotes) {
 	this.buildQuote = buildQuote.bind(this);
 
 	// End
-  this.endQuiz = endQuiz.bind(this);  
+  this.endQuiz = endQuiz.bind(this);
+  this.done = done.bind(this);
+  this.onfinish = function () {};
 };
 
 /*************************************************
@@ -76,16 +84,17 @@ function cycleQuestions() {
 	if (this.questionsCopy.length > 0) {
     var question = this.fetchQuestion();
     this.correct = (question.options[0]);
+    
+    
+    this.results = question;
+    
+    
     var questionHTML = this.buildQuestion(question);
     this.container.html(questionHTML);
-		var trackProgressHTML = ('<h2 class="center">Progress: ' + (this.questions.length - this.questionsCopy.length) + ' of ' + this.questions.length + '</h2>');
-		var trackScoreHTML = ('<h2 class="center">Score: ' + score + ' of ' + this.questions.length + '</h2>');
-    $('#progress').html(trackProgressHTML);
-    $('#score').html(trackScoreHTML);
+    $('#progress').html(templates.trackProgressHTML.call(this));
+    $('#score').html(templates.trackScoreHTML.call(this));
 	} else {
-		var trackScoreHTML = ('<h2 class="center">Score: ' + score + ' of ' + this.questions.length + '</h2>');
-		$('#score').html(trackScoreHTML);
-		console.log(trackScoreHTML);
+		$('#score').html(templates.trackScoreHTML);
 		var endQuote = this.fetchQuote();
     this.endQuiz(endQuote);
   }
@@ -128,7 +137,6 @@ function buildQuestion(question) {
 							'<button class="btn btn-quiz grade-question-btn">Submit Choice</button>' +
 						'</div>' +
 					'</form>';
-	console.log(question);
 	return $(HTML);
 };
 
@@ -138,9 +146,13 @@ function buildQuestion(question) {
 
 function gradeAnswer() {
   var choice = this.container.find("input:checked").val();
+  this.results['answer'] = choice;
+  // currentQuestion and push results into results array, then send it to the server with any other data
 	if (choice === this.correct) {
-    score += 1;
-  }
+    this.score += 1;
+    this.results['score'] = this.score;
+    console.log(this.results);
+    }
   this.correct = "";
 };
 
@@ -173,4 +185,9 @@ function endQuiz(quoteObj) {
 		 '</div>');
 	$('#quotes').hide();
   this.container.html(finalHTML);
+  this.onfinish(this.results);
 };
+
+function done(fn) {
+  this.onfinish = fn || function() {};
+}

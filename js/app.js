@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  checkPosition();
+  $(window).resize(checkPosition);
 	setTimeout(function() {
 		$('#js-video-delay')[0].play()
 	}, 1000);	
@@ -24,6 +26,8 @@ $(document).ready(function() {
 		event.preventDefault();
 		logoutUser();
 	});
+  
+  
 	$('main').on('click', '#start-quiz', function(event) {
 		event.preventDefault();
 		getQuestions().then(function(questions) {
@@ -31,14 +35,16 @@ $(document).ready(function() {
 				$('#quiz-results, #quiz-start').addClass('hidden');
 				var Quizard = new Quiz($('#quiz'), questions, quotes);
   			Quizard.cycleQuiz();
-//				Quizard.done(function() {
-//					// done via quiz.js, it would have to call this callback when it cycles the last question...
-//					// returns the results of the quiz, how many questions, how many right, wrong, etc --> puts the control back into app.js hands
-//					// Save the quiz to the user history
-//				})
+				Quizard.done(function(quizState) {
+          postResults(quizState).then(function() {
+            
+          });
+        })
 			});
 		});
 	});
+  
+  
 	if($('#contribute').length > 0) {
 		$('#contribute').on('click', '#contribute-question-submit', function(event) {
 			event.preventDefault();

@@ -35,6 +35,8 @@ body {
 body {
 	background-color: #000;
 	z-index: -50;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 #contribute,
