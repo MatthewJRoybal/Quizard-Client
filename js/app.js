@@ -27,7 +27,6 @@ $(document).ready(function() {
 		logoutUser();
 	});
   
-  
 	$('main').on('click', '#start-quiz', function(event) {
 		event.preventDefault();
 		getQuestions().then(function(questions) {
@@ -36,13 +35,14 @@ $(document).ready(function() {
 				var Quizard = new Quiz($('#quiz'), questions, quotes);
   			Quizard.cycleQuiz();
 				Quizard.done(function(quizState) {
+          console.log(quizState);
           postResults(quizState).then(function() {
-            
+//             3. Push results array to server
+            });
           });
-        })
-			});
+        });
+		  });
 		});
-	});
   
   
 	if($('#contribute').length > 0) {
@@ -75,8 +75,4 @@ $(document).ready(function() {
 			})
 		})
 	};
-});
-
-			 
-
-	
+});	

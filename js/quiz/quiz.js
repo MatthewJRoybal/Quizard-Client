@@ -1,69 +1,29 @@
-// templates.restartButton
-var templates = {
-  trackProgressHTML: function (){
-    return '<h2 class="center">Progress: ' + (this.questions.length - this.questionsCopy.length) + ' of ' + this.questions.length + '</h2>';
-  },
-	trackScoreHTML: function() {
-    return '<h2 class="center">Score: ' + this.score + ' of ' + this.questions.length + '</h2>';
-  },
-	restartButton: '<div class="btn"><button class="center restart-quiz-btn">Restart Quiz</button></div>',
-	returnHomeBtn: '<div><button class="btn btn-quiz"><a href="dashboard.html">Return Home</a></button></div>',
-	nextButton: '<div><button class="btn btn-quiz next-question-btn">Next Question</button></div>',	
-	finalScore: function(score) {
-		return 'string here' + this.score;
-	}
-};
-
-// Problem 1: Moving trackProgressHTML and trackScoreHTML serves errors saying length, play undefined.
-// Problem 2: 
-
-
-// Create a new array for answered questions 
-// Save each question answer as a new key/value pair
-// Push question with answer into the new array
-// At the end of the quiz, post that new array with answers to the database
-// Display all quiz results to the dashboard
-// Keep track of the highest score...when pulling all of the quiz results, sort by high to low score...highlight the high score
-
-/*************************************************
- ************    GLOBAL VARIABLES    *************
- *************************************************/
-
-
-
 /*************************************************
  **************    QUIZ FUNCTION    **************
  *************************************************/
 
 var Quiz = function(container, questions, quotes) {
 	this.container = container;
-	
-	// Storage Arrays
-  this.questions = questions; // Original questions array
-  this.questionsCopy = questions.slice(); // Copy of questions array
-	this.quotes = quotes; // // Quotes array
-  
   //  Cycle Quiz
   this.cycleQuiz = cycleQuiz.bind(this);
 	this.cycleQuestions = cycleQuestions.bind(this);
 	this.cycleAnswers = cycleAnswers.bind(this);
-	
-	//  Scoreboard
-  
   //  Questions
-  this.fetchQuestion = fetchQuestion.bind(this);
-  this.buildQuestion = buildQuestion.bind(this);
-	
-	//  Grading
-  this.score = 0;
-  this.results = {};
-  this.gradeAnswer = gradeAnswer.bind(this);
-	this.correct;
-	
-	// Quotes
-  this.fetchQuote = fetchQuote.bind(this);
-	this.buildQuote = buildQuote.bind(this);
-
+  this.questions = questions;
+  this.questionsCopy = questions.slice();
+  this.questionsFetch = questionsFetch.bind(this);
+  this.questionsBuild = questionsBuild.bind(this);
+  this.questionsCurrent = {};
+  this.questionsShuffle = questionsShuffle.bind(this);
+  // Answers
+  this.answerGraded = answerGraded.bind(this);
+  this.answerCorrect;
+  this.answerScore = 0;
+  this.answerResults = [];
+  // Quotes
+  this.quotes = quotes;
+  this.quoteFetch = quoteFetch.bind(this);
+	this.quoteBuild = quoteBuild.bind(this);
 	// End
   this.endQuiz = endQuiz.bind(this);
   this.done = done.bind(this);
@@ -82,56 +42,77 @@ function cycleQuiz() {
 
 function cycleQuestions() {
 	if (this.questionsCopy.length > 0) {
-    var question = this.fetchQuestion();
-    this.correct = (question.options[0]);
-    
-    
-    this.results = question;
-    
-    
-    var questionHTML = this.buildQuestion(question);
+    var question = this.questionsFetch();
+    this.questionsCurrent = question;
+    this.answerCorrect = (question.options[0]);
+    var questionHTML = this.questionsBuild(question);
     this.container.html(questionHTML);
     $('#progress').html(templates.trackProgressHTML.call(this));
     $('#score').html(templates.trackScoreHTML.call(this));
 	} else {
-		$('#score').html(templates.trackScoreHTML);
-		var endQuote = this.fetchQuote();
+		$('#score').html(templates.trackScoreHTML.call(this));
+		var endQuote = this.quoteFetch();
     this.endQuiz(endQuote);
   }
 };
 
 function cycleAnswers() {
-	this.gradeAnswer();
-	$('.grade-question-btn').replaceWith(templates.nextButton);
-	var randomQuote = this.fetchQuote();
-	var quoteHTML = this.buildQuote(randomQuote);
-	$('#quotes').html(quoteHTML);
+  var choice = this.container.find("input:checked").val();
+  if (choice == undefined) {
+    alert("You must answer the question to move forward");
+    return false;
+  } else {
+    if (this.questionsCopy.length > 0) {
+      $('.grade-question-btn').replaceWith(templates.nextButton);
+    } else {
+      $('.grade-question-btn').replaceWith(templates.finalButton);
+    }
+    this.answerGraded(choice);
+    var randomQuote = this.quoteFetch();
+    var quoteHTML = this.quoteBuild(randomQuote);
+    $('#quotes').html(quoteHTML);
+  }
 };
 
 /*************************************************
  ****************    QUESTIONS    ****************
  *************************************************/
 
-function fetchQuestion() {
+function questionsFetch() {
   var random = Math.floor(Math.random() * this.questionsCopy.length);
   var randomQuestion = this.questionsCopy[random];
   this.questionsCopy.splice(random, 1);
   return randomQuestion;
 };
 
-function buildQuestion(question) {
-	var HTML = '<form class="quiz-container">' +
+function questionsShuffle(arr) {
+    var a = [].concat(arr);
+    var j, x, i;
+    for (i = a.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
+  return a;
+}
+
+function questionsBuild(question) {
+  var choices = [];
+  var HTML = [('<form class="quiz-container">' +
 							 '<h2 class="quiz-question">' + question.question + '</h2>' +
-							 '<ul class="quiz-choices">';
+							 '<ul class="quiz-choices">')];
 
 	for(var i = 0; i < question.options.length; i++) {
-		HTML += '<li class="quiz-option">' +
-							'<input type="radio" name="question_' + question._id + '" id="question_' + question._id + '_' + i + '" value="' + question.options[i] + '" required>' +
-							'<label for="question_' + question._id + '_' + i + '">' + question.options[i] + '</label>' +
-							'<div class="check"><div class="inside"></div></div>' +
-						'</li>';
+		choices.push('<li class="quiz-option">' +
+							   '<input type="radio" name="question_' + question._id + '" id="question_' + question._id + '_' + i + '" value="' + question.options[i] + '" required>' +
+							   '<label for="question_' + question._id + '_' + i + '">' + question.options[i] + '</label>' +
+							   '<div class="check"><div class="inside"></div></div>' +
+               '</li>');
 	}
-
+  var shuffled = this.questionsShuffle(choices).join("");
+  HTML += shuffled;
 	HTML += '</ul>' +
 						'<div>' +
 							'<button class="btn btn-quiz grade-question-btn">Submit Choice</button>' +
@@ -144,30 +125,28 @@ function buildQuestion(question) {
  *************    GRADING    **************
  ******************************************/
 
-function gradeAnswer() {
-  var choice = this.container.find("input:checked").val();
-  this.results['answer'] = choice;
-  // currentQuestion and push results into results array, then send it to the server with any other data
-	if (choice === this.correct) {
-    this.score += 1;
-    this.results['score'] = this.score;
-    console.log(this.results);
-    }
-  this.correct = "";
+function answerGraded(choice) {
+  if (choice === this.answerCorrect) {
+    this.answerScore += 1;
+  }
+  this.questionsCurrent['answer'] = choice;
+  this.questionsCurrent['score'] = this.answerScore;
+  this.answerResults.push(this.questionsCurrent);
+  this.answerCorrect = "";  
 };
 
 /********************************************
  ****************    QUOTES    **************
  ********************************************/
 
-function fetchQuote() {
+function quoteFetch() {
   var random = Math.floor(Math.random() * this.quotes.length);
   var randomQuote = this.quotes[random];
   this.quotes.splice(random, 1);
   return randomQuote;
 };
 
-function buildQuote(quoteObj) {
+function quoteBuild(quoteObj) {
 	return ('<h2>' + quoteObj.story + '</h2><p>' + quoteObj.quote + '</p><h3>' + quoteObj.character + '</h3>');
 };
 
@@ -175,17 +154,30 @@ function buildQuote(quoteObj) {
  *************    END    **************
  **************************************/
 
+function getFinalScore(arr) {
+  var obj = arr[arr.length - 1];
+  return obj.score;
+}
+
 function endQuiz(quoteObj) {
 	var finalHTML = 
 		('<div id="quiz-end">' +
 			 '<h2>Congratulations, you\'ve completed the quiz.</h2>' +
-		 		 '<h3>Your score was ' + score + ' points out of ' + this.questions.length + '</h3>' +
+		 		 '<h3>Your score was ' + this.answerScore + ' points out of ' + this.questions.length + '</h3>' +
 		 		 '<h2>' + quoteObj.story + '</h2><p>' + quoteObj.quote + '</p><h3>' + quoteObj.character + '</h3>' +
 		   '<br>' + templates.returnHomeBtn +
 		 '</div>');
 	$('#quotes').hide();
+  console.log(this.answerResults);
+  var finalScore = getFinalScore(this.answerResults);
+  var finalResult = {
+    score: finalScore,
+    results: this.answerResults,
+    date: Date()
+  };
+  this.answerResults = finalResult;
   this.container.html(finalHTML);
-  this.onfinish(this.results);
+  this.onfinish(this.answerResults);
 };
 
 function done(fn) {

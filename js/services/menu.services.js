@@ -19,7 +19,7 @@ $( ".hamburger" ).click(function() {
 $( ".cross" ).click(function() {
   $("header").animate({'margin-bottom': '0px'}, 500);
   $( "#nav-menu" ).slideToggle( 500, function() {
-      $( ".cross" ).hide();
-      $( ".hamburger" ).show();
+    $( ".cross" ).hide();
+    $( ".hamburger" ).show();
   });
 });

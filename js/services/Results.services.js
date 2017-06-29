@@ -27,7 +27,6 @@ function getResults() {
  ********************************************/
 
 function postResults(resultsObj) {
-  // Find results Obj
   // POST to endpoint
 	return new Promise(function(resolve, reject) {
 		$.ajax({
