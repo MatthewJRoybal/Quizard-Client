@@ -42,6 +42,9 @@ function getQuestions() {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
+      headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+      },
 			url: queryString,
 			success: function(questions) {
 				resolve(questions);

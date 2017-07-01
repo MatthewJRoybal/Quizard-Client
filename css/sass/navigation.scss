@@ -2,14 +2,9 @@
  *************   NAV MAIN  *************
  ***************************************/
 
-
-
 .open {
   margin-bottom: 220px;
 }
-
-
-
 
 #nav-logo img {
   width: 185.5px;
@@ -100,22 +95,22 @@
     right: 0;
     text-align: right;
     height: 106px;
+    width: auto;
   }
   
   #nav-menu ul {
-  margin: 0;
-  padding: 36px 20px 36px 0px;
-  background: none;
-}
+    margin: 0;
+    padding: 36px 20px 36px 0px;
+    background: none;
+  }
 
-#nav-menu li {
-  display: inline-block;
-    font-size: 24px;
-}
+  #nav-menu li {
+    display: inline-block;
+      font-size: 24px;
+  }
 
-#nav-menu ul li a {
-  display: inline-block;
-  padding: 0 20px;
-}
-
+  #nav-menu ul li a {
+    display: inline-block;
+    padding: 0 20px;
+  }
 }

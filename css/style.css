@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto:900");
 @font-face {
   font-family: 'wizard-magic';
   src: url("../../fonts/wizard-magic.ttf");
@@ -15,7 +16,7 @@ body {
   padding: 0; }
 
 body {
-  background-color: #000;
+  background: url("../images/bg.jpg") no-repeat center center;
   z-index: -50;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -24,7 +25,7 @@ body {
 #about,
 #dashboard,
 #contact {
-  color: darkviolet; }
+  color: #BBB; }
 
 header {
   height: 100px;
@@ -137,7 +138,7 @@ header {
   display: block;
   text-decoration: none;
   padding: 10px 0;
-  color: #FFF; }
+  color: #BBB; }
 
 #nav-menu ul li a:hover {
   color: #B905D2;
@@ -161,7 +162,8 @@ header {
     top: 0;
     right: 0;
     text-align: right;
-    height: 106px; }
+    height: 106px;
+    width: auto; }
 
   #nav-menu ul {
     margin: 0;
@@ -175,11 +177,32 @@ header {
   #nav-menu ul li a {
     display: inline-block;
     padding: 0 20px; } }
+#contact {
+  width: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+#contact h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px; }
+
+#contact h2 {
+  font-family: 'Merienda One', cursive; }
+
+#contact textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px; }
+
 /***************************************
  ***********   CONTRIBUTE   ************
  ***************************************/
-#contribute,
-#contact {
+#contribute {
   width: 800px;
   margin: auto; }
 
@@ -315,7 +338,7 @@ header {
  ***********   LOGIN FORM   ************
  ***************************************/
 #login {
-  z-index: 10;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -406,7 +429,7 @@ select,
   box-sizing: border-box;
   background-color: #B905D2;
   font-size: 22px;
-  color: #FFF; }
+  color: #BBB; }
 
 #quiz-start ul.quiz-choices {
   list-style: none;
@@ -510,7 +533,7 @@ select,
   box-sizing: border-box;
   background-color: #B905D2;
   font-size: 22px;
-  color: #FFF; }
+  color: #BBB; }
 
 #quiz ul.quiz-choices {
   list-style: none;

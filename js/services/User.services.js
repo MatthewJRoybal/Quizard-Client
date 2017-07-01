@@ -47,7 +47,11 @@ function loginUser(userObject) {
 			url: 'http://localhost:8080/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
-				window.location.href = "html/dashboard.html";
+        if(window.location.href !== ('http://127.0.0.1:49333/index.html')) {
+          window.location.href = "dashboard.html";
+        } else {
+          window.location.href = "html/dashboard.html";
+        }
 				window.localStorage.setItem('token', user.token);
 			},
 			contentType: "application/json"

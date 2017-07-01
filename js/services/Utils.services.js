@@ -19,3 +19,18 @@ function createFormObject(formArray) {
 	}
 	return(formObject);
 };
+
+/******************************************
+ *********** LOG IN VS OUT BUTTON *********
+ ******************************************/
+
+function logInOutBtn() {
+  var token = window.localStorage.getItem('token');
+  var login = ('<a class="nav-link js-toggle-hidden">Log in</a>');
+  var logout = ('<a id="logout" class="nav-link">Log out</a>');
+  if (token === ('null' || 'undefined')) {
+    return $('#login-logout').append(login);
+  } else {
+    return $('#login-logout').append(logout);
+  }
+}

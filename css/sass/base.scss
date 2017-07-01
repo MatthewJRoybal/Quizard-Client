@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto:900');
+
+//font-family: 'Roboto', sans-serif;
+//font-family: 'Open Sans', sans-serif;
+//font-family: 'Merienda', cursive;
+//font-family: 'Merienda One', cursive;
+
 @font-face {
 	font-family: 'wizard-magic';
 	src: url('../../fonts/wizard-magic.ttf');
@@ -17,7 +24,7 @@ $font-witch: 'witch-magic';
 
 $color-light: #B905D2;
 $color-dark: #4B05B4;
-$color-spell: #FFF;
+$color-spell: #BBB;
 $color-good: green;
 $color-evil: red;
 
@@ -33,7 +40,7 @@ body {
 }
 
 body {
-	background-color: #000;
+	background: url('../images/bg.jpg') no-repeat center center;
 	z-index: -50;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -43,7 +50,7 @@ body {
 #about,
 #dashboard,
 #contact {
-	color: darkviolet;
+	color: $color-spell;
 }
 
 header {

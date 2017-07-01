@@ -26,10 +26,7 @@
   </header>
 	
 	<main id="contact">
-		<h1>"Everyone makes mistakes. How a person deals with their mistakes is a mark of their character." — Richard
-		
-		"There is magic in patience, you know." — Zedd
-		</h1>
+		<h1>YOU MADE IT THIS FAR. YOU MUST BE IMPRESSED!</h1>
 		<form>
 			<select name="contact-category" id="contact-category" required>
 				<option value="" disabled selected hidden>Please choose a category</option>
@@ -40,9 +37,13 @@
 			</select>
 			<input type="text" name="contact-name" id="contact-name" placeholder="Full Name" required>
 			<input type="email" name="contact-email" id="contact-email" placeholder="Email Address" required>
+			<textarea name="contact-message" rows="5" cols="" placeholder="My compliment, problem, question, suggestion..." required></textarea>
+			
 
-			<button id="question-submit" class="btn" type="submit">Submit Question</button>
+			<button id="contact-submit" class="btn" type="submit">Submit</button>
 		</form>
+		
+		<h2>"Everyone makes mistakes. How a person deals with their mistakes is a mark of their character." — Richard</h2>
 	</main>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

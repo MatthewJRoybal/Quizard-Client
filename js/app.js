@@ -7,6 +7,8 @@ $(document).ready(function() {
 	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
 	};
+  console.log(window.location.href);
+  logInOutBtn();
 	$('body').on('click', '.js-toggle-hidden', function() {
 		$('#login').toggleClass('hidden');
 	})
