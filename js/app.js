@@ -1,14 +1,23 @@
 $(document).ready(function() {
-  checkPosition();
-  $(window).resize(checkPosition);
+  navUX();
+  $(window).resize(function() {
+    navUX();
+  });
+  
+  $('#tabs ul li a').click(function(){
+    $('li a').removeClass("active");
+    $(this).addClass("active");
+  });
+  
+  
 	setTimeout(function() {
 		$('#js-video-delay')[0].play()
 	}, 1000);	
 	if($('#tabs').length > 0) {
 		$('#tabs').tabs();
 	};
-  console.log(window.location.href);
   logInOutBtn();
+  
 	$('body').on('click', '.js-toggle-hidden', function() {
 		$('#login').toggleClass('hidden');
 	})

@@ -6,12 +6,12 @@
 	width: 25%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 3px red solid;
+	border: 3px $color-white solid;
 }
 
 .table .thead {
 	display: table-header-group;
-	background-color: gray;
+	background-color: $color-white;
 }
 
 .table .th {
@@ -19,7 +19,7 @@
 	padding: 10px;
 	font-size: 18px;
 	font-weight: bold;
-	color: #fff;
+	color: $color-white;
 }
 
 .table .tr {

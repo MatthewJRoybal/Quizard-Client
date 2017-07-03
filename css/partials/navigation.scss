@@ -1,0 +1,133 @@
+/*
+ * Navigation
+ */
+
+#nav-logo {
+  display: inline-block;
+}
+  
+#nav-logo img {
+  width: 156px;
+  padding-left: 15px;
+}
+
+#js-nav-menu {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: $color-dark;
+  background: -webkit-linear-gradient($color-dark, $color-light);
+  background: -o-linear-gradient($color-dark, $color-light);
+  background: -moz-linear-gradient($color-dark, $color-light);
+  background: linear-gradient($color-dark, $color-light);
+}
+
+#js-nav-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+#js-nav-btn button {
+  background-color: transparent;
+  border: 1px solid $color-light;
+  border-radius: 4px;
+  color: $color-light;
+}
+
+nav#js-nav-menu ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav#js-nav-menu ul li {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border-bottom: 1px solid $color-good;
+}
+
+nav#js-nav-menu ul li a {
+  display: block;
+  padding: 15px 25px;
+  color: $color-white;
+  text-decoration: none; 
+  font-size: 28px;
+}
+
+nav#js-nav-menu ul li a:hover {
+  background-color: $color-light;
+}
+
+nav#js-nav-menu span.fa {
+  width: 30px;
+}
+
+@media all and (min-width: 900px) {
+  
+  .non-landing {
+    background-color: $color-fade;
+  }
+  
+  nav#js-nav-menu {
+    position: static;
+    display: inline-block;
+    height: 75px;
+    width: auto;
+    float: right;
+    background: #000;
+  }
+
+  nav#js-nav-menu ul {
+    width: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+  }
+
+  nav#js-nav-menu ul li {
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+    vertical-align: none;
+    border-bottom: none;
+  }
+
+  nav#js-nav-menu ul li a {
+    display: block;
+    padding: 25px 25px;
+    color: $color-white;
+    text-decoration: none; 
+    font-size: 18px;
+  }
+  
+  header#home nav#js-nav-menu ul li a {
+    font-size: 20px;
+    color: $color-good;
+    font-weight: bold;
+  }
+  
+  header#home nav#js-nav-menu ul li a:hover {
+    color: $color-white;
+    font-weight: bold;
+  }
+
+  nav#js-nav-menu ul li a:hover {
+    color: $color-white;
+    background-color: $color-good;
+  }
+
+  nav#js-nav-menu span.fa {
+    display: none;
+  }
+  
+
+}

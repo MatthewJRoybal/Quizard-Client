@@ -22,15 +22,15 @@
 $font-wizard: 'wizard-magic';
 $font-witch: 'witch-magic';
 
-$color-light: #B905D2;
-$color-dark: #4B05B4;
-$color-spell: #BBB;
-$color-good: green;
-$color-evil: red;
+$color-light: #2fb89a;
+$color-good: #B905D2;
 
-$bp-small: "only screen and (max-width: 767px)";
-$bp-medium: "only screen and (min-width: 768px) and (max-width: 1023px)";
-$bp-large: "only screen and (min-width: 1024px)";
+$color-dark: #62278d;
+$color-evil: #4B05B4;
+
+$color-white: #FFF;
+$color-gray: #DDD;
+$color-fade: #333;
 
 html,
 body {
@@ -39,23 +39,12 @@ body {
 	padding: 0;
 }
 
+body > * {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
-	background: url('../images/bg.jpg') no-repeat center center;
-	z-index: -50;
-  -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-#contribute,
-#about,
-#dashboard,
-#contact {
-	color: $color-spell;
-}
-
-header {
-	height: 100px;
-	z-index: -50;
+  background: $color-fade;
 }
 
 .hidden {

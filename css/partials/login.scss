@@ -1,0 +1,86 @@
+/***************************************
+ ***********   LOGIN FORM   ************
+ ***************************************/ 
+
+#login {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.container-login {
+  height: 100%;
+	background-color: $color-gray;
+}
+
+#tabs {
+  ul {
+    display: table;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    display: table-cell;
+    width: 50%;
+    list-style: none;
+    text-align: center;
+    background-color: $color-light;
+  }
+  
+  a {
+    display: block;
+    padding: 15px 0;
+    color: $color-white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+  }
+  
+  .active {
+    background-color: $color-dark;
+  }
+  
+  .container-input {
+    padding: 15px;
+  }
+  
+  select,
+  .login select#gender {
+    color: $color-good;
+  }
+
+  .login input[type=checkbox] {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #login {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .container-login {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 475px;
+    max-width: 400px;
+  }
+}

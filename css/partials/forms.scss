@@ -1,0 +1,19 @@
+label {
+  font-weight: 600;
+}
+
+label,
+input,
+select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input, 
+select {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid $color-good;
+  box-sizing: border-box;
+}

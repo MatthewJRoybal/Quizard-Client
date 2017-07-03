@@ -4,25 +4,31 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quizard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   
-  <header>
+  <header id="home">
     <div id="nav-logo">
       <a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
     </div>
-    <div id="nav-menu">
+    <nav id="js-nav-menu" role='navigation'>
       <ul>
-        <li><a class="nav-link" href="html/about.html">About</a></li>
-        <li><a class="nav-link" href="html/contact.html">Contact</a></li>
-        <li><a class="nav-link" href="html/contribute.html">Contribute</a></li>
-        <li><a class="nav-link js-toggle-hidden">Sign In/Up</a></li>
+        <li><a href="index.html"><span class="fa fa-home"></span> Home</a></li>
+        <li><a href="html/start.html"><span class="fa fa-star"></span> Start</a></li>
+        <li><a href="html/about.html"><span class="fa fa-bolt"></span> About</a></li>
+        <li><a href="html/contact.html"><span class="fa fa-comment"></span> Contact</a></li>
+        <li><a href="html/contribute.html"><span class="fa fa-plus-square"></span> Contribute</a></li>
+        <li><a class="js-toggle-hidden"><span class="fa fa-user"></span> Log In</a></li>
+        <li><a class="js-toggle-hidden"><span class="fa fa-user-plus"></span> Register</a></li>
       </ul>
-    </div> 
-    <button class="hamburger">&#9776;</button>
-    <button class="cross">&#735;</button>
+    </nav>
+    <div id="js-nav-btn">
+      <button id="js-hamburger" class="fa fa-bars"></button>
+      <button id="js-cross" class="fa fa-close"></button>
+    </div>
   </header>
 	
 	<div class="fullscreen-bg">
@@ -33,20 +39,14 @@
 	</div>
 	
 	<main id="landing">
-		
-		<section id="splash">
-			<h1 class="landingOne">Make Your Mark!</h1>
-			<h1 class="landingTwo">Test Your Knowledge</h1>
-			<h1 class="landingThree">Come One, Come All</h1>
-		</section>
-		
+		<h1>Quizard.me</h1>		
 	</main>
 	
 	<section id="login" class="hidden">
 	
-		<div id="tabs" class="container-login animate">
+		<div id="tabs" class="container-login">
 			<ul>
-				<li><a href="#tab1">Log In</a></li>
+				<li><a class="active" href="#tab1">Log In</a></li>
 				<li><a href="#tab2">Sign Up</a></li>
 			</ul>
 			

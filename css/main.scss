@@ -1,10 +1,13 @@
-@import "sass/base";
-@import "sass/buttons";
-@import "sass/navigation";
-@import "sass/about";
-@import "sass/contact";
-@import "sass/contribute";
-@import "sass/dashboard";
-@import "sass/landing";
-@import "sass/login";
-@import "sass/quiz";
+@import "partials/base";
+@import "partials/buttons";
+@import "partials/forms";
+@import "partials/navigation";
+@import "partials/login";
+@import "partials/quiz";
+
+@import "pages/landing";
+@import "pages/start";
+@import "pages/dashboard";
+@import "pages/about";
+@import "pages/contact";
+@import "pages/contribute";
