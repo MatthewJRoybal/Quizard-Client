@@ -8,15 +8,14 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="index">
   
-  <header id="home">
+  <header>
     <div id="nav-logo">
       <a href="index.html"><img src="images/logo.png" alt="Quizard Logo"></a>
     </div>
     <nav id="js-nav-menu" role='navigation'>
       <ul>
-        <li><a href="index.html"><span class="fa fa-home"></span> Home</a></li>
         <li><a href="html/start.html"><span class="fa fa-star"></span> Start</a></li>
         <li><a href="html/about.html"><span class="fa fa-bolt"></span> About</a></li>
         <li><a href="html/contact.html"><span class="fa fa-comment"></span> Contact</a></li>
@@ -31,15 +30,19 @@
     </div>
   </header>
 	
-	<div class="fullscreen-bg">
-		<video id="js-video-delay" loop class="fullscreen-bg__video">
+	<div id="video">
+		<video id="js-video-delay" loop class="video">
 			<source src="videos/magicBook.mp4" type="video/mp4">
 			<source src="videos/magicBook.mov" type="video/mov">
 		</video>
 	</div>
 	
-	<main id="landing">
-		<h1>Quizard.me</h1>		
+	<main>
+	  <div id="landing-splash">
+	    <span id="ls-1" class="ls">Master Thy Craft</span>
+		  <span id="ls-2" class="ls">Unleash Your</span>
+		  <span id="ls-3" class="ls">Magic</span>
+	  </div>
 	</main>
 	
 	<section id="login" class="hidden">
@@ -93,7 +96,7 @@
   <script src="js/services/Quotes.services.js"></script>
   <script src="js/services/Questions.services.js"></script>
   <script src="js/services/User.services.js"></script>
-  <script src="js/services/menu.services.js"></script>
+  <script src="js/services/Menu.services.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -5,9 +5,7 @@
 @import "partials/login";
 @import "partials/quiz";
 
-@import "pages/landing";
-@import "pages/start";
-@import "pages/dashboard";
-@import "pages/about";
-@import "pages/contact";
-@import "pages/contribute";
+@import "pages/Pages.all";
+@import "pages/Pages.custom";
+@import "pages/Pages.index";
+@import "pages/Pages.dashboard";

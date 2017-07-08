@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body id="contribute">
   
   <header>
     <div id="nav-logo">
@@ -16,7 +16,6 @@
     </div>
     <nav id="js-nav-menu" role='navigation'>
       <ul>
-        <li><a href="../index.html"><span class="fa fa-home"></span> Home</a></li>
         <li><a href="start.html"><span class="fa fa-star"></span> Start</a></li>
         <li><a href="about.html"><span class="fa fa-bolt"></span> About</a></li>
         <li><a href="contact.html"><span class="fa fa-comment"></span> Contact</a></li>
@@ -31,48 +30,61 @@
     </div>
   </header>
 	
-	<main id="contribute">
-	
-		<h1>Contribute a question</h1>
-		<form id="contribute-questions">
-			<select name="question-category" id="question-category" required>
-				<option value="" disabled selected>Choose a Category</option>
-				<option value="HTML">HTML</option>
-				<option value="CSS">CSS</option>
-				<option value="CSS">JavaScript</option>
-				<option value="CSS">NodeJS</option>
-				<option value="CSS">Git</option>
-			</select>
-			<select name="type" id="question-type" required>
-				<option value="" disabled selected>Choose a Type</option>
-				<option value="Boolean">Boolean</option>
-				<option value="Multiple">Multiple Choice</option>
-			</select>
-			<input type="text" name="name" id="question-title" placeholder="Question Title" required>
-			<input type="text" name="question" id="question-ask" placeholder="What's the question?" required>
-			<input type="text" name="correct" id="question-answer" placeholder="What's the correct answer?" required>
-			<input type="text" name="options" id="question-option-1" placeholder="What's a wrong answer #1?" required>
-			<input type="text" name="options" id="question-option-2" placeholder="What's a wrong answer #2?">
-			<input type="text" name="options" id="question-option-3" placeholder="What's a wrong answer #3?">
-			<button id="contribute-question-submit" class="btn" type="submit">Submit Question</button>
-		</form>
+	<main>
+	  <div class="splash">
+      <div class="splash-overlay">
+        <div class="splash-content">
+          <span class="sc-1">Expand</span>
+          <span class="sc-2">Your</span>
+          <span class="sc-3">Boundries</span>
+        </div>
+      </div>
+	  </div>
+	  
+	  <div id="contribute-content" class="content">
+	    <h1>Contribute a question</h1>
+      <form id="contribute-questions" class="content-form">
+        <select name="question-category" id="question-category" required>
+          <option value="" disabled selected>Choose a Category</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="CSS">JavaScript</option>
+          <option value="CSS">NodeJS</option>
+          <option value="CSS">Git</option>
+        </select>
+        <select name="type" id="question-type" required>
+          <option value="" disabled selected>Choose a Type</option>
+          <option value="Boolean">Boolean</option>
+          <option value="Multiple">Multiple Choice</option>
+        </select>
+        <input type="text" name="name" id="question-title" placeholder="Question Title" required>
+        <input type="text" name="question" id="question-ask" placeholder="What's the question?" required>
+        <input type="text" name="correct" id="question-answer" placeholder="What's the correct answer?" required>
+        <input type="text" name="options" id="question-option-1" placeholder="What's a wrong answer #1?" required>
+        <input type="text" name="options" id="question-option-2" placeholder="What's a wrong answer #2?">
+        <input type="text" name="options" id="question-option-3" placeholder="What's a wrong answer #3?">
+        <button id="contribute-question-submit" class="btn" type="submit">Submit Question</button>
+      </form>
+      
+      <br>
+      <br>
 		
-		<h1>Contribute a quote</h1>
-		<form id="contribute-quotes">
-			<select name="type" id="type" required>
-				<option value="" disabled selected>Choose a Type</option>
-				<option value="book">Book</option>
-				<option value="comic">Comic</option>
-				<option value="tvshow">TV Show</option>
-				<option value="movie">Movie</option>
-				<option value="other">Other</option>
-			</select>
-			<input type="text" name="story" placeholder="What story are you quoting from?" required>
-			<input type="text" name="character" placeholder="What character in that story are you quoting?" required>
-			<textarea name="quote" rows="5" cols="111" placeholder="What's the actual quote?" required></textarea>
-			<button id="contribute-quote-submit" class="btn" type="submit">Submit Quote</button>
-		</form>
-		
+      <h1>Contribute a quote</h1>
+      <form id="contribute-quotes" class="content-form">
+        <select name="type" id="type" required>
+          <option value="" disabled selected>Choose a Type</option>
+          <option value="book">Book</option>
+          <option value="comic">Comic</option>
+          <option value="tvshow">TV Show</option>
+          <option value="movie">Movie</option>
+          <option value="other">Other</option>
+        </select>
+        <input type="text" name="story" placeholder="What story are you quoting from?" required>
+        <input type="text" name="character" placeholder="What character in that story are you quoting?" required>
+        <textarea class="textarea" name="quote" rows="5" cols="111" placeholder="What's the actual quote?" required></textarea>
+        <button id="contribute-quote-submit" class="btn" type="submit">Submit Quote</button>
+      </form>
+	  </div>		
 	</main>
 	
 	<section id="login" class="hidden">
@@ -122,7 +134,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   <script src="../js/quiz/quiz.js"></script>
-  <script src="../js/quiz/quotes.js"></script>
+  <script src="../js/services/Quotes.services.js"></script>
   <script src="../js/services/Utils.services.js"></script>
   <script src="../js/services/Questions.services.js"></script>
   <script src="../js/services/User.services.js"></script>

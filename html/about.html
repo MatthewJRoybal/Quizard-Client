@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body id="about">
   
   <header>
     <div id="nav-logo">
@@ -16,7 +16,6 @@
     </div>
     <nav id="js-nav-menu" role='navigation'>
       <ul>
-        <li><a href="../index.html"><span class="fa fa-home"></span> Home</a></li>
         <li><a href="start.html"><span class="fa fa-star"></span> Start</a></li>
         <li><a href="about.html"><span class="fa fa-bolt"></span> About</a></li>
         <li><a href="contact.html"><span class="fa fa-comment"></span> Contact</a></li>
@@ -31,8 +30,42 @@
     </div>
   </header>
 	
-	<main id="about">
-		<h1><center>About Me</center></h1>
+	<main>
+	  <div class="splash">
+      <div class="splash-overlay">
+        <div class="splash-content">
+          <span class="sc-1">You Made it This Far</span>
+          <span class="sc-2">You Must Be</span>
+          <span class="sc-3">Impressed</span>
+        </div>
+      </div>
+	  </div>
+	  
+	  <div class="content">
+	    <h1><center>About Me</center></h1>
+
+      <h2>Who am I</h2>
+        <p>Hi, my name is Matthew Roybal. I started learning how to program web pages a few years ago on my own, but I wasn't getting very far on my own. Eventually, I joined a Bootcamp and began to hunt for a job. One of the things I noticed missing was the ability to practice job interview questions. So, I started Quizard.me</p>
+      <h2>What is Quizard?</h2>
+        <p>Quizard is a web application that I created to ask those who join questions that may get asked in an interview. Or, simply questions that you should try to get to know the answers. However, my knowledge goes as far as what I've learned so far. The question categories are as follows:</p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SASS</li>
+          <li>JavaScript</li>
+          <li>jQuery</li>
+          <li>NodeJS</li>
+          <li>React</li>
+          <li>Git/Github</li>
+          <li>The Command Line</li>
+        </ul>
+        <p>Since I cannot think of every question myself, I'm hoping you can help me out. I created a form for contributing questions. Just create an account, login and submit your question now!</p>
+      <h2>Why did I start Quizard?</h2>
+        <p>I started out designing Quizard as a project that could show prospective employers what I could do as well as help me prepare better for job interviews. By practing questions and making up more to ask myself over, I figured it was the surest way to get ready for inteviews. If I went to an interview, I would enter all the questiosn afterwards to continue contributing to my own success!</p>
+      <h2>What to expect!</h2>
+        <p>The questions are multiple choice, true and false, and are otherwise pretty basic in format. I hope to get more advanced and be able to include code snippets.</p>
+	  </div>
+		
 	</main>
 	
 	<section id="login" class="hidden">
@@ -82,7 +115,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   <script src="../js/quiz/quiz.js"></script>
-  <script src="../js/quiz/quotes.js"></script>
+  <script src="../js/services/Quotes.services.js"></script>
   <script src="../js/services/Utils.services.js"></script>
   <script src="../js/services/Questions.services.js"></script>
   <script src="../js/services/User.services.js"></script>

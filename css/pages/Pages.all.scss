@@ -1,0 +1,83 @@
+main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: $color-white;
+}
+
+main h1 {
+  margin: 0;
+}
+
+.splash {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.splash-overlay {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(200, 200, 200, 0.4);
+}
+
+.splash-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-family: $font-accent;
+  letter-spacing: 3px;
+  color: #000;
+  text-shadow: 1px 1px 2px $color-good;
+}
+
+.splash-content span {
+  display: block;
+}
+
+.splash-content .sc-1 {
+  font-size: 60px;
+}
+
+.splash-content .sc-2 {
+  font-size: 60px;
+}
+
+.splash-content .sc-3 {
+  font-size: 54px;
+}
+
+.content {
+  padding: 15px;
+  color: $color-white;
+}
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+@media all and (min-width: 768px) {
+  
+  .splash {
+    position: relative;
+    height: calc(100% - 300px);
+  }
+//  
+//  #splash-start {
+//    position: absolute;
+//    top: 35%;
+//    right: 7%;
+//    transform: translateY(-35%);
+//    text-align: right;
+//  }
+}

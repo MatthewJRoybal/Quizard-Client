@@ -3,6 +3,9 @@
  */
 
 #nav-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: inline-block;
 }
   
@@ -12,15 +15,16 @@
 }
 
 #js-nav-menu {
+  z-index: 10;
   display: none;
   position: fixed;
   height: 100%;
   width: 100%;
   background: $color-dark;
-  background: -webkit-linear-gradient($color-dark, $color-light);
-  background: -o-linear-gradient($color-dark, $color-light);
-  background: -moz-linear-gradient($color-dark, $color-light);
-  background: linear-gradient($color-dark, $color-light);
+  background: -webkit-linear-gradient($color-dark, $color-fade);
+  background: -o-linear-gradient($color-dark, $color-fade);
+  background: -moz-linear-gradient($color-dark, $color-fade);
+  background: linear-gradient($color-dark, $color-fade);
 }
 
 #js-nav-btn {
@@ -35,13 +39,14 @@
   border: 1px solid $color-light;
   border-radius: 4px;
   color: $color-light;
+  font-size: 1.5em;
 }
 
 nav#js-nav-menu ul {
   width: 100%;
   height: 100%;
   list-style: none;
-  margin: 0;
+  margin: 55px 0 0 0;
   padding: 0;
 }
 
@@ -59,10 +64,11 @@ nav#js-nav-menu ul li a {
   color: $color-white;
   text-decoration: none; 
   font-size: 28px;
+  letter-spacing: 1px;
 }
 
 nav#js-nav-menu ul li a:hover {
-  background-color: $color-light;
+  background-color: $color-good;
 }
 
 nav#js-nav-menu span.fa {
@@ -71,8 +77,9 @@ nav#js-nav-menu span.fa {
 
 @media all and (min-width: 900px) {
   
-  .non-landing {
-    background-color: $color-fade;
+  #nav-logo {
+    position: static;
+    display: inline-block;
   }
   
   nav#js-nav-menu {
@@ -81,7 +88,7 @@ nav#js-nav-menu span.fa {
     height: 75px;
     width: auto;
     float: right;
-    background: #000;
+    background: transparent;
   }
 
   nav#js-nav-menu ul {
@@ -109,20 +116,20 @@ nav#js-nav-menu span.fa {
     font-size: 18px;
   }
   
-  header#home nav#js-nav-menu ul li a {
-    font-size: 20px;
-    color: $color-good;
+  #landing nav#js-nav-menu ul li a {
+    font-size: 18px;
+    color: $color-white;
     font-weight: bold;
   }
   
-  header#home nav#js-nav-menu ul li a:hover {
+  #landing nav#js-nav-menu ul li a:hover {
     color: $color-white;
     font-weight: bold;
   }
 
   nav#js-nav-menu ul li a:hover {
     color: $color-white;
-    background-color: $color-good;
+    background-color: $color-dark;
   }
 
   nav#js-nav-menu span.fa {

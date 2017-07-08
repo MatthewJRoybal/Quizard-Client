@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto:900");
+@import url("https://fonts.googleapis.com/css?family=Bungee|Creepster|Julee|Lakki+Reddy|Mogra|Shadows+Into+Light");
 @font-face {
   font-family: 'wizard-magic';
   src: url("../../fonts/wizard-magic.ttf");
@@ -9,8 +10,12 @@
   src: url("../../fonts/witch-magic.ttf");
   font-weight: normal;
   font-style: normal; }
+html {
+  font-size: 1.5; }
+
 html,
 body {
+  min-height: 100%;
   height: 100%;
   margin: 0;
   padding: 0; }
@@ -91,6 +96,9 @@ select {
  * Navigation
  */
 #nav-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: inline-block; }
 
 #nav-logo img {
@@ -98,15 +106,16 @@ select {
   padding-left: 15px; }
 
 #js-nav-menu {
+  z-index: 10;
   display: none;
   position: fixed;
   height: 100%;
   width: 100%;
   background: #62278d;
-  background: -webkit-linear-gradient(#62278d, #2fb89a);
-  background: -o-linear-gradient(#62278d, #2fb89a);
-  background: -moz-linear-gradient(#62278d, #2fb89a);
-  background: linear-gradient(#62278d, #2fb89a); }
+  background: -webkit-linear-gradient(#62278d, #333);
+  background: -o-linear-gradient(#62278d, #333);
+  background: -moz-linear-gradient(#62278d, #333);
+  background: linear-gradient(#62278d, #333); }
 
 #js-nav-btn {
   position: absolute;
@@ -118,13 +127,14 @@ select {
   background-color: transparent;
   border: 1px solid #2fb89a;
   border-radius: 4px;
-  color: #2fb89a; }
+  color: #2fb89a;
+  font-size: 1.5em; }
 
 nav#js-nav-menu ul {
   width: 100%;
   height: 100%;
   list-style: none;
-  margin: 0;
+  margin: 55px 0 0 0;
   padding: 0; }
 
 nav#js-nav-menu ul li {
@@ -139,17 +149,19 @@ nav#js-nav-menu ul li a {
   padding: 15px 25px;
   color: #FFF;
   text-decoration: none;
-  font-size: 28px; }
+  font-size: 28px;
+  letter-spacing: 1px; }
 
 nav#js-nav-menu ul li a:hover {
-  background-color: #2fb89a; }
+  background-color: #B905D2; }
 
 nav#js-nav-menu span.fa {
   width: 30px; }
 
 @media all and (min-width: 900px) {
-  .non-landing {
-    background-color: #333; }
+  #nav-logo {
+    position: static;
+    display: inline-block; }
 
   nav#js-nav-menu {
     position: static;
@@ -157,7 +169,7 @@ nav#js-nav-menu span.fa {
     height: 75px;
     width: auto;
     float: right;
-    background: #000; }
+    background: transparent; }
 
   nav#js-nav-menu ul {
     width: auto;
@@ -181,18 +193,18 @@ nav#js-nav-menu span.fa {
     text-decoration: none;
     font-size: 18px; }
 
-  header#home nav#js-nav-menu ul li a {
-    font-size: 20px;
-    color: #B905D2;
+  #landing nav#js-nav-menu ul li a {
+    font-size: 18px;
+    color: #FFF;
     font-weight: bold; }
 
-  header#home nav#js-nav-menu ul li a:hover {
+  #landing nav#js-nav-menu ul li a:hover {
     color: #FFF;
     font-weight: bold; }
 
   nav#js-nav-menu ul li a:hover {
     color: #FFF;
-    background-color: #B905D2; }
+    background-color: #62278d; }
 
   nav#js-nav-menu span.fa {
     display: none; } }
@@ -469,131 +481,203 @@ nav#js-nav-menu span.fa {
   text-align: center; }
 
 main {
-  height: 100%; }
-
-#landing {
-  position: relative;
-  z-index: -100;
-  height: 100%;
-  text-align: center; }
-
-#landing h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  color: #B905D2; }
-
-@media only screen and (min-width: 768px) {
-  #landing {
-    position: static;
-    height: auto; }
-
-  main {
-    height: auto; } }
-/***************************************
- **************   VIDEO   **************
- ***************************************/
-.fullscreen-bg {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -10; }
-
-.fullscreen-bg__video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
-@media only screen and (max-width: 767px) {
-  .fullscreen-bg {
-    background: url("../images/magicbook.png") center center/cover no-repeat; }
-
-  .fullscreen-bg__video {
-    display: none; } }
-/***************************************
- *************   SPLASH   **************
- ***************************************/
-@media only screen and (min-width: 768px) {
-  #splash h1 {
-    position: relative;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-family: "wizard-magic", Verdana, sans-serif;
-    font-size: 100px;
-    text-align: center; }
-
-  @keyframes splash-1 {
-    from {
-      color: #000; }
-    to {
-      color: #2fb89a; } }
-  @keyframes splash-2 {
-    from {
-      color: #000; }
-    to {
-      color: #2fb89a; } }
-  @keyframes splash-3 {
-    from {
-      color: #000; }
-    to {
-      color: #2fb89a; } }
-  #splash h1 {
-    text-shadow: 2px 2px 4px #000; }
-
-  #splash .landingOne {
-    animation-name: splash-1;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-delay: 6s;
-    animation-fill-mode: forwards; }
-
-  #splash .landingTwo {
-    animation-name: splash-2;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-delay: 4s;
-    animation-fill-mode: forwards; }
-
-  #splash .landingThree {
-    animation-name: splash-3;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-delay: 2s;
-    animation-fill-mode: forwards; }
-
-  #splash .landingTwo {
-    font-family: "witch-magic", Verdana, sans-serif; } }
-#start main {
-  background-color: #DDD;
   height: 100%;
   margin: 0;
   padding: 0;
   color: #FFF; }
 
-main #start-splash {
-  background: url("../images/witch.jpg") no-repeat center center;
-  background-size: cover;
+main h1 {
+  margin: 0; }
+
+.splash {
   height: 100%;
   margin: 0;
   padding: 0; }
 
-main h1 {
-  margin: 0; }
+.splash-overlay {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(200, 200, 200, 0.4); }
 
+.splash-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-family: "Merienda One", cursive;
+  letter-spacing: 3px;
+  color: #000;
+  text-shadow: 1px 1px 2px #B905D2; }
+
+.splash-content span {
+  display: block; }
+
+.splash-content .sc-1 {
+  font-size: 60px; }
+
+.splash-content .sc-2 {
+  font-size: 60px; }
+
+.splash-content .sc-3 {
+  font-size: 54px; }
+
+.content {
+  padding: 15px;
+  color: #FFF; }
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px; }
+
+@media all and (min-width: 768px) {
+  .splash {
+    position: relative;
+    height: calc(100% - 300px); } }
+#start .splash {
+  background: url("../images/castle-knight.jpg") no-repeat top center;
+  background-size: cover; }
+
+#about .splash {
+  background: url("../images/castle-hall.jpg") no-repeat top center;
+  background-size: cover; }
+
+#contact .splash {
+  background: url("../images/magical-forest.jpg") no-repeat center center;
+  background-size: cover; }
+
+#contribute .splash {
+  background: url("../images/witch.jpg") no-repeat center center;
+  background-size: cover; }
+
+@keyframes ls-1 {
+  0% {
+    color: #000; }
+  50% {
+    color: #DDD; }
+  100% {
+    color: #000; } }
+@keyframes ls-2 {
+  0% {
+    color: #000; }
+  50% {
+    color: #DDD; }
+  100% {
+    color: #000; } }
+@keyframes ls-3 {
+  0% {
+    color: #000; }
+  50% {
+    color: #DDD; }
+  100% {
+    color: #000; } }
+#ls-1 {
+  animation-name: ls-1;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-delay: 6s;
+  animation-fill-mode: forwards; }
+
+#ls-2 {
+  animation-name: ls-2;
+  animation-duration: 11s;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+  animation-fill-mode: forwards; }
+
+#ls-3 {
+  animation-name: ls-3;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; }
+
+.video {
+  display: none; }
+
+#index main {
+  background: url("../images/magicbook.png") center center/cover no-repeat; }
+#index #landing-splash {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-30%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #000;
+  text-align: center; }
+  #index #landing-splash span {
+    display: block; }
+  #index #landing-splash .ls {
+    text-shadow: 2px 2px 4px #B905D2;
+    font-family: "Merienda One", cursive; }
+  #index #landing-splash #ls-1 {
+    font-size: 1.75em;
+    padding-bottom: 0.35em; }
+  #index #landing-splash #ls-2 {
+    font-size: 2em; }
+  #index #landing-splash #ls-3 {
+    font-size: 3em; }
+  @media only screen and (min-width: 400px) and (max-width: 600px) {
+    #index #landing-splash #ls-1 {
+      font-size: 2.5em; }
+    #index #landing-splash #ls-2 {
+      font-size: 2.75em;
+      padding-bottom: 0.15em; }
+    #index #landing-splash #ls-3 {
+      font-size: 3.5em; } }
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    #index #landing-splash #ls-1 {
+      font-size: 3.5em; }
+    #index #landing-splash #ls-2 {
+      font-size: 4.75em;
+      padding-bottom: 0.15em; }
+    #index #landing-splash #ls-3 {
+      font-size: 6.5em; } }
+  @media only screen and (min-width: 901px) {
+    #index #landing-splash #ls-1 {
+      font-size: 4.5em; }
+    #index #landing-splash #ls-2 {
+      font-size: 5.75em;
+      padding-bottom: 0.15em; }
+    #index #landing-splash #ls-3 {
+      font-size: 7.5em; } }
+
+@media only screen and (min-width: 768px) {
+  #index main {
+    position: static;
+    height: auto;
+    background: none; }
+
+  #video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -10; }
+
+  .video {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); } }
 /***************************************
  *************   DASHBOARD  ************
  ***************************************/
@@ -637,31 +721,5 @@ main h1 {
   text-align: center;
   vertical-align: middle;
   line-height: 2em; }
-
-#contact {
-  width: auto;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 15px; }
-
-#contact h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 36px; }
-
-#contact h2 {
-  font-family: 'Merienda One', cursive; }
-
-#contact textarea {
-  width: 100%;
-  box-sizing: border-box;
-  resize: vertical;
-  font-family: sans-serif;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px; }
-
-#contribute {
-  width: 800px;
-  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

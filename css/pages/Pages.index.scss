@@ -1,0 +1,169 @@
+@keyframes ls-1 {
+		0% {color: #000}
+    50% {color: $color-gray}
+    100% {color: #000}
+	}
+
+	@keyframes ls-2 {
+		0% {color: #000}
+    50% {color: $color-gray}
+    100% {color: #000}
+	}
+
+	@keyframes ls-3 {
+		0% {color: #000}
+    50% {color: $color-gray}
+    100% {color: #000}
+	}
+
+#ls-1 {
+		animation-name: ls-1;
+		animation-duration: 7s;
+		animation-timing-function: linear;
+		animation-delay: 6s;
+		animation-fill-mode:forwards;
+    
+	}
+
+#ls-2 {
+  animation-name: ls-2;
+  animation-duration: 11s;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+  animation-fill-mode:forwards;
+}
+
+#ls-3 {
+  animation-name: ls-3;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
+}
+
+.video {
+		display: none;
+	}
+
+#index {
+  
+  main {
+    background: url('../images/magicbook.png') center center / cover no-repeat;
+  }
+
+  #landing-splash {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-30%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    
+    span {
+      display: block;
+    }
+    
+    .ls {
+      text-shadow: 2px 2px 4px $color-good;
+      font-family: $font-accent;
+    }
+      
+    #ls-1 {
+      font-size: 1.75em;
+      padding-bottom: 0.35em;
+    }
+
+     #ls-2 {
+      font-size: 2em;
+    }
+
+     #ls-3 {
+      font-size: 3em;
+    }
+    
+    @media only screen and (min-width: 400px) and (max-width: 600px) {
+      
+      #ls-1 {
+        font-size: 2.5em;
+      }
+      
+      #ls-2 {
+        font-size: 2.75em;
+        padding-bottom: 0.15em;
+      }
+
+       #ls-3 {
+        font-size: 3.5em;
+      }
+    }
+    
+    @media only screen and (min-width: 601px) and (max-width: 900px) {
+      
+      #ls-1 {
+        font-size: 3.5em;
+      }
+      
+      #ls-2 {
+        font-size: 4.75em;
+        padding-bottom: 0.15em;
+      }
+
+       #ls-3 {
+        font-size: 6.5em;
+      }
+    }
+    
+    @media only screen and (min-width: 901px) {
+      
+      #ls-1 {
+        font-size: 4.5em;
+      }
+      
+      #ls-2 {
+        font-size: 5.75em;
+        padding-bottom: 0.15em;
+      }
+
+       #ls-3 {
+        font-size: 7.5em;
+      }
+    }
+    
+  }
+}
+
+@media only screen and (min-width: 768px) {
+    
+  #index main {
+    position: static;
+    height: auto;
+    background: none;
+  }
+
+  #video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -10;
+  }
+
+  .video {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}

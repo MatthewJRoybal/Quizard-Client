@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body id="contact">
   
   <header>
     <div id="nav-logo">
@@ -16,7 +16,6 @@
     </div>
     <nav id="js-nav-menu" role='navigation'>
       <ul>
-        <li><a href="../index.html"><span class="fa fa-home"></span> Home</a></li>
         <li><a href="start.html"><span class="fa fa-star"></span> Start</a></li>
         <li><a href="about.html"><span class="fa fa-bolt"></span> About</a></li>
         <li><a href="contact.html"><span class="fa fa-comment"></span> Contact</a></li>
@@ -31,25 +30,35 @@
     </div>
   </header>
 	
-	<main id="contact">
-		<h1>YOU MADE IT THIS FAR. YOU MUST BE IMPRESSED!</h1>
-		<form>
-			<select name="contact-category" id="contact-category" required>
-				<option value="" disabled selected hidden>Please choose a category</option>
-				<option value="compliment">Compliment</option>
-				<option value="problem">Problem</option>
-				<option value="question">Question</option>
-				<option value="suggestion">Suggestion</option>
-			</select>
-			<input type="text" name="contact-name" id="contact-name" placeholder="Full Name" required>
-			<input type="email" name="contact-email" id="contact-email" placeholder="Email Address" required>
-			<textarea name="contact-message" rows="5" cols="" placeholder="My compliment, problem, question, suggestion..." required></textarea>
-			
+	<main>
+	  <div class="splash">
+      <div class="splash-overlay">
+        <div class="splash-content">
+          <span class="sc-1">Expand</span>
+          <span class="sc-2">Your</span>
+          <span class="sc-3">Boundries</span>
+        </div>
+      </div>
+	  </div>
+    
+    <div class="content">
+      <h1>Contact Form</h1>
+      <form id="contact-form"  class="content-form">
+        <select name="contact-category" id="contact-category" required>
+          <option value="" disabled selected hidden>Please choose a category</option>
+          <option value="compliment">Compliment</option>
+          <option value="problem">Problem</option>
+          <option value="question">Question</option>
+          <option value="suggestion">Suggestion</option>
+        </select>
+        <input type="text" name="contact-name" id="contact-name" placeholder="Full Name" required>
+        <input type="email" name="contact-email" id="contact-email" placeholder="Email Address" required>
+        <textarea class="textarea" name="contact-message" rows="5" cols="" placeholder="My compliment, problem, question, suggestion..." required></textarea>
 
-			<button id="contact-submit" class="btn" type="submit">Submit</button>
-		</form>
-		
-		<h2>"Everyone makes mistakes. How a person deals with their mistakes is a mark of their character." — Richard</h2>
+        <button id="contact-submit" class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+    
 	</main>
 	
 	<section id="login" class="hidden">
@@ -99,7 +108,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
   <script src="../js/quiz/quiz.js"></script>
-  <script src="../js/quiz/quotes.js"></script>
+  <script src="../js/services/Quotes.services.js"></script>
   <script src="../js/services/Utils.services.js"></script>
   <script src="../js/services/Questions.services.js"></script>
   <script src="../js/services/User.services.js"></script>
