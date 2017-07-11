@@ -2,11 +2,15 @@
  * Navigation
  */
 
+header {
+  position: relative;
+}
+
 #nav-logo {
+  z-index: 10;
   position: absolute;
   top: 0;
   left: 0;
-  display: inline-block;
 }
   
 #nav-logo img {
@@ -55,7 +59,7 @@ nav#js-nav-menu ul li {
   width: 100%;
   box-sizing: border-box;
   vertical-align: middle;
-  border-bottom: 1px solid $color-good;
+  border-bottom: 1px solid $color-light;
 }
 
 nav#js-nav-menu ul li a {
@@ -68,7 +72,7 @@ nav#js-nav-menu ul li a {
 }
 
 nav#js-nav-menu ul li a:hover {
-  background-color: $color-good;
+  background-color: $color-light;
 }
 
 nav#js-nav-menu span.fa {
@@ -107,6 +111,10 @@ nav#js-nav-menu span.fa {
     vertical-align: none;
     border-bottom: none;
   }
+  
+//  nav#js-nav-menu ul li:hover {
+//    box-shadow: 2px 2px 2px $color-light;
+//  }
 
   nav#js-nav-menu ul li a {
     display: block;
@@ -125,6 +133,7 @@ nav#js-nav-menu span.fa {
   #landing nav#js-nav-menu ul li a:hover {
     color: $color-white;
     font-weight: bold;
+    
   }
 
   nav#js-nav-menu ul li a:hover {

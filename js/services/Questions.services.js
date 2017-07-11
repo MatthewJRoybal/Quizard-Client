@@ -1,3 +1,21 @@
+function questions() {
+  if($('#contribute').length > 0) {
+		$('#contribute').on('click', '#contribute-question-submit', function(event) {
+			event.preventDefault();
+			var questionArray = $('#contribute-questions').serializeArray();
+			var questionObject = createFormObject(questionArray);
+			contributeQuestion(questionObject)
+			.then(function() {
+				// If question exists, say so
+				// If success, what do I want to show?
+			}).catch(function() {
+				// If there's an error, how am I going to show the error
+				// Call a function that redirects so its reusable
+			})
+		});
+  }
+};
+
 /********************************************
  ************   CONVERT TO URL   ************
  ********************************************/

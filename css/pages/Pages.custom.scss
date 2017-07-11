@@ -1,21 +1,215 @@
+/*********************************
+ ***********   START   ***********
+ *********************************/
+
 #start .splash {
   background: url('../images/castle-knight.jpg') no-repeat top center;
   background-size: cover;
+  
+  .splash-content {
+    color: #170019;
+  }
+  
+  // Landscape Phone
+  @media only screen and (max-width: 749px) and (orientation: landscape) {
+
+    .splash-content {
+      left: 10%;
+      -ms-transform: translate(-10%, -50%); /* IE 9 */
+      -webkit-transform: translate(-10%, -50%); /* Safari */
+      transform: translate(-10%, -50%);
+      text-align: left;
+    }
+
+    .sc-2 {
+      padding-left: 0.70em;
+    }
+  }
+
+  // Tablet Portrait
+  @media only screen and (min-width: 450px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .splash-content {
+      left: 10%;
+      -ms-transform: translate(-10%, -50%); /* IE 9 */
+      -webkit-transform: translate(-10%, -50%); /* Safari */
+      transform: translate(-10%, -50%);
+      text-align: left;
+      font-size: 4.5em;
+    }
+
+    .sc-2 {
+      padding-left: 0.70em;
+    }
+  }
+
+  // Landscape Tablet and Desktop
+  @media only screen and (min-width: 750px) and (orientation: landscape) {
+
+    .splash-content {
+      top: 35%;
+      left: 12%;
+      -ms-transform: translate(-12%, -35%); /* IE 9 */
+      -webkit-transform: translate(-12%, -35%); /* Safari */
+      transform: translate(-12%, -35%);
+      text-align: left;
+      font-size: 6em;
+    }
+
+    .sc-2 {
+      padding-left: 0.70em;
+    }
+  }
 }
 
+/*********************************
+ ***********   ABOUT   ***********
+ *********************************/
+
 #about .splash {
-  background: url('../images/castle-hall.jpg')
-   no-repeat top center;
+  background: url('../images/lighted-floor.jpg')
+   no-repeat center center;
   background-size: cover;
+  
+  .splash-overlay {
+//    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .splash-content {
+    text-shadow: -2px -2px 4px #C1DD4D,
+    2px 2px 4px #6FD800;
+  }
+ 
+
+  @media only screen and (min-width: 768px) {
+
+    .splash-content {
+      font-size: 4.5em;
+    }
+  }
 }
+
+/*********************************
+ **********   CONTACT   **********
+ *********************************/
 
 #contact .splash {
   background: url('../images/magical-forest.jpg') no-repeat center center;
   background-size: cover;
+  
+  .splash-content {
+    text-shadow: -2px -2px 4px #C1DD4D,
+    2px 2px 4px #6FD800;
+  }
+  
+  
+  @media only screen and (min-width: 768px) {
+
+    .splash-content {
+      font-size: 4.5em;
+    }
+  }
+  
+    @media only screen and (min-width: 960px) and (orientation: landscape) {
+
+    .splash-content {
+      top: 35%;
+      left: 12%;
+      -ms-transform: translate(-12%, -35%); /* IE 9 */
+      -webkit-transform: translate(-12%, -35%); /* Safari */
+      transform: translate(-12%, -35%);
+      text-align: left;
+      font-size: 5em;
+    }
+
+    .sc-2 {
+      padding-left: 2em;
+    }
+      
+    .sc-3 {
+      padding-left: 0.75em;
+    }
+  }
 }
+
+/*********************************
+ ********   CONTRIBUTE   *********
+ *********************************/
 
 #contribute .splash {
   background: url('../images/witch.jpg')
    no-repeat center center;
   background-size: cover;
+  
+  .splash-content {
+    top: auto;
+    right: auto;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    font-size: 3em;
+
+  }
+  
+    // Landscape Small
+  @media only screen and (max-width: 730px) and (orientation: landscape) {
+
+    .splash-content {
+      top: 50%;
+      left: 3%;
+      right: auto;
+      bottom: auto;
+      -ms-transform: translate(-3%, -50%); /* IE 9 */
+      -webkit-transform: translate(-3%, -50%); /* Safari */
+      transform: translate(-3%, -50%);
+      text-align: left;
+    }
+
+    .sc-2 {
+      padding-left: 1.5em;
+    }
+    
+    .sc-3 {
+      padding-left: 1em;
+    }
+  }
+  
+  // Landscape Large
+  @media only screen and (min-width: 731px) and (orientation: landscape) {
+
+    .splash-content {
+      top: 50%;
+      left: auto;
+      right: 3%;
+      bottom: auto;
+      -ms-transform: translate(-3%, -50%); /* IE 9 */
+      -webkit-transform: translate(-3%, -50%); /* Safari */
+      transform: translate(-3%, -50%);
+      text-align: right;
+    }
+    
+    .sc-1 {
+      padding-right: 2.5em;
+    }
+
+    .sc-2 {
+      padding-right: 3em;
+    }
+  }
+  
+    // Tablet and Desktop
+  @media only screen and (min-width: 960px) and (max-width: 1199px) {
+
+    .splash-content {
+      font-size: 4em;
+    }
+  }
+  
+  // Tablet and Desktop
+  @media only screen and (min-width: 1200px) {
+
+    .splash-content {
+      font-size: 5em;
+    }
+  }
 }

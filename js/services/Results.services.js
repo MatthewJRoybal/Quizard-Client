@@ -1,3 +1,28 @@
+function results() {
+  if($('#dashboard').length > 0) {
+    getResults()
+    .then(function(results) {
+      displayResults(results);
+      console.log("You got results");
+    }).catch(function() {
+      // If there's an error, how am I going to show the error
+      // Call a function that redirects so its reusable
+    });
+  };
+};
+
+/********************************************
+ ************   DISPLAY RESULTS   ***********
+ ********************************************/
+
+function displayResults(resultsObj) {
+  var HTML;
+  
+  
+  
+  return $('#results').append(HTML);
+}
+
 /********************************************
  **************   GET RESULTS   *************
  ********************************************/
@@ -6,7 +31,10 @@ function getResults() {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
-			url: "http://localhost:8080/results/" + username,
+     headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+      },
+			url: "http://localhost:8080/results/display",
 			success: function(results) {
 				resolve(results);
 			},

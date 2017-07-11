@@ -66,7 +66,7 @@
     }
     
     .ls {
-      text-shadow: 2px 2px 4px $color-good;
+      text-shadow: -2px -2px 4px $color-dark, 2px 2px 4px $color-light;
       font-family: $font-accent;
     }
       
@@ -80,7 +80,7 @@
     }
 
      #ls-3 {
-      font-size: 3em;
+      font-size: 4em;
     }
     
     @media only screen and (min-width: 400px) and (max-width: 600px) {
@@ -95,7 +95,7 @@
       }
 
        #ls-3 {
-        font-size: 3.5em;
+        font-size: 5em;
       }
     }
     
@@ -106,12 +106,12 @@
       }
       
       #ls-2 {
-        font-size: 4.75em;
+        font-size: 4.00em;
         padding-bottom: 0.15em;
       }
 
        #ls-3 {
-        font-size: 6.5em;
+        font-size: 6.75em;
       }
     }
     
@@ -122,12 +122,12 @@
       }
       
       #ls-2 {
-        font-size: 5.75em;
+        font-size: 5.00em;
         padding-bottom: 0.15em;
       }
 
        #ls-3 {
-        font-size: 7.5em;
+        font-size: 7.75em;
       }
     }
     

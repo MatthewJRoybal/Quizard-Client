@@ -1,3 +1,19 @@
+function quotes() {
+  $('#contribute').on('click', '#contribute-quote-submit', function(event) {
+    event.preventDefault();
+    var quoteArray = $('#contribute-quotes').serializeArray();
+    var quoteObject = createFormObject(quoteArray);
+    contributeQuote(quoteObject)
+    .then(function() {
+      // If question exists, say so
+      // If success, what do I want to show?
+    }).catch(function() {
+      // If there's an error, how am I going to show the error
+      // Call a function that redirects so its reusable
+    });
+  });
+}
+
 /********************************************
  **************   GET QUOTES  ***************
  ********************************************/

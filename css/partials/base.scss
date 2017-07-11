@@ -1,17 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto:900');
 
-@import url('https://fonts.googleapis.com/css?family=Bungee|Creepster|Julee|Lakki+Reddy|Mogra|Shadows+Into+Light');
-
 //font-family: 'Roboto', sans-serif;
 //font-family: 'Open Sans', sans-serif;
 //font-family: 'Merienda', cursive;
 //font-family: 'Merienda One', cursive;
-//font-family: 'Shadows Into Light', cursive;
-//font-family: 'Julee', cursive;
-//font-family: 'Lakki Reddy', cursive;
-//font-family: 'Creepster', cursive;
-//font-family: 'Bungee', cursive;
-//font-family: 'Mogra', cursive;
 
 @font-face {
 	font-family: 'wizard-magic';
@@ -35,19 +27,17 @@ $font-accent: 'Merienda One', cursive;
 $font-size: 16px;
 $font-line-height: 1.5;
 
-$color-light: #2fb89a;
-$color-good: #B905D2;
-
+$color-light: #B905D2;
 $color-dark: #62278d;
 $color-evil: #4B05B4;
+
+$color-yellow: #C1DD4D;
+$color-green: #6FD800;
+$color-blue: #2fb89a;
 
 $color-white: #FFF;
 $color-gray: #DDD;
 $color-fade: #333;
-
-html {
-  font-size: $font-line-height;
-}
 
 html,
 body {
@@ -57,12 +47,13 @@ body {
 	padding: 0;
 }
 
-body > * {
-  font-family: 'Roboto', sans-serif;
-}
-
 body {
   background: $color-fade;
+  font-size: $font-line-height;
+}
+
+body > * {
+  font-family: 'Roboto', sans-serif;
 }
 
 .hidden {

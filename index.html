@@ -19,9 +19,7 @@
         <li><a href="html/start.html"><span class="fa fa-star"></span> Start</a></li>
         <li><a href="html/about.html"><span class="fa fa-bolt"></span> About</a></li>
         <li><a href="html/contact.html"><span class="fa fa-comment"></span> Contact</a></li>
-        <li><a href="html/contribute.html"><span class="fa fa-plus-square"></span> Contribute</a></li>
-        <li><a class="js-toggle-hidden"><span class="fa fa-user"></span> Log In</a></li>
-        <li><a class="js-toggle-hidden"><span class="fa fa-user-plus"></span> Register</a></li>
+        <li><a class="js-toggle-login"><span class="fa fa-plus-square"></span> Sign In/Up</a></li>
       </ul>
     </nav>
     <div id="js-nav-btn">
@@ -31,7 +29,7 @@
   </header>
 	
 	<div id="video">
-		<video id="js-video-delay" loop class="video">
+		<video id="js-video-delay" autoplay loop class="video">
 			<source src="videos/magicBook.mp4" type="video/mp4">
 			<source src="videos/magicBook.mov" type="video/mov">
 		</video>
@@ -40,7 +38,7 @@
 	<main>
 	  <div id="landing-splash">
 	    <span id="ls-1" class="ls">Master Thy Craft</span>
-		  <span id="ls-2" class="ls">Unleash Your</span>
+		  <span id="ls-2" class="ls">& Unleash Your</span>
 		  <span id="ls-3" class="ls">Magic</span>
 	  </div>
 	</main>
@@ -58,8 +56,8 @@
 					<div class="container-input">
 						<input type="text" name="username" placeholder="Username" required>
 						<input type="password" name="password" placeholder="Password" required>
-						<button type="submit" class="btn btn-success">Login</button>
-						<button type="button" class="btn btn-cancel js-toggle-hidden ">Cancel</button>
+						<button type="submit" class="btn btn-light">Login</button>
+						<button type="button" class="btn btn-dark js-toggle-login ">Cancel</button>
 						<br>
 					</div>
 				</form>
@@ -78,8 +76,8 @@
 							<option value="Wizard">Wizard</option>
 							<option value="Witch">Witch</option>
 						</select>
-						<button type="submit" class="btn btn-success js-toggle-hidden">Sign up</button>
-						<button type="button" class="btn btn-cancel js-toggle-hidden">Cancel</button>
+						<button type="submit" class="btn btn-light js-toggle-hidden">Sign up</button>
+						<button type="button" class="btn btn-dark js-toggle-hidden">Cancel</button>
 						<br>
 					</div>
 				</form>

@@ -10,6 +10,7 @@
 	width: 100%;
 	height: 100%;
 	overflow: auto;
+  font-family: 'Merienda One', cursive;
 }
 
 .container-login {
@@ -24,7 +25,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style: none;  
   }
   
   li {
@@ -33,6 +34,12 @@
     list-style: none;
     text-align: center;
     background-color: $color-light;
+    color: $color-white;   
+  }
+  
+  li:hover {
+    background-color: $color-dark;
+    color: $color-white;
   }
   
   a {
@@ -41,12 +48,18 @@
     color: $color-white;
     text-decoration: none;
     font-size: 18px;
-    text-transform: capitalize;
-    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
   }
   
   .active {
+    background-color: $color-gray;
+    color: $color-dark;
+  }
+  
+  .active:hover {
     background-color: $color-dark;
+    color: $color-white;
   }
   
   .container-input {
@@ -55,7 +68,7 @@
   
   select,
   .login select#gender {
-    color: $color-good;
+    color: $color-light;
   }
 
   .login input[type=checkbox] {

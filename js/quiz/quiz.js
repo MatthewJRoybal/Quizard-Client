@@ -1,3 +1,22 @@
+
+function quiz() {
+  $('main').on('click', '#start-quiz', function(event) {
+		event.preventDefault();
+		getQuestions().then(function(questions) {
+			getQuotes(questions.length + 1).then(function(quotes) {
+				$('#quiz-results, #quiz-start').addClass('hidden');
+				var Quizard = new Quiz($('#quiz'), questions, quotes);
+  			Quizard.cycleQuiz();
+				Quizard.done(function(quizState) {
+          postResults(quizState).then(function() {
+//             3. Push results array to server
+            });
+          });
+        });
+		  });
+		});
+}
+
 /*************************************************
  **************    QUIZ FUNCTION    **************
  *************************************************/
@@ -168,7 +187,6 @@ function endQuiz(quoteObj) {
 		   '<br>' + templates.returnHomeBtn +
 		 '</div>');
 	$('#quotes').hide();
-  console.log(this.answerResults);
   var finalScore = getFinalScore(this.answerResults);
   var finalResult = {
     score: finalScore,

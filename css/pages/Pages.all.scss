@@ -10,6 +10,7 @@ main h1 {
 }
 
 .splash {
+  position: relative;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -19,36 +20,28 @@ main h1 {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: rgba(200, 200, 200, 0.4);
+//  background: rgba(200, 200, 200, 0.4);
 }
 
 .splash-content {
   position: absolute;
   top: 50%;
   left: 50%;
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari */
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: auto;
   text-align: center;
   font-family: $font-accent;
   letter-spacing: 3px;
   color: #000;
-  text-shadow: 1px 1px 2px $color-good;
+  font-size: 3.5em;
+  text-shadow: -2px -2px 4px $color-dark,
+    2px 2px 4px $color-light;
 }
 
 .splash-content span {
   display: block;
-}
-
-.splash-content .sc-1 {
-  font-size: 60px;
-}
-
-.splash-content .sc-2 {
-  font-size: 60px;
-}
-
-.splash-content .sc-3 {
-  font-size: 54px;
 }
 
 .content {
@@ -66,18 +59,9 @@ main h1 {
   padding: 10px;
 }
 
-@media all and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   
   .splash {
-    position: relative;
     height: calc(100% - 300px);
   }
-//  
-//  #splash-start {
-//    position: absolute;
-//    top: 35%;
-//    right: 7%;
-//    transform: translateY(-35%);
-//    text-align: right;
-//  }
 }

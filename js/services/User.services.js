@@ -1,10 +1,30 @@
 /********************************************
- *************   DISPLAY LOGIN   ************
+ ************   USER SERVICES   *************
  ********************************************/
 
-function displayLogin() {	
-	$(this).toggleClass('hidden');
-	};
+function users() {
+  $('#signUp').submit(function(event) {
+		event.preventDefault();
+		var userArray = $(this).serializeArray();
+		var newUser = createUserObject(userArray);
+		createUser(newUser);
+	});
+  
+  
+  
+	$('#signIn').submit(function(event) {
+		event.preventDefault();
+		var userCredentials = $(this).serializeArray();
+		var returningUser = createUserObject(userCredentials);
+		loginUser(returningUser);
+	});
+  
+  
+	$('body').on('click', '.js-logout', function(event) {
+		event.preventDefault();
+		logoutUser();
+	});
+}
 
 /********************************************
  ************   GET USER OBJECT   ***********
@@ -47,11 +67,7 @@ function loginUser(userObject) {
 			url: 'http://localhost:8080/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
-        if(window.location.href !== ('http://127.0.0.1:49333/index.html')) {
-          window.location.href = "dashboard.html";
-        } else {
-          window.location.href = "html/dashboard.html";
-        }
+        window.location.href = "../html/dashboard.html";
 				window.localStorage.setItem('token', user.token);
 			},
 			contentType: "application/json"
@@ -64,5 +80,9 @@ function loginUser(userObject) {
 
 function logoutUser() {
 	window.localStorage.setItem('token', null);
-	window.location.href = "../index.html";
+  if (window.location.pathname === "/html/dashboard.html") {
+    window.location.assign("../index.html");
+  } else {
+    location.reload();
+  }
 }

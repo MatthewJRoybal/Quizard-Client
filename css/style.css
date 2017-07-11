@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto:900");
-@import url("https://fonts.googleapis.com/css?family=Bungee|Creepster|Julee|Lakki+Reddy|Mogra|Shadows+Into+Light");
 @font-face {
   font-family: 'wizard-magic';
   src: url("../../fonts/wizard-magic.ttf");
@@ -10,9 +9,6 @@
   src: url("../../fonts/witch-magic.ttf");
   font-weight: normal;
   font-style: normal; }
-html {
-  font-size: 1.5; }
-
 html,
 body {
   min-height: 100%;
@@ -20,60 +16,36 @@ body {
   margin: 0;
   padding: 0; }
 
+body {
+  background: #333;
+  font-size: 1.5; }
+
 body > * {
   font-family: 'Roboto', sans-serif; }
-
-body {
-  background: #333; }
 
 .hidden {
   display: none; }
 
 .btn {
-  background: #b64ce0;
-  background: -webkit-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  background: -moz-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  background: -ms-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  background: -o-linear-gradient(top, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  background: linear-gradient(to bottom, rgba(185, 5, 210, 0.3), rgba(75, 5, 180, 0.3));
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
   border-radius: 10px;
   border: solid #4b2657 1px;
-  -webkit-box-shadow: 0.5px 0.5px 3px #ab83ab;
-  -moz-box-shadow: 0.5px 0.5px 3px #ab83ab;
-  box-shadow: 0.5px 0.5px 3px #ab83ab;
+  box-shadow: 2px 2px 4px #333;
   color: #FFF;
-  font-family: "wizard-magic";
   font-size: 24px;
   text-decoration: none;
   padding: 5px 15px; }
 
-.btn a {
-  color: #FFF;
-  font-family: "wizard-magic";
-  text-decoration: none; }
+.btn {
+  background: #b64ce0;
+  background: -webkit-linear-gradient(top, #B905D2, #62278d);
+  background: -moz-linear-gradient(top, #B905D2, #62278d);
+  background: -ms-linear-gradient(top, #B905D2, #62278d);
+  background: -o-linear-gradient(top, #B905D2, #62278d);
+  background: linear-gradient(to bottom, #B905D2, #62278d); }
 
 .btn:hover {
-  background: #d645d6;
-  background: -webkit-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: -moz-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: -ms-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: -o-linear-gradient(top, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  background: linear-gradient(to bottom, rgba(200, 5, 225, 0.6), rgba(60, 5, 97, 0.6));
-  text-decoration: none; }
-
-.btn-success {
-  background: #b64ce0; }
-
-.btn-success:hover {
-  background: darkgreen; }
-
-.btn-cancel {
-  background: #d645d6; }
-
-.btn-cancel:hover {
-  background: darkred; }
+  box-shadow: 2px 2px 4px #4B05B4;
+  color: #DDD; }
 
 label {
   font-weight: 600; }
@@ -95,11 +67,14 @@ select {
 /*
  * Navigation
  */
+header {
+  position: relative; }
+
 #nav-logo {
+  z-index: 10;
   position: absolute;
   top: 0;
-  left: 0;
-  display: inline-block; }
+  left: 0; }
 
 #nav-logo img {
   width: 156px;
@@ -125,9 +100,9 @@ select {
 
 #js-nav-btn button {
   background-color: transparent;
-  border: 1px solid #2fb89a;
+  border: 1px solid #B905D2;
   border-radius: 4px;
-  color: #2fb89a;
+  color: #B905D2;
   font-size: 1.5em; }
 
 nav#js-nav-menu ul {
@@ -218,7 +193,8 @@ nav#js-nav-menu span.fa {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; }
+  overflow: auto;
+  font-family: 'Merienda One', cursive; }
 
 .container-login {
   height: 100%;
@@ -236,17 +212,25 @@ nav#js-nav-menu span.fa {
   width: 50%;
   list-style: none;
   text-align: center;
-  background-color: #2fb89a; }
+  background-color: #B905D2;
+  color: #FFF; }
+#tabs li:hover {
+  background-color: #62278d;
+  color: #FFF; }
 #tabs a {
   display: block;
   padding: 15px 0;
   color: #FFF;
   text-decoration: none;
   font-size: 18px;
-  text-transform: capitalize;
-  font-family: sans-serif; }
+  font-weight: 700;
+  letter-spacing: 1px; }
 #tabs .active {
-  background-color: #62278d; }
+  background-color: #DDD;
+  color: #62278d; }
+#tabs .active:hover {
+  background-color: #62278d;
+  color: #FFF; }
 #tabs .container-input {
   padding: 15px; }
 #tabs select,
@@ -292,7 +276,7 @@ nav#js-nav-menu span.fa {
   margin: 0;
   padding: 20px 40px;
   box-sizing: border-box;
-  background-color: #2fb89a;
+  background-color: #B905D2;
   font-size: 22px;
   color: #FFF; }
 
@@ -330,7 +314,7 @@ nav#js-nav-menu span.fa {
   -webkit-transition: all 0.25s linear; }
 
 #quiz-start ul li:hover label {
-  color: #2fb89a; }
+  color: #B905D2; }
 
 #quiz-start ul li .check {
   display: block;
@@ -346,7 +330,7 @@ nav#js-nav-menu span.fa {
   -webkit-transition: border .25s linear; }
 
 #quiz-start ul li:hover .check {
-  border: 5px solid #2fb89a; }
+  border: 5px solid #B905D2; }
 
 #quiz-start ul li .check::before {
   display: block;
@@ -362,13 +346,13 @@ nav#js-nav-menu span.fa {
   -webkit-transition: background 0.25s linear; }
 
 #quiz-start input[type=checkbox]:checked ~ .check {
-  border: 5px solid #2fb89a; }
+  border: 5px solid #B905D2; }
 
 #quiz-start input[type=checkbox]:checked ~ .check::before {
-  background: #2fb89a; }
+  background: #B905D2; }
 
 #quiz-start input[type=checkbox]:checked ~ label {
-  color: #2fb89a; }
+  color: #B905D2; }
 
 .btn-quiz {
   margin-top: 30px;
@@ -396,7 +380,7 @@ nav#js-nav-menu span.fa {
   margin: 0;
   padding: 20px 40px;
   box-sizing: border-box;
-  background-color: #2fb89a;
+  background-color: #B905D2;
   font-size: 22px;
   color: #FFF; }
 
@@ -434,7 +418,7 @@ nav#js-nav-menu span.fa {
   -webkit-transition: all 0.25s linear; }
 
 #quiz ul li:hover label {
-  color: #2fb89a; }
+  color: #B905D2; }
 
 #quiz ul li .check {
   display: block;
@@ -450,7 +434,7 @@ nav#js-nav-menu span.fa {
   -webkit-transition: border .25s linear; }
 
 #quiz ul li:hover .check {
-  border: 5px solid #2fb89a; }
+  border: 5px solid #B905D2; }
 
 #quiz ul li .check::before {
   display: block;
@@ -466,13 +450,13 @@ nav#js-nav-menu span.fa {
   -webkit-transition: background 0.25s linear; }
 
 #quiz input[type=radio]:checked ~ .check {
-  border: 5px solid #2fb89a; }
+  border: 5px solid #B905D2; }
 
 #quiz input[type=radio]:checked ~ .check::before {
-  background: #2fb89a; }
+  background: #B905D2; }
 
 #quiz input[type=radio]:checked ~ label {
-  color: #2fb89a; }
+  color: #B905D2; }
 
 /***************************************
  ************   QUIZ END   *************
@@ -490,6 +474,7 @@ main h1 {
   margin: 0; }
 
 .splash {
+  position: relative;
   height: 100%;
   margin: 0;
   padding: 0; }
@@ -497,32 +482,27 @@ main h1 {
 .splash-overlay {
   height: 100%;
   margin: 0;
-  padding: 0;
-  background: rgba(200, 200, 200, 0.4); }
+  padding: 0; }
 
 .splash-content {
   position: absolute;
   top: 50%;
   left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  /* IE 9 */
+  -webkit-transform: translate(-50%, -50%);
+  /* Safari */
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: auto;
   text-align: center;
   font-family: "Merienda One", cursive;
   letter-spacing: 3px;
   color: #000;
-  text-shadow: 1px 1px 2px #B905D2; }
+  font-size: 3.5em;
+  text-shadow: -2px -2px 4px #62278d, 2px 2px 4px #B905D2; }
 
 .splash-content span {
   display: block; }
-
-.splash-content .sc-1 {
-  font-size: 60px; }
-
-.splash-content .sc-2 {
-  font-size: 60px; }
-
-.splash-content .sc-3 {
-  font-size: 54px; }
 
 .content {
   padding: 15px;
@@ -537,25 +517,144 @@ main h1 {
   margin-bottom: 10px;
   padding: 10px; }
 
-@media all and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .splash {
-    position: relative;
     height: calc(100% - 300px); } }
+/*********************************
+ ***********   START   ***********
+ *********************************/
 #start .splash {
   background: url("../images/castle-knight.jpg") no-repeat top center;
   background-size: cover; }
+  #start .splash .splash-content {
+    color: #170019; }
+  @media only screen and (max-width: 749px) and (orientation: landscape) {
+    #start .splash .splash-content {
+      left: 10%;
+      -ms-transform: translate(-10%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-10%, -50%);
+      /* Safari */
+      transform: translate(-10%, -50%);
+      text-align: left; }
+    #start .splash .sc-2 {
+      padding-left: 0.70em; } }
+  @media only screen and (min-width: 450px) and (max-width: 1024px) and (orientation: portrait) {
+    #start .splash .splash-content {
+      left: 10%;
+      -ms-transform: translate(-10%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-10%, -50%);
+      /* Safari */
+      transform: translate(-10%, -50%);
+      text-align: left;
+      font-size: 4.5em; }
+    #start .splash .sc-2 {
+      padding-left: 0.70em; } }
+  @media only screen and (min-width: 750px) and (orientation: landscape) {
+    #start .splash .splash-content {
+      top: 35%;
+      left: 12%;
+      -ms-transform: translate(-12%, -35%);
+      /* IE 9 */
+      -webkit-transform: translate(-12%, -35%);
+      /* Safari */
+      transform: translate(-12%, -35%);
+      text-align: left;
+      font-size: 6em; }
+    #start .splash .sc-2 {
+      padding-left: 0.70em; } }
 
+/*********************************
+ ***********   ABOUT   ***********
+ *********************************/
 #about .splash {
-  background: url("../images/castle-hall.jpg") no-repeat top center;
+  background: url("../images/lighted-floor.jpg") no-repeat center center;
   background-size: cover; }
+  #about .splash .splash-content {
+    text-shadow: -2px -2px 4px #C1DD4D, 2px 2px 4px #6FD800; }
+  @media only screen and (min-width: 768px) {
+    #about .splash .splash-content {
+      font-size: 4.5em; } }
 
+/*********************************
+ **********   CONTACT   **********
+ *********************************/
 #contact .splash {
   background: url("../images/magical-forest.jpg") no-repeat center center;
   background-size: cover; }
+  #contact .splash .splash-content {
+    text-shadow: -2px -2px 4px #C1DD4D, 2px 2px 4px #6FD800; }
+  @media only screen and (min-width: 768px) {
+    #contact .splash .splash-content {
+      font-size: 4.5em; } }
+  @media only screen and (min-width: 960px) and (orientation: landscape) {
+    #contact .splash .splash-content {
+      top: 35%;
+      left: 12%;
+      -ms-transform: translate(-12%, -35%);
+      /* IE 9 */
+      -webkit-transform: translate(-12%, -35%);
+      /* Safari */
+      transform: translate(-12%, -35%);
+      text-align: left;
+      font-size: 5em; }
+    #contact .splash .sc-2 {
+      padding-left: 2em; }
+    #contact .splash .sc-3 {
+      padding-left: 0.75em; } }
 
+/*********************************
+ ********   CONTRIBUTE   *********
+ *********************************/
 #contribute .splash {
   background: url("../images/witch.jpg") no-repeat center center;
   background-size: cover; }
+  #contribute .splash .splash-content {
+    top: auto;
+    right: auto;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    font-size: 3em; }
+  @media only screen and (max-width: 730px) and (orientation: landscape) {
+    #contribute .splash .splash-content {
+      top: 50%;
+      left: 3%;
+      right: auto;
+      bottom: auto;
+      -ms-transform: translate(-3%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-3%, -50%);
+      /* Safari */
+      transform: translate(-3%, -50%);
+      text-align: left; }
+    #contribute .splash .sc-2 {
+      padding-left: 1.5em; }
+    #contribute .splash .sc-3 {
+      padding-left: 1em; } }
+  @media only screen and (min-width: 731px) and (orientation: landscape) {
+    #contribute .splash .splash-content {
+      top: 50%;
+      left: auto;
+      right: 3%;
+      bottom: auto;
+      -ms-transform: translate(-3%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-3%, -50%);
+      /* Safari */
+      transform: translate(-3%, -50%);
+      text-align: right; }
+    #contribute .splash .sc-1 {
+      padding-right: 2.5em; }
+    #contribute .splash .sc-2 {
+      padding-right: 3em; } }
+  @media only screen and (min-width: 960px) and (max-width: 1199px) {
+    #contribute .splash .splash-content {
+      font-size: 4em; } }
+  @media only screen and (min-width: 1200px) {
+    #contribute .splash .splash-content {
+      font-size: 5em; } }
 
 @keyframes ls-1 {
   0% {
@@ -616,7 +715,7 @@ main h1 {
   #index #landing-splash span {
     display: block; }
   #index #landing-splash .ls {
-    text-shadow: 2px 2px 4px #B905D2;
+    text-shadow: -2px -2px 4px #62278d, 2px 2px 4px #B905D2;
     font-family: "Merienda One", cursive; }
   #index #landing-splash #ls-1 {
     font-size: 1.75em;
@@ -624,7 +723,7 @@ main h1 {
   #index #landing-splash #ls-2 {
     font-size: 2em; }
   #index #landing-splash #ls-3 {
-    font-size: 3em; }
+    font-size: 4em; }
   @media only screen and (min-width: 400px) and (max-width: 600px) {
     #index #landing-splash #ls-1 {
       font-size: 2.5em; }
@@ -632,23 +731,23 @@ main h1 {
       font-size: 2.75em;
       padding-bottom: 0.15em; }
     #index #landing-splash #ls-3 {
-      font-size: 3.5em; } }
+      font-size: 5em; } }
   @media only screen and (min-width: 601px) and (max-width: 900px) {
     #index #landing-splash #ls-1 {
       font-size: 3.5em; }
     #index #landing-splash #ls-2 {
-      font-size: 4.75em;
+      font-size: 4.00em;
       padding-bottom: 0.15em; }
     #index #landing-splash #ls-3 {
-      font-size: 6.5em; } }
+      font-size: 6.75em; } }
   @media only screen and (min-width: 901px) {
     #index #landing-splash #ls-1 {
       font-size: 4.5em; }
     #index #landing-splash #ls-2 {
-      font-size: 5.75em;
+      font-size: 5.00em;
       padding-bottom: 0.15em; }
     #index #landing-splash #ls-3 {
-      font-size: 7.5em; } }
+      font-size: 7.75em; } }
 
 @media only screen and (min-width: 768px) {
   #index main {
