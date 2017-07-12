@@ -2,7 +2,7 @@ main {
   height: 100%;
   margin: 0;
   padding: 0;
-  color: $color-white;
+  color: $color-dark;
 }
 
 main h1 {
@@ -46,7 +46,7 @@ main h1 {
 
 .content {
   padding: 15px;
-  color: $color-white;
+  color: $color-dark;
 }
 
 .textarea {
@@ -63,5 +63,17 @@ main h1 {
   
   .splash {
     height: calc(100% - 300px);
+  }
+  
+  .introduction {
+    height: 200px;
+    padding: 14px;
+    background-color: $color-fade;
+    color: $color-white;
+  }
+  
+  .introduction h1 {
+    font-family: 'Merienda One', cursive;
+    text-align: center;
   }
 }

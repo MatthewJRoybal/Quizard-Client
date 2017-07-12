@@ -1,19 +1,24 @@
-label {
-  font-weight: 600;
-}
+#contribute,
+#contact,
+#login {
+  
+  label {
+    font-weight: 600;
+  }
 
-label,
-input,
-select {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  label,
+  input,
+  select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-input, 
-select {
-  width: 100%;
-  padding: 10px;
-  display: inline-block;
-  border: 1px solid $color-light;
-  box-sizing: border-box;
+  input, 
+  select {
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid $color-light;
+    box-sizing: border-box;
+  }
 }

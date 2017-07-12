@@ -2,10 +2,15 @@
   border-radius: 10px;
 	border: solid #4b2657 1px;
   box-shadow: 2px 2px 4px $color-fade;
-  color: #FFF;
-	font-size: 24px;
+  color: $color-white;
+	font-size: 1.5em;
 	text-decoration: none;
 	padding: 5px 15px;
+}
+
+.btn a {
+  color: $color-white;
+  text-decoration: none;
 }
   
 .btn {

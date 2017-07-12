@@ -1,20 +1,27 @@
-
 function quiz() {
+  $('#quizard').hide();
   $('main').on('click', '#start-quiz', function(event) {
-		event.preventDefault();
-		getQuestions().then(function(questions) {
-			getQuotes(questions.length + 1).then(function(quotes) {
-				$('#quiz-results, #quiz-start').addClass('hidden');
-				var Quizard = new Quiz($('#quiz'), questions, quotes);
-  			Quizard.cycleQuiz();
-				Quizard.done(function(quizState) {
-          postResults(quizState).then(function() {
-//             3. Push results array to server
+    var choice = $('.quiz-options').find("input:checked").val();
+    if (choice == undefined) {
+      alert("You must choose a minimum of one category to move forward");
+      return false;
+    } else {
+      event.preventDefault();
+      getQuestions().then(function(questions) {
+        getQuotes(questions.length + 1).then(function(quotes) {
+          $('#quizard').show();
+          $('#quiz-start').hide();
+          var Quizard = new Quiz($('#test'), questions, quotes);
+          Quizard.cycleQuiz();
+          Quizard.done(function(quizState) {
+            postResults(quizState).then(function() {
+  //             3. Push results array to server
+              });
             });
           });
         });
-		  });
-		});
+      }
+    });
 }
 
 /*************************************************
@@ -68,6 +75,7 @@ function cycleQuestions() {
     this.container.html(questionHTML);
     $('#progress').html(templates.trackProgressHTML.call(this));
     $('#score').html(templates.trackScoreHTML.call(this));
+    
 	} else {
 		$('#score').html(templates.trackScoreHTML.call(this));
 		var endQuote = this.quoteFetch();
@@ -119,9 +127,9 @@ function questionsShuffle(arr) {
 
 function questionsBuild(question) {
   var choices = [];
-  var HTML = [('<form class="quiz-container">' +
+  var HTML = [('<form class="quiz-form">' +
 							 '<h2 class="quiz-question">' + question.question + '</h2>' +
-							 '<ul class="quiz-choices">')];
+							 '<ul class="quiz-options">')];
 
 	for(var i = 0; i < question.options.length; i++) {
 		choices.push('<li class="quiz-option">' +
@@ -133,7 +141,7 @@ function questionsBuild(question) {
   var shuffled = this.questionsShuffle(choices).join("");
   HTML += shuffled;
 	HTML += '</ul>' +
-						'<div>' +
+						'<div class="btn-wrapper">' +
 							'<button class="btn btn-quiz grade-question-btn">Submit Choice</button>' +
 						'</div>' +
 					'</form>';

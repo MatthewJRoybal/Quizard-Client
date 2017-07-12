@@ -36,6 +36,7 @@ function getResults() {
       },
 			url: "http://localhost:8080/results/display",
 			success: function(results) {
+        console.log(results);
 				resolve(results);
 			},
 			error: function(err) {

@@ -23,12 +23,12 @@ function menus() {
  */
 
 function navUX() {
-  if (window.matchMedia('(max-width: 899px)').matches) {
+  if (window.matchMedia('(max-width: 767px)').matches) {
     $('#js-nav-menu').hide();
     $('#js-nav-btn').show();
     $('#landing').show();
 
-  } else if (window.matchMedia('(min-width: 900px)').matches) {
+  } else if (window.matchMedia('(min-width: 768px)').matches) {
     $('#js-nav-menu').show();
     $('#js-nav-btn').hide();
   }

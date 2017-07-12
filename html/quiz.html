@@ -8,43 +8,36 @@
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body id="quiz-page">
+<body id="quiz">
   
   <header class="js-anon-auth"></header>
   
   <main>
-		<div id="quiz-scoreboard">
-			<div id="progress">
-					
-			</div>
-			<div id="score">
-					
-			</div>
-		</div>
-		
-		<div id="quiz"></div>
-		<div id="quotes"></div>
+    <div id="quizard">
+      <div id="scoreboard">
+        <div id="progress"></div>
+        <div id="score"></div>
+      </div>
+      <div id="test"></div>
+<!--      <div id="quotes"></div>-->
+    </div>
+    <div id="quiz-start">
+      <form class="quiz-form">
+        <h2 class="quiz-question">Select the types of quiz questions you'd like to practice:</h2>
 
-		<div id="quiz-start">
-			<form id="quiz-start-form">
-				<h2 class="quiz-question">Select the types of quiz questions you'd like to practice:</h2>
-				
-				<ul class="quiz-choices">
-					<li class="quiz-option"><input type="checkbox" name="html" id="html" value="true"><label for="html">HTML</label><div class="check"><div class="inside"></div></div></li>
-					<li class="quiz-option"><input type="checkbox" name="css" id="css" value="true"><label for="css">CSS</label><div class="check"><div class="inside"></div></div></li>
-					<li class="quiz-option"><input type="checkbox" name="javascript" id="javascript" value="true"><label for="javascript">JavaScript</label><div class="check"><div class="inside"></div></div></li>
-					<li class="quiz-option"><input type="checkbox" name="nodejs" id="nodejs" value="true"><label for="nodejs">Node JS</label><div class="check"><div class="inside"></div></div></li>
-					<li class="quiz-option"><input type="checkbox" name="git" id="git" value="true"><label for="git">Git</label><div class="check"><div class="inside"></div></div></li>
-				</ul>
-				<div>
-					<button type="button" id="start-quiz" class="btn btn-quiz">Start Quiz</button>
-				</div>
-				
-			</form>
-		</div>
-					
+        <ul class="quiz-options">
+          <li class="quiz-option"><input type="checkbox" name="html" id="html" value="true"><label for="html">HTML</label><div class="check"><div class="inside"></div></div></li>
+          <li class="quiz-option"><input type="checkbox" name="css" id="css" value="true"><label for="css">CSS</label><div class="check"><div class="inside"></div></div></li>
+          <li class="quiz-option"><input type="checkbox" name="javascript" id="javascript" value="true"><label for="javascript">JavaScript</label><div class="check"><div class="inside"></div></div></li>
+          <li class="quiz-option"><input type="checkbox" name="nodejs" id="nodejs" value="true"><label for="nodejs">Node JS</label><div class="check"><div class="inside"></div></div></li>
+          <li class="quiz-option"><input type="checkbox" name="git" id="git" value="true"><label for="git">Git</label><div class="check"><div class="inside"></div></div></li>
+        </ul>
+      </form>
+        <div class="btn-wrapper">
+          <button type="button" id="start-quiz" class="btn btn-quiz">Start Quiz</button>
+        </div>
+    </div>
 	</main>
-	
 	
 	<section id="login" class="hidden">
 	
@@ -101,5 +94,6 @@
   <script src="../js/services/User.services.js"></script>
   <script src="../js/services/menu.services.js"></script>
   <script src="../js/app.js"></script>
+  
 </body>
 </html>

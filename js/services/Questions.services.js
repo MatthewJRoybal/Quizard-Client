@@ -54,7 +54,8 @@ function makeQueryString(categoriesObj) {
  ********************************************/
 
 function getQuestions() {
-	var categories = $('#quiz-start-form').serializeArray();
+	var categories = $('.quiz-form').serializeArray();
+  console.log(categories);
 	var categoriesObj = createFormObject(categories);
 	var queryString = makeQueryString(categoriesObj);
 	return new Promise(function(resolve, reject) {

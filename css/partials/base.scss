@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto:900');
+@import url('https://fonts.googleapis.com/css?family=Merienda+One|Merienda:700|Open+Sans|Roboto');
 
 //font-family: 'Roboto', sans-serif;
 //font-family: 'Open Sans', sans-serif;
@@ -48,8 +48,16 @@ body {
 }
 
 body {
-  background: $color-fade;
+  background: $color-gray;
   font-size: $font-line-height;
+}
+
+header {
+  background-color: $color-fade;
+}
+
+#index header {
+  background-color: transparent;
 }
 
 body > * {
