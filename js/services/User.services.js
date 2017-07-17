@@ -67,7 +67,7 @@ function loginUser(userObject) {
 			url: 'http://localhost:8080/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
-        window.location.href = "../html/dashboard.html";
+        window.location.href = "../html/results.html";
 				window.localStorage.setItem('token', user.token);
 			},
 			contentType: "application/json"
@@ -80,7 +80,7 @@ function loginUser(userObject) {
 
 function logoutUser() {
 	window.localStorage.setItem('token', null);
-  if (window.location.pathname === "/html/dashboard.html") {
+  if (window.location.pathname === "/html/results.html") {
     window.location.assign("../index.html");
   } else {
     location.reload();

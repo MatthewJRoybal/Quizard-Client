@@ -1,8 +1,10 @@
 const config = {
 	local: {
-		api: 'http://localhost:8080'
+		api: 'http://127.0.01:55632'
 	},
 	production: {
-		api: 'urlhere'
+		api: 'http://www.quizard.me'
 	}
 }
+
+const environment = 'local';

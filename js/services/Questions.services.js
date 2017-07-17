@@ -46,7 +46,7 @@ function makeQueryString(categoriesObj) {
 		queryString += (prop + "=" + categoriesObj[prop] + "&");
 	}
 	queryString = queryString.substring(0, queryString.length - 1);
-	return ('http://localhost:8080/questions?' + queryString);	
+	return ('http://localhost:8080/questions?' + queryString);	// config[environment].api
 }
 
 /********************************************
@@ -55,7 +55,6 @@ function makeQueryString(categoriesObj) {
 
 function getQuestions() {
 	var categories = $('.quiz-form').serializeArray();
-  console.log(categories);
 	var categoriesObj = createFormObject(categories);
 	var queryString = makeQueryString(categoriesObj);
 	return new Promise(function(resolve, reject) {
@@ -72,7 +71,7 @@ function getQuestions() {
 				reject(err);
 			},
 			contentType: "application/json"
-		});	
+		});
 	}).catch(function(err) {
 		console.log(err);
 	})

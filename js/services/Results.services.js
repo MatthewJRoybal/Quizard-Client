@@ -1,9 +1,8 @@
 function results() {
-  if($('#dashboard').length > 0) {
+  if($('#results').length > 0) {
     getResults()
     .then(function(results) {
       displayResults(results);
-      console.log("You got results");
     }).catch(function() {
       // If there's an error, how am I going to show the error
       // Call a function that redirects so its reusable
@@ -15,12 +14,49 @@ function results() {
  ************   DISPLAY RESULTS   ***********
  ********************************************/
 
+function dateBreakdown(d) {
+  var date, year, month, day, hours, minutes;
+  date = new Date(d);
+  year = date.getFullYear();
+  month = date.getMonth()+1;
+  day = date.getDate();
+  hours = date.getHours();
+  minutes = date.getMinutes();
+
+  if (day < 10) {
+    day = '0' + dt;
+  }
+  if (month < 10) {
+    month = '0' + month;
+  }
+  
+  if (minutes < 10) {
+      minutes = '0' + minutes;
+  }
+
+  return (year + '-' + month + '-' + day + ' @ ' + hours + ':' + minutes);
+}
+
 function displayResults(resultsObj) {
-  var HTML;
-  
-  
-  
-  return $('#results').append(HTML);
+  // Loop through the array of objects
+  // Get each object date and score
+  // Build a table with dates and scores
+  var theDate;
+  var HTML = (
+			'<div class="header-group">' +
+				'<div class="header-cell date">Date</div>' +
+				'<div class="header-cell score">Score</div>' +
+			'</div>');
+
+  resultsObj.forEach((obj) => {
+    theDate = dateBreakdown(obj.date);
+    HTML += (
+      '<div class="row-group">' +
+        '<div class="row-cell">' + theDate + '</div>' +
+        '<div class="row-cell">' + obj.score + '</div>' +
+      '</div>'); 
+  }) 
+  return $('#results .display').append(HTML);
 }
 
 /********************************************
@@ -36,7 +72,6 @@ function getResults() {
       },
 			url: "http://localhost:8080/results/display",
 			success: function(results) {
-        console.log(results);
 				resolve(results);
 			},
 			error: function(err) {

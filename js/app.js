@@ -1,4 +1,14 @@
 $(document).ready(function() {
+  var check = localStorage.getItem('token');
+  
+  if (check) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+  
+  console.log(window.location.href);
+  
   // See services/Menu.services
   menus();
   
@@ -16,4 +26,6 @@ $(document).ready(function() {
   
   // See services/Results.services
   results();
+  
+  
 });

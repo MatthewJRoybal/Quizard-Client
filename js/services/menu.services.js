@@ -58,6 +58,35 @@ function navUX() {
 
 function navSessions() {
   var token = window.localStorage.getItem('token');
+  var links = {
+    index: 'index',
+    start: 'start',
+    contact: 'contact',
+    contribute: 'contribute',
+    results: 'results',
+    quiz: 'quiz',
+    contribute: 'contribute',
+    login: '<a class="js-toggle-login"><span class="fa fa-user"></span> Sign In/Up</a>',
+    logout: '<a class="js-logout"><span class="fa fa-user"></span> Sign Out</a>'
+  };
+  
+  // Build a anon menu at root
+  // Build a anon menu down one level
+  // Build a auth menu at root
+  // Build a auth menu down one level
+  
+  // 1. Determine where in the directory the user is at
+  // 2. Determine if the used is logged in
+  // 2. Build a menu based on position & sessions
+  
+  
+//	window.localStorage.setItem('token', null);
+//  if (window.location.pathname === "/html/dashboard.html") {
+//    window.location.assign("../index.html");
+//  } else {
+//    location.reload();
+//  }
+  
   
   var anonymous = (
     '<div id="nav-logo">' +
@@ -78,11 +107,11 @@ function navSessions() {
   
   var authenticated = (
     '<div id="nav-logo">' +
-        '<a href="dashboard.html"><img src="../images/logo.png" alt="Quizard Logo"></a>' +
+        '<a href="results.html"><img src="../images/logo.png" alt="Quizard Logo"></a>' +
       '</div>' +
       '<nav id="js-nav-menu" role="navigation">' +
         '<ul>' +
-          '<li><a href="dashboard.html"><span class="fa fa-pencil"></span> Dashboard</a></li>' +
+          '<li><a href="results.html"><span class="fa fa-pencil"></span> Results</a></li>' +
           '<li><a href="quiz.html"><span class="fa fa-bolt"></span> Quiz</a></li>' +
           '<li><a href="contribute.html"><span class="fa fa-comment"></span> Contribute</a></li>' +
           '<li><a class="js-logout"><span class="fa fa-user"></span> Sign Out</a></li>' +
