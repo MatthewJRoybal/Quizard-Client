@@ -9,17 +9,17 @@ function users() {
 		var newUser = createUserObject(userArray);
 		createUser(newUser);
 	});
-  
-  
-  
+
+
+
 	$('#signIn').submit(function(event) {
 		event.preventDefault();
 		var userCredentials = $(this).serializeArray();
 		var returningUser = createUserObject(userCredentials);
 		loginUser(returningUser);
 	});
-  
-  
+
+
 	$('body').on('click', '.js-logout', function(event) {
 		event.preventDefault();
 		logoutUser();
@@ -48,7 +48,7 @@ function createUserObject(userArray) {
 function createUser(userObject) {
 	$.ajax({
 			type: "POST",
-			url: 'http://localhost:8080/user/create',
+			url: environment + '/user/create',
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				loginUser(userObject);
@@ -64,14 +64,14 @@ function createUser(userObject) {
 function loginUser(userObject) {
 	$.ajax({
 			type: "POST",
-			url: 'http://localhost:8080/user/login',
+			url: environment + '/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
         window.location.href = "../html/results.html";
 				window.localStorage.setItem('token', user.token);
 			},
 			contentType: "application/json"
-		});	
+		});
 }
 
 /********************************************

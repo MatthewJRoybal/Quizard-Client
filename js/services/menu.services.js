@@ -39,7 +39,7 @@ function navUX() {
     $('#js-nav-menu').show();
     $('#js-hamburger').hide();
     $('#js-cross').show();
-  }); 
+  });
   $('#js-cross').on('click', function() {
     $('#js-nav-menu').hide();
     $('#landing').show();
@@ -69,25 +69,25 @@ function navSessions() {
     login: '<a class="js-toggle-login"><span class="fa fa-user"></span> Sign In/Up</a>',
     logout: '<a class="js-logout"><span class="fa fa-user"></span> Sign Out</a>'
   };
-  
+
   // Build a anon menu at root
   // Build a anon menu down one level
   // Build a auth menu at root
   // Build a auth menu down one level
-  
+
   // 1. Determine where in the directory the user is at
   // 2. Determine if the used is logged in
   // 2. Build a menu based on position & sessions
-  
-  
+
+
 //	window.localStorage.setItem('token', null);
 //  if (window.location.pathname === "/html/dashboard.html") {
 //    window.location.assign("../index.html");
 //  } else {
 //    location.reload();
 //  }
-  
-  
+
+
   var anonymous = (
     '<div id="nav-logo">' +
       '<a href="../index.html"><img src="../images/logo.png" alt="Quizard Logo"></a>' +
@@ -104,7 +104,7 @@ function navSessions() {
       '<button id="js-hamburger" class="fa fa-bars"></button>' +
       '<button id="js-cross" class="fa fa-close"></button>' +
     '</div>');
-  
+
   var authenticated = (
     '<div id="nav-logo">' +
         '<a href="results.html"><img src="../images/logo.png" alt="Quizard Logo"></a>' +

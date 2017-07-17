@@ -22,7 +22,7 @@ function getQuotes(count) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
-			url: 'http://localhost:8080/quotes?count=' + count,
+			url: environment + '/quotes?count=' + count,
 			success: function(quotes) {
 				resolve(quotes);
 			},
@@ -30,7 +30,7 @@ function getQuotes(count) {
 				reject(err);
 			},
 			contentType: "application/json"
-		});	
+		});
 	}).catch(function(err) {
 		console.log(err);
 	})
@@ -44,7 +44,7 @@ function contributeQuote(quoteObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8080/quotes",
+			url: environment + '/quotes',
 			data: JSON.stringify(quoteObj),
 			contentType: "application/json",
 			success: function(quote) {

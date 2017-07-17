@@ -46,7 +46,7 @@ function makeQueryString(categoriesObj) {
 		queryString += (prop + "=" + categoriesObj[prop] + "&");
 	}
 	queryString = queryString.substring(0, queryString.length - 1);
-	return ('http://localhost:8080/questions?' + queryString);	// config[environment].api
+	return (environment + '/questions?' + queryString);	// config[environment].api
 }
 
 /********************************************
@@ -85,7 +85,7 @@ function contributeQuestion(questionObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8080/questions",
+			url: environment + '/questions',
 			data: JSON.stringify(questionObj),
 			contentType: "application/json",
 			success: function(question) {

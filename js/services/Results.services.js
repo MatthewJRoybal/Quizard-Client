@@ -29,7 +29,7 @@ function dateBreakdown(d) {
   if (month < 10) {
     month = '0' + month;
   }
-  
+
   if (minutes < 10) {
       minutes = '0' + minutes;
   }
@@ -54,8 +54,8 @@ function displayResults(resultsObj) {
       '<div class="row-group">' +
         '<div class="row-cell">' + theDate + '</div>' +
         '<div class="row-cell">' + obj.score + '</div>' +
-      '</div>'); 
-  }) 
+      '</div>');
+  })
   return $('#results .display').append(HTML);
 }
 
@@ -70,7 +70,7 @@ function getResults() {
      headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
       },
-			url: "http://localhost:8080/results/display",
+			url: environment + '/results/display',
 			success: function(results) {
 				resolve(results);
 			},
@@ -78,7 +78,7 @@ function getResults() {
 				reject(err);
 			},
 			contentType: "application/json"
-		});	
+		});
 	}).catch(function(err) {
 		console.log(err);
 	})
@@ -96,7 +96,7 @@ function postResults(resultsObj) {
       headers: {
         Authorization: 'Bearer ' + window.localStorage.getItem('token')
       },
-			url: "http://localhost:8080/results",
+			url: environment + '/results',
 			data: JSON.stringify(resultsObj),
 			contentType: "application/json",
 			success: function(results) {
