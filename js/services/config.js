@@ -7,4 +7,4 @@ const config = {
 	}
 }
 
-const environment = 'local';
+const environment = 'production';
