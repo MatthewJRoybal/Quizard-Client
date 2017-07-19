@@ -67,7 +67,11 @@ function getResults() {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
-     headers: {
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
+      headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
       },
 			url: config[environment].api + '/results/display',
@@ -78,10 +82,6 @@ function getResults() {
 				reject(err);
 			},
 			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
 		});
 	}).catch(function(err) {
 		console.log(err);
@@ -97,16 +97,16 @@ function postResults(resultsObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
       headers: {
         Authorization: 'Bearer ' + window.localStorage.getItem('token')
       },
 			url: config[environment].api + '/results',
 			data: JSON.stringify(resultsObj),
 			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
 			success: function(results) {
 				resolve(results);
 			},

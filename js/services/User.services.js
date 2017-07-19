@@ -48,16 +48,16 @@ function createUserObject(userArray) {
 function createUser(userObject) {
 	$.ajax({
 			type: "POST",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
 			url: config[environment].api + '/user/create',
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				loginUser(userObject);
 			},
-			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
+			contentType: "application/json"
 		});
 }
 
@@ -68,6 +68,10 @@ function createUser(userObject) {
 function loginUser(userObject) {
 	$.ajax({
 			type: "POST",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
 			url: config[environment].api + '/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
