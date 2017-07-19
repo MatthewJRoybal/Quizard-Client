@@ -3,8 +3,8 @@ const config = {
 		api: 'http://127.0.01:55632'
 	},
 	production: {
-		api: 'https://s3-us-west-1.amazonaws.com/quizard-dev/'
+		api: 'https://quizard-me.herokuapp.com/'
 	}
 }
 
-const environment = 'https://quizard-me.herokuapp.com/';
+const environment = 'production';

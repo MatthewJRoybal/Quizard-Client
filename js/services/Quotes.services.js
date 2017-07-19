@@ -22,7 +22,7 @@ function getQuotes(count) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
-			url: environment + '/quotes?count=' + count,
+			url: config[environment].api + '/quotes?count=' + count,
 			success: function(quotes) {
 				resolve(quotes);
 			},
@@ -44,7 +44,7 @@ function contributeQuote(quoteObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: environment + '/quotes',
+			url: config[environment].api + '/quotes',
 			data: JSON.stringify(quoteObj),
 			contentType: "application/json",
 			success: function(quote) {

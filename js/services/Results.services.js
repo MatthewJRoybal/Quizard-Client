@@ -70,7 +70,7 @@ function getResults() {
      headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
       },
-			url: environment + '/results/display',
+			url: config[environment].api + '/results/display',
 			success: function(results) {
 				resolve(results);
 			},
@@ -96,7 +96,7 @@ function postResults(resultsObj) {
       headers: {
         Authorization: 'Bearer ' + window.localStorage.getItem('token')
       },
-			url: environment + '/results',
+			url: config[environment].api + '/results',
 			data: JSON.stringify(resultsObj),
 			contentType: "application/json",
 			success: function(results) {

@@ -48,7 +48,7 @@ function createUserObject(userArray) {
 function createUser(userObject) {
 	$.ajax({
 			type: "POST",
-			url: environment + '/user/create',
+			url: config[environment].api + '/user/create',
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				loginUser(userObject);
@@ -64,7 +64,7 @@ function createUser(userObject) {
 function loginUser(userObject) {
 	$.ajax({
 			type: "POST",
-			url: environment + '/user/login',
+			url: config[environment].api + '/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
         window.location.href = "../html/results.html";

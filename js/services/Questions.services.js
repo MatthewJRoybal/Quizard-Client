@@ -46,7 +46,7 @@ function makeQueryString(categoriesObj) {
 		queryString += (prop + "=" + categoriesObj[prop] + "&");
 	}
 	queryString = queryString.substring(0, queryString.length - 1);
-	return (environment + '/questions?' + queryString);	// config[environment].api
+	return (config[environment].api + '/questions?' + queryString);	// config[environment].api
 }
 
 /********************************************
