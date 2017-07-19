@@ -5,4 +5,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 sync ./ s3://quizard-dev.s3-website-us-west-1.amazonaws.com --delete
+      - aws s3 sync ./ s3://quizard-dev --region us-west-1 --delete
