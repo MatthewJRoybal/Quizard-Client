@@ -3,7 +3,7 @@ const config = {
 		api: 'http://127.0.01:27017'
 	},
 	production: {
-		api: 'https://quizard-me.herokuapp.com/'
+		api: 'https://quizard-me.herokuapp.com'
 	}
 }
 

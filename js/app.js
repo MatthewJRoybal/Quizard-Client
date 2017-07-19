@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   // See services/Quotes.services
   quotes();
+  
   // See services/Results.services
   results();
 });
