@@ -77,7 +77,11 @@ function getResults() {
 			error: function(err) {
 				reject(err);
 			},
-			contentType: "application/json"
+			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
 		});
 	}).catch(function(err) {
 		console.log(err);
@@ -99,6 +103,10 @@ function postResults(resultsObj) {
 			url: config[environment].api + '/results',
 			data: JSON.stringify(resultsObj),
 			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
 			success: function(results) {
 				resolve(results);
 			},

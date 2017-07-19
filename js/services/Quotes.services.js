@@ -29,7 +29,11 @@ function getQuotes(count) {
 			error: function(err) {
 				reject(err);
 			},
-			contentType: "application/json"
+			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
 		});
 	}).catch(function(err) {
 		console.log(err);

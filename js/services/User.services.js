@@ -53,7 +53,11 @@ function createUser(userObject) {
 			success: function(user) {
 				loginUser(userObject);
 			},
-			contentType: "application/json"
+			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
 		});
 }
 
@@ -70,7 +74,11 @@ function loginUser(userObject) {
         window.location.href = "../html/results.html";
 				window.localStorage.setItem('token', user.token);
 			},
-			contentType: "application/json"
+			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
 		});
 }
 

@@ -70,7 +70,11 @@ function getQuestions() {
 			error: function(err) {
 				reject(err);
 			},
-			contentType: "application/json"
+			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
 		});
 	}).catch(function(err) {
 		console.log(err);
@@ -88,6 +92,10 @@ function contributeQuestion(questionObj) {
 			url: environment + '/questions',
 			data: JSON.stringify(questionObj),
 			contentType: "application/json",
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
 			success: function(question) {
 				resolve(question);
 			},
