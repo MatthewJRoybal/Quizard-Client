@@ -1,0 +1,8 @@
+machine:
+  node:
+    version: 7.8.0
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync quizard-dev/_site/docs s3://quizard-dev.s3-website-us-west-1.amazonaws.com --delete

@@ -7,4 +7,4 @@ const config = {
 	}
 }
 
-const environment = 'https://s3-us-west-1.amazonaws.com/quizard-dev/';
+const environment = 'https://quizard-me.herokuapp.com/';
