@@ -48,10 +48,10 @@ function createUserObject(userArray) {
 function createUser(userObject) {
 	$.ajax({
 			type: "POST",
+      crossDomain: true,
       xhrFields: {
         withCredentials: true
       },
-      crossDomain: true,
 			url: config[environment].api + '/user/create',
 			data: JSON.stringify(userObject),
 			success: function(user) {
@@ -68,10 +68,10 @@ function createUser(userObject) {
 function loginUser(userObject) {
 	$.ajax({
 			type: "POST",
+      crossDomain: true,
       xhrFields: {
         withCredentials: true
       },
-      crossDomain: true,
 			url: config[environment].api + '/user/login',
 			data: JSON.stringify(userObject),
 			success: function(user) {
