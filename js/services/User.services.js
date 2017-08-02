@@ -78,7 +78,7 @@ function loginUser(userObject) {
         window.location.href = "../html/results.html";
 				window.localStorage.setItem('token', user.token);
 			},
-			contentType: "application/x-www-form-urlencoded" // "application/json",
+			contentType: "application/x-www-form-urlencoded", // "application/json",
       xhrFields: {
         withCredentials: true
       },
