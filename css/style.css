@@ -87,20 +87,15 @@ body > * {
 /*
  * Navigation
  */
-#nav-logo {
+header div#nav-logo {
+  display: inline-block; }
+  header div#nav-logo img {
+    width: 150px;
+    padding-left: 15px; }
+header nav#js-nav-menu {
   z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0; }
-
-#nav-logo img {
-  width: 156px;
-  padding-left: 15px; }
-
-#js-nav-menu {
-  z-index: 10;
-  display: none;
   position: fixed;
+  display: none;
   height: 100%;
   width: 100%;
   background: #62278d;
@@ -108,97 +103,80 @@ body > * {
   background: -o-linear-gradient(#62278d, #333);
   background: -moz-linear-gradient(#62278d, #333);
   background: linear-gradient(#62278d, #333); }
-
-#js-nav-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 10; }
-
-#js-nav-btn button {
-  background-color: transparent;
-  border: 1px solid #B905D2;
-  border-radius: 4px;
-  color: #B905D2;
-  font-size: 1.5em; }
-
-nav#js-nav-menu ul {
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  margin: 55px 0 0 0;
-  padding: 0; }
-
-nav#js-nav-menu ul li {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  vertical-align: middle;
-  border-bottom: 1px solid #B905D2; }
-
-nav#js-nav-menu ul li a {
-  display: block;
-  padding: 15px 25px;
-  color: #FFF;
-  text-decoration: none;
-  font-size: 28px;
-  letter-spacing: 1px; }
-
-nav#js-nav-menu ul li a:hover {
-  background-color: #B905D2; }
-
-nav#js-nav-menu span.fa {
-  width: 30px; }
+  header nav#js-nav-menu ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 55px 0 0 0;
+    padding: 0; }
+    header nav#js-nav-menu ul li {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      vertical-align: middle;
+      border-bottom: 1px solid #B905D2; }
+      header nav#js-nav-menu ul li a {
+        display: block;
+        padding: 15px 25px;
+        color: #FFF;
+        text-decoration: none;
+        font-size: 28px;
+        letter-spacing: 1px; }
+  header nav#js-nav-menu ul li a:hover {
+    background-color: #B905D2; }
+  header nav#js-nav-menu span.fa {
+    width: 30px; }
+header div#js-nav-btn {
+  float: right;
+  padding: 20.5px; }
+  header div#js-nav-btn button {
+    background-color: transparent;
+    border: 1px solid #B905D2;
+    border-radius: 4px;
+    color: #B905D2;
+    font-size: 1.5em; }
 
 @media all and (min-width: 768px) {
-  #nav-logo {
+  header #nav-logo {
     position: static;
     display: inline-block; }
-
-  nav#js-nav-menu {
+  header nav#js-nav-menu {
     position: static;
     display: inline-block;
     height: 72px;
     width: auto;
     float: right;
     background: transparent; }
-
-  nav#js-nav-menu ul {
+  header nav#js-nav-menu ul {
     width: auto;
     list-style: none;
     margin: 0;
     padding: 0;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0; }
-
-  nav#js-nav-menu ul li {
+  header nav#js-nav-menu ul li {
     display: inline-block;
     width: auto;
     box-sizing: border-box;
     vertical-align: none;
     border-bottom: none; }
-
-  nav#js-nav-menu ul li a {
+  header nav#js-nav-menu ul li a {
     display: block;
-    padding: 25px 25px;
+    padding: 23.5px 23.5px;
     color: #FFF;
     text-decoration: none;
     font-size: 18px; }
-
-  #landing nav#js-nav-menu ul li a {
+  header #landing nav#js-nav-menu ul li a {
     font-size: 18px;
     color: #FFF;
     font-weight: bold; }
-
-  #landing nav#js-nav-menu ul li a:hover {
+  header #landing nav#js-nav-menu ul li a:hover {
     color: #FFF;
     font-weight: bold; }
-
-  nav#js-nav-menu ul li a:hover {
+  header nav#js-nav-menu ul li a:hover {
     color: #FFF;
     background-color: #62278d; }
-
-  nav#js-nav-menu span.fa {
+  header nav#js-nav-menu span.fa {
     display: none; } }
 /***************************************
  ***********   LOGIN FORM   ************
@@ -344,7 +322,7 @@ main h1 {
  ***********   START   ***********
  *********************************/
 #start .splash {
-  background: url("../images/castle-knight.jpg") no-repeat top center;
+  background: url("../images/knight.jpg") no-repeat top center;
   background-size: cover; }
   #start .splash .splash-content {
     color: #170019; }
@@ -389,7 +367,7 @@ main h1 {
  ***********   ABOUT   ***********
  *********************************/
 #about .splash {
-  background: url("../images/lighted-floor.jpg") no-repeat center center;
+  background: url("../images/castle-hallway.jpg") no-repeat center center;
   background-size: cover; }
   #about .splash .splash-content {
     text-shadow: -2px -2px 4px #C1DD4D, 2px 2px 4px #6FD800; }
@@ -400,29 +378,10 @@ main h1 {
 /*********************************
  **********   CONTACT   **********
  *********************************/
-#contact .splash {
-  background: url("../images/magical-forest.jpg") no-repeat center center;
-  background-size: cover; }
-  #contact .splash .splash-content {
-    text-shadow: -2px -2px 4px #C1DD4D, 2px 2px 4px #6FD800; }
-  @media only screen and (min-width: 768px) {
-    #contact .splash .splash-content {
-      font-size: 4.5em; } }
-  @media only screen and (min-width: 960px) and (orientation: landscape) {
-    #contact .splash .splash-content {
-      top: 35%;
-      left: 12%;
-      -ms-transform: translate(-12%, -35%);
-      /* IE 9 */
-      -webkit-transform: translate(-12%, -35%);
-      /* Safari */
-      transform: translate(-12%, -35%);
-      text-align: left;
-      font-size: 5em; }
-    #contact .splash .sc-2 {
-      padding-left: 2em; }
-    #contact .splash .sc-3 {
-      padding-left: 0.75em; } }
+#contact .content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*********************************
  ********   CONTRIBUTE   *********
@@ -600,48 +559,37 @@ main h1 {
 /***************************************
  *************   DASHBOARD  ************
  ***************************************/
-#results .display-bg {
-  z-index: -10;
-  background-color: #B905D2;
-  position: absolute;
-  top: 72px;
+#results .results-top {
   height: 60px;
+  width: 100%;
+  background-color: #B905D2; }
+#results .results-wrapper {
+  max-width: 375px;
+  margin-top: -60px;
+  margin-right: auto;
+  margin-left: auto; }
+#results table {
+  border-collapse: collapse;
+  border-spacing: none;
+  border-color: none;
   width: 100%; }
-#results .display {
-  margin-top: 72px;
-  display: table;
-  width: 100%; }
-  #results .display .header-group {
-    display: table-header-group;
-    width: 100%;
+  #results table .header-group {
     height: 60px; }
-  #results .display .header-cell {
-    display: table-cell;
+  #results table .header-cell {
+    display: inline-block;
     font-size: 1.5em;
     font-weight: bold;
     color: #FFF;
-    height: 60px;
-    vertical-align: middle;
+    padding: 15.5px;
     text-align: center; }
-  #results .display .row-group {
-    display: table-row;
-    height: 40px; }
-  #results .display .row-cell {
-    display: table-cell;
+  #results table .row-cell {
+    display: inline-block;
     padding: 10px;
     font-size: 1em;
     font-weight: bold;
     text-align: center;
     vertical-align: middle; }
 
-@media only screen and (min-width: 768px) {
-  #results {
-    position: relative; }
-    #results .display {
-      margin-top: 0px;
-      max-width: 375px;
-      margin-right: auto;
-      margin-left: auto; } }
 #quiz {
   width: 100%;
   text-overflow: wrap;

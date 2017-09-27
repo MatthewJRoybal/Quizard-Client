@@ -91,10 +91,13 @@ function loginUser(userObject) {
  ********************************************/
 
 function logoutUser() {
+  console.log('logout');
 	window.localStorage.setItem('token', null);
   if (window.location.pathname === "/html/results.html") {
-    window.location.assign("../index.html");
+    window.location.assign("index.html");
+    console.log('assign');
   } else {
-    location.reload();
+    location.reload("../index.html");
+    console.log('else');
   }
 }

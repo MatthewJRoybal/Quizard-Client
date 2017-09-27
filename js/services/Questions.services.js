@@ -65,6 +65,7 @@ function getQuestions() {
       },
 			url: queryString,
 			success: function(questions) {
+        console.log(questions);
 				resolve(questions);
 			},
 			error: function(err) {
@@ -89,7 +90,7 @@ function contributeQuestion(questionObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: environment + '/questions',
+			url: config[environment].api + '/questions',
 			data: JSON.stringify(questionObj),
 			contentType: "application/json",
       xhrFields: {

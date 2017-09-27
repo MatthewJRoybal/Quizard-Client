@@ -69,7 +69,7 @@ function navSessions() {
     login: '<a class="js-toggle-login"><span class="fa fa-user"></span> Sign In/Up</a>',
     logout: '<a class="js-logout"><span class="fa fa-user"></span> Sign Out</a>'
   };
-  
+
   var anonymous = (
     '<div id="nav-logo">' +
       '<a href="../index.html"><img src="../images/logo.png" alt="Quizard Logo"></a>' +
@@ -96,7 +96,7 @@ function navSessions() {
           '<li><a href="results.html"><span class="fa fa-pencil"></span> Results</a></li>' +
           '<li><a href="quiz.html"><span class="fa fa-bolt"></span> Quiz</a></li>' +
           '<li><a href="contribute.html"><span class="fa fa-comment"></span> Contribute</a></li>' +
-          '<li><a class="js-logout"><span class="fa fa-user"></span> Sign Out</a></li>' +
+          '<li><a class="js-logout" href="../index.html"><span class="fa fa-user"></span> Sign Out</a></li>' +
         '</ul>' +
       '</nav>' +
       '<div id="js-nav-btn">' +

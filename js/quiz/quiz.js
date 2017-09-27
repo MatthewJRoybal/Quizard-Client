@@ -61,7 +61,7 @@ var Quiz = function(container, questions, quotes) {
  ************************************************/
 
 function cycleQuiz() {
-	this.cycleQuestions(); 
+	this.cycleQuestions();
 	this.container.on('click', '.grade-question-btn', this.cycleAnswers);
 	this.container.on('click', '.next-question-btn', this.cycleQuestions);
 };
@@ -75,7 +75,7 @@ function cycleQuestions() {
     this.container.html(questionHTML);
     $('#progress').html(templates.trackProgressHTML.call(this));
     $('#score').html(templates.trackScoreHTML.call(this));
-    
+
 	} else {
 		$('#score').html(templates.trackScoreHTML.call(this));
 		var endQuote = this.quoteFetch();
@@ -117,7 +117,7 @@ function questionsShuffle(arr) {
     var j, x, i;
     for (i = a.length; i; i--) {
         j = Math.floor(Math.random() * i);
-        
+
         x = a[i - 1];
         a[i - 1] = a[j];
         a[j] = x;
@@ -159,7 +159,7 @@ function answerGraded(choice) {
   this.questionsCurrent['answer'] = choice;
   this.questionsCurrent['score'] = this.answerScore;
   this.answerResults.push(this.questionsCurrent);
-  this.answerCorrect = "";  
+  this.answerCorrect = "";
 };
 
 /********************************************
@@ -187,7 +187,7 @@ function getFinalScore(arr) {
 }
 
 function endQuiz(quoteObj) {
-	var finalHTML = 
+	var finalHTML =
 		('<div id="quiz-end">' +
 			 '<h2>Congratulations, you\'ve completed the quiz.</h2>' +
 		 		 '<h3>Your score was ' + this.answerScore + ' points out of ' + this.questions.length + '</h3>' +

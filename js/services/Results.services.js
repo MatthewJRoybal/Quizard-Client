@@ -56,7 +56,7 @@ function displayResults(resultsObj) {
         '<div class="row-cell">' + obj.score + '</div>' +
       '</div>');
   })
-  return $('#results .display').append(HTML);
+  return $('#results .results-content').append(HTML);
 }
 
 /********************************************

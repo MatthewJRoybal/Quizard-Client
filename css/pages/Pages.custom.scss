@@ -3,13 +3,13 @@
  *********************************/
 
 #start .splash {
-  background: url('../images/castle-knight.jpg') no-repeat top center;
+  background: url('../images/knight.jpg') no-repeat top center;
   background-size: cover;
-  
+
   .splash-content {
     color: #170019;
   }
-  
+
   // Landscape Phone
   @media only screen and (max-width: 749px) and (orientation: landscape) {
 
@@ -67,19 +67,19 @@
  *********************************/
 
 #about .splash {
-  background: url('../images/lighted-floor.jpg')
+  background: url('../images/castle-hallway.jpg')
    no-repeat center center;
   background-size: cover;
-  
+
   .splash-overlay {
 //    background-color: rgba(0, 0, 0, 0.05);
   }
-  
+
   .splash-content {
     text-shadow: -2px -2px 4px #C1DD4D,
     2px 2px 4px #6FD800;
   }
- 
+
 
   @media only screen and (min-width: 768px) {
 
@@ -93,43 +93,10 @@
  **********   CONTACT   **********
  *********************************/
 
-#contact .splash {
-  background: url('../images/magical-forest.jpg') no-repeat center center;
-  background-size: cover;
-  
-  .splash-content {
-    text-shadow: -2px -2px 4px #C1DD4D,
-    2px 2px 4px #6FD800;
-  }
-  
-  
-  @media only screen and (min-width: 768px) {
-
-    .splash-content {
-      font-size: 4.5em;
-    }
-  }
-  
-    @media only screen and (min-width: 960px) and (orientation: landscape) {
-
-    .splash-content {
-      top: 35%;
-      left: 12%;
-      -ms-transform: translate(-12%, -35%); /* IE 9 */
-      -webkit-transform: translate(-12%, -35%); /* Safari */
-      transform: translate(-12%, -35%);
-      text-align: left;
-      font-size: 5em;
-    }
-
-    .sc-2 {
-      padding-left: 2em;
-    }
-      
-    .sc-3 {
-      padding-left: 0.75em;
-    }
-  }
+#contact .content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*********************************
@@ -140,7 +107,7 @@
   background: url('../images/witch.jpg')
    no-repeat center center;
   background-size: cover;
-  
+
   .splash-content {
     top: auto;
     right: auto;
@@ -150,7 +117,7 @@
     font-size: 3em;
 
   }
-  
+
     // Landscape Small
   @media only screen and (max-width: 730px) and (orientation: landscape) {
 
@@ -168,12 +135,12 @@
     .sc-2 {
       padding-left: 1.5em;
     }
-    
+
     .sc-3 {
       padding-left: 1em;
     }
   }
-  
+
   // Landscape Large
   @media only screen and (min-width: 731px) and (orientation: landscape) {
 
@@ -187,7 +154,7 @@
       transform: translate(-3%, -50%);
       text-align: right;
     }
-    
+
     .sc-1 {
       padding-right: 2.5em;
     }
@@ -196,7 +163,7 @@
       padding-right: 3em;
     }
   }
-  
+
     // Tablet and Desktop
   @media only screen and (min-width: 960px) and (max-width: 1199px) {
 
@@ -204,7 +171,7 @@
       font-size: 4em;
     }
   }
-  
+
   // Tablet and Desktop
   @media only screen and (min-width: 1200px) {
 
