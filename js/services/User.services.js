@@ -48,16 +48,15 @@ function createUserObject(userArray) {
 function createUser(userObject) {
 	$.ajax({
 			type: "POST",
-      crossDomain: true,
-      xhrFields: {
-        withCredentials: true
-      },
-			url: config[environment].api + '/user/create',
+      contentType: "application/json",
+			url: config[environment].api + '/api/user/signup',
 			data: JSON.stringify(userObject),
 			success: function(user) {
 				loginUser(userObject);
-			},
-			contentType: "application/json"
+        localStorage.setItem('token');
+        location.window.href = config[environment].api + "/html/results.html";
+			}
+
 		});
 }
 
@@ -68,21 +67,15 @@ function createUser(userObject) {
 function loginUser(userObject) {
 	$.ajax({
 			type: "POST",
-      crossDomain: true,
-      xhrFields: {
-        withCredentials: true
-      },
-			url: config[environment].api + '/user/login',
+      contentType: "application/json",
+			url: config[environment].api + '/api/user/signin',
 			data: JSON.stringify(userObject),
 			success: function(user) {
+        console.log(user);
         window.location.href = "../html/results.html";
 				window.localStorage.setItem('token', user.token);
 			},
-			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
+
 		});
 }
 
@@ -91,13 +84,6 @@ function loginUser(userObject) {
  ********************************************/
 
 function logoutUser() {
-  console.log('logout');
-	window.localStorage.setItem('token', null);
-  if (window.location.pathname === "/html/results.html") {
-    window.location.assign("index.html");
-    console.log('assign');
-  } else {
-    location.reload("../index.html");
-    console.log('else');
-  }
+	localStorage.removeItem('token');
+  window.location.href = "http://quizard.me";
 }

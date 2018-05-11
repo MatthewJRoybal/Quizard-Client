@@ -22,7 +22,7 @@
 		animation-timing-function: linear;
 		animation-delay: 6s;
 		animation-fill-mode:forwards;
-    
+
 	}
 
 #ls-2 {
@@ -46,9 +46,9 @@
 	}
 
 #index {
-  
+
   main {
-    background: url('../images/magicbook.png') center center / cover no-repeat;
+    // background: url('../images/magicbook.png') center center / cover no-repeat;
   }
 
   #landing-splash {
@@ -60,16 +60,16 @@
     width: 100%;
     color: #000;
     text-align: center;
-    
+
     span {
       display: block;
     }
-    
+
     .ls {
       text-shadow: -2px -2px 4px $color-dark, 2px 2px 4px $color-light;
       font-family: $font-accent;
     }
-      
+
     #ls-1 {
       font-size: 1.75em;
       padding-bottom: 0.35em;
@@ -82,13 +82,13 @@
      #ls-3 {
       font-size: 4em;
     }
-    
+
     @media only screen and (min-width: 400px) and (max-width: 600px) {
-      
+
       #ls-1 {
         font-size: 2.5em;
       }
-      
+
       #ls-2 {
         font-size: 2.75em;
         padding-bottom: 0.15em;
@@ -98,13 +98,13 @@
         font-size: 5em;
       }
     }
-    
+
     @media only screen and (min-width: 601px) and (max-width: 900px) {
-      
+
       #ls-1 {
         font-size: 3.5em;
       }
-      
+
       #ls-2 {
         font-size: 4.00em;
         padding-bottom: 0.15em;
@@ -114,13 +114,13 @@
         font-size: 6.75em;
       }
     }
-    
+
     @media only screen and (min-width: 901px) {
-      
+
       #ls-1 {
         font-size: 4.5em;
       }
-      
+
       #ls-2 {
         font-size: 5.00em;
         padding-bottom: 0.15em;
@@ -130,12 +130,12 @@
         font-size: 7.75em;
       }
     }
-    
+
   }
 }
 
 @media only screen and (min-width: 768px) {
-    
+
   #index main {
     position: static;
     height: auto;

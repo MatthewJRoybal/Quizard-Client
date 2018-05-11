@@ -22,18 +22,15 @@ function getQuotes(count) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
-			url: config[environment].api + '/quotes?count=' + count,
+      contentType: "application/json",
+			url: config[environment].api + '/api/quiz/quotes?count=' + count,
 			success: function(quotes) {
 				resolve(quotes);
 			},
 			error: function(err) {
 				reject(err);
-			},
-			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
+			}
+
 		});
 	}).catch(function(err) {
 		console.log(err);
@@ -48,9 +45,9 @@ function contributeQuote(quoteObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: config[environment].api + '/quotes',
+      contentType: "application/json",
+			url: config[environment].api + '/api/quiz/quotes',
 			data: JSON.stringify(quoteObj),
-			contentType: "application/json",
 			success: function(quote) {
 				resolve(quote);
 			},

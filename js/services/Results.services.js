@@ -67,21 +67,17 @@ function getResults() {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
       headers: {
-        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        'contentType': "application/json",
+        "Authorization": localStorage.getItem('token')
       },
-			url: config[environment].api + '/results/display',
+			url: config[environment].api + '/api/quiz/results',
 			success: function(results) {
 				resolve(results);
 			},
 			error: function(err) {
 				reject(err);
-			},
-			contentType: "application/json",
+			}
 		});
 	}).catch(function(err) {
 		console.log(err);
@@ -93,20 +89,16 @@ function getResults() {
  ********************************************/
 
 function postResults(resultsObj) {
-  // POST to endpoint
+  console.log(resultsObj);
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
       headers: {
-        Authorization: 'Bearer ' + window.localStorage.getItem('token')
+        Authorization: localStorage.getItem('token'),
+        contentType: "application/json"
       },
-			url: config[environment].api + '/results',
-			data: JSON.stringify(resultsObj),
-			contentType: "application/json",
+			url: config[environment].api + '/api/quiz/results',
+			body: JSON.stringify(resultsObj),
 			success: function(results) {
 				resolve(results);
 			},

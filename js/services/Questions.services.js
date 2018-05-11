@@ -46,7 +46,7 @@ function makeQueryString(categoriesObj) {
 		queryString += (prop + "=" + categoriesObj[prop] + "&");
 	}
 	queryString = queryString.substring(0, queryString.length - 1);
-	return (config[environment].api + '/questions?' + queryString);	// config[environment].api
+	return (config[environment].api + '/api/quiz/questions?' + queryString);	// config[environment].api
 }
 
 /********************************************
@@ -61,21 +61,18 @@ function getQuestions() {
 		$.ajax({
 			type: "GET",
       headers: {
-        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        contentType: "application/json",
+        "Authorization": localStorage.getItem('token')
       },
 			url: queryString,
 			success: function(questions) {
-        console.log(questions);
+        console.log(queryString);
 				resolve(questions);
 			},
 			error: function(err) {
 				reject(err);
 			},
-			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
+
 		});
 	}).catch(function(err) {
 		console.log(err);
@@ -90,13 +87,9 @@ function contributeQuestion(questionObj) {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "POST",
-			url: config[environment].api + '/questions',
+      contentType: "application/json",
+			url: config[environment].api + '/api/quiz/questions',
 			data: JSON.stringify(questionObj),
-			contentType: "application/json",
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
 			success: function(question) {
 				resolve(question);
 			},
