@@ -2,18 +2,14 @@
   width: 100%;
   text-overflow: wrap;
   box-sizing: border-box;
-  
-  main {
-    margin-top: 72px;
-  }
-  
+
   .btn-wrapper {
     width: 100%;
     text-align: center;
-    
+
     .btn-quiz {
       margin-top: 1em;
-      font-size: 2em;
+      font-size: 1.5em;
       letter-spacing: 2px;
     }
   }
@@ -25,17 +21,24 @@
 
   #scoreboard {
     background-color: $color-dark;
-    display: table;
     height: 60px;
     width: 100%;
 
+    #updates {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-around;
+      height: 60px;
+      width: 100%;
+    }
+
     #progress,
     #score {
-      display: table-cell;
       text-align: center;
-      vertical-align: middle;
       line-height: 2em;
-      
+
       h2 {
         margin: 0;
         font-size: 1em;
@@ -43,11 +46,11 @@
       }
     }
   } // End of #quiz-scoreboard
-  
+
   .quiz-form {
     height: auto;
     width: 100%;
-    
+
     .quiz-question {
       margin: 0;
       padding: 1em;
@@ -61,7 +64,7 @@
       margin: 0;
       padding: 0;
       overflow: visible;
-      
+
       li.quiz-option {
         position: relative;
         display: block;
@@ -70,7 +73,7 @@
         height: 100%;
         color: $color-dark;
         border-bottom: 1px solid $color-dark;
-        
+
         input[type=checkbox] {
           position: absolute;
           visibility: hidden;
@@ -114,7 +117,7 @@
           transition: border .25s linear;
           -webkit-transition: border .25s linear;
         }
-        
+
         .check::before {
           display: block;
           position: absolute;
@@ -129,14 +132,14 @@
           -webkit-transition: background 0.25s linear;
         }
       }
-      
+
       li:hover .check,
       input[type=checkbox]:checked ~ .check,
       input[type=radio]:checked ~ .check {
         border: 5px solid $color-light;
       }
 
-      input[type=checkbox]:checked ~ .check::before, 
+      input[type=checkbox]:checked ~ .check::before,
       input[type=radio]:checked ~ .check::before {
         background: $color-light;
       }
@@ -147,37 +150,45 @@
         color: $color-light;
       }
     }
+
   }
 
   #test ul li .check,
   #test ul li .check::before {
     border-radius: 100%;
-  }  
+  }
+
+  #quotes {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
 }
 
 @media screen and (min-width: 768px) {
   #quiz main {
     margin-top: 0;
   }
-  
+
   #quiz #scoreboard {
-    margin-top: -5px;
     font-size: 1.5em;
   }
-  
+
   .quiz-question {
     text-align: center;
   }
-  
-  #quiz .quiz-form ul.quiz-options {
+
+  #quiz .quiz-form {
+    display: block;
     width: 768px;
-    margin: 1em auto;
+    margin: 0 auto 1em auto;
   }
-  
+
   #quiz .btn-wrapper {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -75%);
+    display: block;
   }
 }

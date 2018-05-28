@@ -1,11 +1,11 @@
 function results() {
   if($('#results').length > 0) {
     getResults()
-    .then(function(results) {
+    .then(results => {
       displayResults(results);
-    }).catch(function() {
-      // If there's an error, how am I going to show the error
-      // Call a function that redirects so its reusable
+    })
+    .catch(err => {
+      console.log(err);
     });
   };
 };
@@ -67,8 +67,8 @@ function getResults() {
 	return new Promise(function(resolve, reject) {
 		$.ajax({
 			type: "GET",
+      contentType: "application/json",
       headers: {
-        'contentType': "application/json",
         "Authorization": localStorage.getItem('token')
       },
 			url: config[environment].api + '/api/quiz/results',
@@ -89,24 +89,16 @@ function getResults() {
  ********************************************/
 
 function postResults(resultsObj) {
-  console.log(resultsObj);
-	return new Promise(function(resolve, reject) {
-		$.ajax({
-			type: "POST",
-      headers: {
-        Authorization: localStorage.getItem('token'),
-        contentType: "application/json"
-      },
-			url: config[environment].api + '/api/quiz/results',
-			body: JSON.stringify(resultsObj),
-			success: function(results) {
-				resolve(results);
-			},
-			error: function(err) {
-				reject(err);
-			}
-		});
-	}).catch(function(err) {
-		console.log(err);
-	})
+	$.ajax({
+		type: "POST",
+    contentType: 'application/json',
+    headers: {
+      "Authorization": localStorage.getItem('token')
+    },
+		url: config[environment].api + '/api/quiz/results',
+		data: JSON.stringify(resultsObj),
+		success: function(results) {
+			console.log('success!');
+		}
+	});
 }

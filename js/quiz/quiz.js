@@ -14,9 +14,7 @@ function quiz() {
           var Quizard = new Quiz($('#test'), questions, quotes);
           Quizard.cycleQuiz();
           Quizard.done(function(quizState) {
-            postResults(quizState).then(function() {
-  //             3. Push results array to server
-              });
+            postResults(quizState);
             });
           });
         });
@@ -97,6 +95,7 @@ function cycleAnswers() {
     this.answerGraded(choice);
     var randomQuote = this.quoteFetch();
     var quoteHTML = this.quoteBuild(randomQuote);
+    console.log(quoteHTML);
     $('#quotes').html(quoteHTML);
   }
 };

@@ -480,8 +480,6 @@ main h1 {
 .video {
   display: none; }
 
-#index main {
-  background: url("../images/magicbook.png") center center/cover no-repeat; }
 #index #landing-splash {
   position: absolute;
   top: 30%;
@@ -594,28 +592,31 @@ main h1 {
   width: 100%;
   text-overflow: wrap;
   box-sizing: border-box; }
-  #quiz main {
-    margin-top: 72px; }
   #quiz .btn-wrapper {
     width: 100%;
     text-align: center; }
     #quiz .btn-wrapper .btn-quiz {
       margin-top: 1em;
-      font-size: 2em;
+      font-size: 1.5em;
       letter-spacing: 2px; }
   #quiz #quiz-end {
     text-align: center;
     font-color: #B905D2; }
   #quiz #scoreboard {
     background-color: #62278d;
-    display: table;
     height: 60px;
     width: 100%; }
+    #quiz #scoreboard #updates {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-around;
+      height: 60px;
+      width: 100%; }
     #quiz #scoreboard #progress,
     #quiz #scoreboard #score {
-      display: table-cell;
       text-align: center;
-      vertical-align: middle;
       line-height: 2em; }
       #quiz #scoreboard #progress h2,
       #quiz #scoreboard #score h2 {
@@ -706,26 +707,30 @@ main h1 {
   #quiz #test ul li .check,
   #quiz #test ul li .check::before {
     border-radius: 100%; }
+  #quiz #quotes {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 15px;
+    padding-right: 15px; }
 
 @media screen and (min-width: 768px) {
   #quiz main {
     margin-top: 0; }
 
   #quiz #scoreboard {
-    margin-top: -5px;
     font-size: 1.5em; }
 
   .quiz-question {
     text-align: center; }
 
-  #quiz .quiz-form ul.quiz-options {
+  #quiz .quiz-form {
+    display: block;
     width: 768px;
-    margin: 1em auto; }
+    margin: 0 auto 1em auto; }
 
   #quiz .btn-wrapper {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -75%); } }
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */

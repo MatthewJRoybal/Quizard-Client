@@ -66,7 +66,6 @@ function getQuestions() {
       },
 			url: queryString,
 			success: function(questions) {
-        console.log(queryString);
 				resolve(questions);
 			},
 			error: function(err) {
