@@ -1,0 +1,18 @@
+/*
+ * ABOUT
+ */
+
+#about .splash {
+	background: url('../images/castle-hallway.jpg') no-repeat center center;
+	background-size: cover;
+
+	.splash-content {
+		text-shadow: -2px -2px 4px #c1dd4d, 2px 2px 4px #6fd800;
+	}
+
+	@media only screen and (min-width: 768px) {
+		.splash-content {
+			font-size: 4.5em;
+		}
+	}
+}

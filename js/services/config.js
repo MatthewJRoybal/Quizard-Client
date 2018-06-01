@@ -5,6 +5,6 @@ const config = {
 	production: {
 		api: 'https://quizard-me.herokuapp.com/'
 	}
-}
+};
 
 const environment = 'local';

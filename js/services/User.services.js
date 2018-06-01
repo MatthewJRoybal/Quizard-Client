@@ -3,14 +3,12 @@
  ********************************************/
 
 function users() {
-  $('#signUp').submit(function(event) {
+	$('#signUp').submit(function(event) {
 		event.preventDefault();
 		var userArray = $(this).serializeArray();
 		var newUser = createUserObject(userArray);
 		createUser(newUser);
 	});
-
-
 
 	$('#signIn').submit(function(event) {
 		event.preventDefault();
@@ -18,7 +16,6 @@ function users() {
 		var returningUser = createUserObject(userCredentials);
 		loginUser(returningUser);
 	});
-
 
 	$('body').on('click', '.js-logout', function(event) {
 		event.preventDefault();
@@ -32,14 +29,14 @@ function users() {
 
 function createUserObject(userArray) {
 	var userObject = {};
-	for(var i = 0; i < userArray.length; i++) {
+	for (var i = 0; i < userArray.length; i++) {
 		var obj = userArray[i];
 		var key = obj[Object.keys(obj)[0]];
 		var value = obj[Object.keys(obj)[1]];
 		userObject[key] = value;
 	}
-	return(userObject);
-};
+	return userObject;
+}
 
 /********************************************
  ************   CREATE NEW USER   ***********
@@ -47,17 +44,16 @@ function createUserObject(userArray) {
 
 function createUser(userObject) {
 	$.ajax({
-			type: "POST",
-      contentType: "application/json",
-			url: config[environment].api + '/api/user/signup',
-			data: JSON.stringify(userObject),
-			success: function(user) {
-				loginUser(userObject);
-        localStorage.setItem('token');
-        location.window.href = config[environment].api + "/html/results.html";
-			}
-
-		});
+		type: 'POST',
+		contentType: 'application/json',
+		url: config[environment].api + '/api/user/signup',
+		data: JSON.stringify(userObject),
+		success: function(user) {
+			loginUser(userObject);
+			localStorage.setItem('token');
+			location.window.href = config[environment].api + '/results.html';
+		}
+	});
 }
 
 /********************************************
@@ -66,17 +62,16 @@ function createUser(userObject) {
 
 function loginUser(userObject) {
 	$.ajax({
-			type: "POST",
-      contentType: "application/json",
-			url: config[environment].api + '/api/user/signin',
-			data: JSON.stringify(userObject),
-			success: function(user) {
-        console.log(user);
-        window.location.href = "../html/results.html";
-				window.localStorage.setItem('token', user.token);
-			},
-
-		});
+		type: 'POST',
+		contentType: 'application/json',
+		url: config[environment].api + '/api/user/signin',
+		data: JSON.stringify(userObject),
+		success: function(user) {
+			console.log(user);
+			window.location.href = '../results.html';
+			window.localStorage.setItem('token', user.token);
+		}
+	});
 }
 
 /********************************************
@@ -85,5 +80,5 @@ function loginUser(userObject) {
 
 function logoutUser() {
 	localStorage.removeItem('token');
-  window.location.href = "http://quizard.me";
+	window.location.href = 'http://quizard.me';
 }

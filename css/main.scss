@@ -1,11 +1,11 @@
-@import "partials/base";
-@import "partials/buttons";
-@import "partials/forms";
-@import "partials/navigation";
-@import "partials/login";
+@import 'partials/base';
+@import 'partials/buttons';
+@import 'partials/forms';
+@import 'partials/navigation';
+@import 'partials/login';
 
-@import "pages/Pages.all";
-@import "pages/Pages.custom";
-@import "pages/Pages.index";
-@import "pages/Pages.results";
-@import "pages/Pages.quiz";
+@import 'pages/Pages.all';
+@import 'pages/Pages.about';
+@import 'pages/Pages.index';
+@import 'pages/Pages.results';
+@import 'pages/Pages.quiz';

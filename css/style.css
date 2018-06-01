@@ -24,7 +24,7 @@ header {
   background-color: #333; }
 
 #index header {
-  background-color: transparent; }
+  background-color: black; }
 
 body > * {
   font-family: 'Roboto', sans-serif; }
@@ -318,122 +318,17 @@ main h1 {
   .introduction h1 {
     font-family: 'Merienda One', cursive;
     text-align: center; } }
-/*********************************
- ***********   START   ***********
- *********************************/
-#start .splash {
-  background: url("../images/knight.jpg") no-repeat top center;
-  background-size: cover; }
-  #start .splash .splash-content {
-    color: #170019; }
-  @media only screen and (max-width: 749px) and (orientation: landscape) {
-    #start .splash .splash-content {
-      left: 10%;
-      -ms-transform: translate(-10%, -50%);
-      /* IE 9 */
-      -webkit-transform: translate(-10%, -50%);
-      /* Safari */
-      transform: translate(-10%, -50%);
-      text-align: left; }
-    #start .splash .sc-2 {
-      padding-left: 0.70em; } }
-  @media only screen and (min-width: 450px) and (max-width: 1024px) and (orientation: portrait) {
-    #start .splash .splash-content {
-      left: 10%;
-      -ms-transform: translate(-10%, -50%);
-      /* IE 9 */
-      -webkit-transform: translate(-10%, -50%);
-      /* Safari */
-      transform: translate(-10%, -50%);
-      text-align: left;
-      font-size: 4.5em; }
-    #start .splash .sc-2 {
-      padding-left: 0.70em; } }
-  @media only screen and (min-width: 750px) and (orientation: landscape) {
-    #start .splash .splash-content {
-      top: 35%;
-      left: 12%;
-      -ms-transform: translate(-12%, -35%);
-      /* IE 9 */
-      -webkit-transform: translate(-12%, -35%);
-      /* Safari */
-      transform: translate(-12%, -35%);
-      text-align: left;
-      font-size: 6em; }
-    #start .splash .sc-2 {
-      padding-left: 0.70em; } }
-
-/*********************************
- ***********   ABOUT   ***********
- *********************************/
+/*
+ * ABOUT
+ */
 #about .splash {
   background: url("../images/castle-hallway.jpg") no-repeat center center;
   background-size: cover; }
   #about .splash .splash-content {
-    text-shadow: -2px -2px 4px #C1DD4D, 2px 2px 4px #6FD800; }
+    text-shadow: -2px -2px 4px #c1dd4d, 2px 2px 4px #6fd800; }
   @media only screen and (min-width: 768px) {
     #about .splash .splash-content {
       font-size: 4.5em; } }
-
-/*********************************
- **********   CONTACT   **********
- *********************************/
-#contact .content {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto; }
-
-/*********************************
- ********   CONTRIBUTE   *********
- *********************************/
-#contribute .splash {
-  background: url("../images/witch.jpg") no-repeat center center;
-  background-size: cover; }
-  #contribute .splash .splash-content {
-    top: auto;
-    right: auto;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%, -5%);
-    font-size: 3em; }
-  @media only screen and (max-width: 730px) and (orientation: landscape) {
-    #contribute .splash .splash-content {
-      top: 50%;
-      left: 3%;
-      right: auto;
-      bottom: auto;
-      -ms-transform: translate(-3%, -50%);
-      /* IE 9 */
-      -webkit-transform: translate(-3%, -50%);
-      /* Safari */
-      transform: translate(-3%, -50%);
-      text-align: left; }
-    #contribute .splash .sc-2 {
-      padding-left: 1.5em; }
-    #contribute .splash .sc-3 {
-      padding-left: 1em; } }
-  @media only screen and (min-width: 731px) and (orientation: landscape) {
-    #contribute .splash .splash-content {
-      top: 50%;
-      left: auto;
-      right: 3%;
-      bottom: auto;
-      -ms-transform: translate(-3%, -50%);
-      /* IE 9 */
-      -webkit-transform: translate(-3%, -50%);
-      /* Safari */
-      transform: translate(-3%, -50%);
-      text-align: right; }
-    #contribute .splash .sc-1 {
-      padding-right: 2.5em; }
-    #contribute .splash .sc-2 {
-      padding-right: 3em; } }
-  @media only screen and (min-width: 960px) and (max-width: 1199px) {
-    #contribute .splash .splash-content {
-      font-size: 4em; } }
-  @media only screen and (min-width: 1200px) {
-    #contribute .splash .splash-content {
-      font-size: 5em; } }
 
 @keyframes ls-1 {
   0% {
@@ -480,6 +375,8 @@ main h1 {
 .video {
   display: none; }
 
+#index main {
+  background: url("../images/magicbook.png") center center/cover no-repeat; }
 #index #landing-splash {
   position: absolute;
   top: 30%;
