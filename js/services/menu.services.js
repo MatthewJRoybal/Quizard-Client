@@ -56,15 +56,12 @@ function navUX() {
  */
 
 function navSessions() {
-	var token = window.localStorage.getItem('token');
+	var token = localStorage.getItem('token');
 	var links = {
 		index: 'index',
-		start: 'start',
-		contact: 'contact',
-		contribute: 'contribute',
 		results: 'results',
 		quiz: 'quiz',
-		contribute: 'contribute',
+		about: 'about',
 		login:
 			'<a class="js-toggle-login"><span class="fa fa-user"></span> Sign In/Up</a>',
 		logout: '<a class="js-logout"><span class="fa fa-user"></span> Sign Out</a>'
@@ -100,7 +97,7 @@ function navSessions() {
 		'<button id="js-hamburger" class="fa fa-bars"></button>' +
 		'<button id="js-cross" class="fa fa-close"></button>' +
 		'</div>';
-	if (token === ('null' || 'undefined')) {
+	if (token === null || undefined) {
 		return $('.js-anon-auth').append(anonymous);
 	} else {
 		return $('.js-anon-auth').append(authenticated);

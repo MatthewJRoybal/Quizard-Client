@@ -90,11 +90,11 @@ function getResults() {
 
 function postResults(resultsObj) {
 	$.ajax({
-		type: "POST",
-    contentType: 'application/json',
+    type: 'POST',
+		contentType: 'application/json',
     headers: {
-      "Authorization": localStorage.getItem('token')
-    },
+      "Authorization": localStorage.getItem('token');
+    }
 		url: config[environment].api + '/api/quiz/results',
 		data: JSON.stringify(resultsObj),
 		success: function(results) {

@@ -3,8 +3,8 @@ const config = {
 		api: 'http://127.0.0.1:8080'
 	},
 	production: {
-		api: 'https://quizard-me.herokuapp.com/'
+		api: 'https://quizard-me.herokuapp.com'
 	}
 };
 
-const environment = 'local';
+const environment = 'production';

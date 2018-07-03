@@ -67,8 +67,7 @@ function loginUser(userObject) {
 		url: config[environment].api + '/api/user/signin',
 		data: JSON.stringify(userObject),
 		success: function(user) {
-			console.log(user);
-			window.location.href = '../results.html';
+			window.location.href = 'results.html';
 			window.localStorage.setItem('token', user.token);
 		}
 	});
